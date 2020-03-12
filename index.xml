@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xu Liu</title>
+    <link>https://xliusufe.github.io/</link>
+    <description>Recent content on Xu Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://xliusufe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Biography</title>
+      <link>https://xliusufe.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/about/</guid>
+      <description>Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms for high-dimensional data analysis, tensor modelling, and their various applications in bioinformatics.</description>
+    </item>
+    
+  </channel>
+</rss>
