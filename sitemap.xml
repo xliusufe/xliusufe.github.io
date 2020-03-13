@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://xliusufe.github.io/about/</loc>
+    <lastmod>2020-03-12T10:42:29+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xliusufe.github.io/post/first/</loc>
     <lastmod>2020-03-12T10:42:29+08:00</lastmod>
   </url>
@@ -18,11 +23,11 @@
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/about/</loc>
+    <loc>https://xliusufe.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/categories/</loc>
+    <loc>https://xliusufe.github.io/false/</loc>
   </url>
   
   <url>
