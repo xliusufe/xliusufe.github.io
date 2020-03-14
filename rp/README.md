@@ -7,7 +7,7 @@ Introduction to R
   - [A course of R](https://xliusufe.github.io/rp/contents.html)
   
 # R packages  
-  - Details can be fount in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  - Details can be found in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
   
 # Homepage
 - go back to [home site](https://xliusufe.github.io)  
