@@ -1,0 +1,19 @@
+---
+title: "Introduction to C"
+date: 2020-03-12T10:42:29+08:00
+draft: false
+---
+
+# Create your first C project
+  - Visual Sdutio on [Windows OS](https://xliusufe.github.io/cp/createFirstProject_windows.pdf)
+  - codeblocks on [Windows OS](https://xliusufe.github.io/cp/createFirstProject_codeblocks.pdf)
+  - Xcode on [Mac OS](https://xliusufe.github.io/cp/createFirstProject_mac.pdf)
+
+# The course of **Computer Programming**
+  - [Computer Programming](https://xliusufe.github.io/cp/contents.html)
+  
+# R packages  
+  - All my R packages called C/C++ to implement inner loop to speed up the computation
+  - Details can be fount in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  
+
