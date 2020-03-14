@@ -36,7 +36,7 @@
   - [A course of R](https://xliusufe.github.io/rp/contents.html)
   
 - R packages  
-  - Details can be fount in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  - Details can be found in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
   
 ## Work
 - [Work](http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm)
