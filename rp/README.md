@@ -1,10 +1,13 @@
-# xliusufe.github.io
+Introduction to R
 
-This is my homepage including 
+# R tutorial
+  - [R tutorial](https://xliusufe.github.io/rp/factorial.html)
 
-  - [Home](https://xliusufe.github.io/index.html)
-  - [Biography](https://xliusufe.github.io/Biography.html)
-  - [Publications](https://xliusufe.github.io/Publications.html)
-  - [Softwares](https://xliusufe.github.io/Softwares.html)
-  - [Teaching](https://xliusufe.github.io/Teaching.html)
-  - [Grants](https://xliusufe.github.io/Grants.html)
+# A short course of R
+  - [A course of R](https://xliusufe.github.io/rp/contents.html)
+  
+# R packages  
+  - Details can be fount in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  
+# Homepage
+- go back to [home site](https://xliusufe.github.io)  
