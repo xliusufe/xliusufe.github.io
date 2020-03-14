@@ -24,7 +24,7 @@
   
 - R packages  
   - All my R packages called C/C++ to implement inner loop to speed up the computation
-  - Details can be fount in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  - Details can be found in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
   
 
 ## Skills/R  
