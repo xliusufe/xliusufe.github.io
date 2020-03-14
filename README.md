@@ -41,8 +41,8 @@
 ## Work
 - [Work](http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm)
 
-## ??????
-- [??????](https://xliusufe.gitee.io/)
+## Chinese version
+- [Chinese version](https://xliusufe.gitee.io/)
   
 # Homepage
 - go back to [home site](https://xliusufe.github.io/)
