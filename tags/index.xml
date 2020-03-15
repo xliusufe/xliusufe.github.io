@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Xu Liu</title>
-    <link>https://xliusufe.gitee.io/tags/</link>
+    <link>https://xliusufe.github.io/tags/</link>
     <description>Recent content in Tags on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.gitee.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CV</title>
-      <link>https://xliusufe.gitee.io/tags/cv/</link>
+      <link>https://xliusufe.github.io/tags/cv/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/tags/cv/</guid>
+      <guid>https://xliusufe.github.io/tags/cv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://xliusufe.gitee.io/tags/hugo/</link>
+      <link>https://xliusufe.github.io/tags/hugo/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/tags/hugo/</guid>
+      <guid>https://xliusufe.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.gitee.io/tags/softwares/</link>
+      <link>https://xliusufe.github.io/tags/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/tags/softwares/</guid>
+      <guid>https://xliusufe.github.io/tags/softwares/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://xliusufe.gitee.io/tags/teaching/</link>
+      <link>https://xliusufe.github.io/tags/teaching/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/tags/teaching/</guid>
+      <guid>https://xliusufe.github.io/tags/teaching/</guid>
       <description></description>
     </item>
     

@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xu Liu</title>
-    <link>https://xliusufe.gitee.io/</link>
+    <link>https://xliusufe.github.io/</link>
     <description>Recent content on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 12 Mar 2020 10:42:29 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.gitee.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Biography</title>
-      <link>https://xliusufe.gitee.io/post/biography/</link>
+      <link>https://xliusufe.github.io/post/biography/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/biography/</guid>
+      <guid>https://xliusufe.github.io/post/biography/</guid>
       <description>Introduction to myself Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms for high-dimensional data analysis, tensor modelling, and their various applications in bioinformatics.</description>
     </item>
     
     <item>
       <title>Grants</title>
-      <link>https://xliusufe.gitee.io/post/grants/</link>
+      <link>https://xliusufe.github.io/post/grants/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/grants/</guid>
+      <guid>https://xliusufe.github.io/post/grants/</guid>
       <description>Grants  &amp;ldquo;Semiparametric modelling and statistical inference for gene data of complex disease&amp;rdquo; (NSF of China, 11771267), PI  Date of project: 01/01/2018 - 12/31/2021    Homepage  go back to Resume go back to home site  </description>
     </item>
     
     <item>
       <title>Math formula in hugo blog</title>
-      <link>https://xliusufe.gitee.io/post/hugomath/</link>
+      <link>https://xliusufe.github.io/post/hugomath/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/hugomath/</guid>
+      <guid>https://xliusufe.github.io/post/hugomath/</guid>
       <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>https://xliusufe.gitee.io/post/publications/</link>
+      <link>https://xliusufe.github.io/post/publications/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/publications/</guid>
+      <guid>https://xliusufe.github.io/post/publications/</guid>
       <description>Published Papers($\color{red}{\small{*corresponding author,\underline{trainee}}} $)    Liu, X., Zheng, S. and Feng, X. (2020+). Estimation of error variance via ridge regression. Biometrika. In press. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar. DOI: 10.1093/biomet/asz074.
   Gao, B.$^{\natural}$, Liu, X. $^{\natural}$, Li, H. and Cui, Y. (2020+). Integrative analysis of genetical genomics data incorporating network structures. Biometrics. ($^{\natural}$The first two authors contributed equally to this work) Published online DOI: 10.1111/biom.13072. An R-package &amp;ldquo;IVGC&amp;rdquo; is available at https://github.</description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://xliusufe.gitee.io/post/resume/</link>
+      <link>https://xliusufe.github.io/post/resume/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/resume/</guid>
+      <guid>https://xliusufe.github.io/post/resume/</guid>
       <description>Contact Information   Tel: (+86) 021-6590-1156
   Email: liu.xu@sufe.edu.cn
   Adress: No. 777, Guoding Rd., Shanghai 200433, China
@@ -63,20 +63,20 @@
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.gitee.io/post/softwares/</link>
+      <link>https://xliusufe.github.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/softwares/</guid>
+      <guid>https://xliusufe.github.io/post/softwares/</guid>
       <description>R packages   The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr.
  Refer to Feng, X., Huang, J. and Liu, X.* (2019). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*.    The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating Tucker decomposition for the symmetric tensor and the steepest gradient descent algorithm on Stiefel manifold.</description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://xliusufe.gitee.io/post/teaching/</link>
+      <link>https://xliusufe.github.io/post/teaching/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/teaching/</guid>
+      <guid>https://xliusufe.github.io/post/teaching/</guid>
       <description>Shanghai University of Finance and Economics   STT102480: Mathematical Statistics
  Spring 2017 Spring 2018    STT311240: Advanced Mathematical Statistics
  Fall 2016 Fall 2017 Fall 2018 Fall 2019    STT213488: Data analysis and statistical modeling
@@ -87,19 +87,19 @@
     
     <item>
       <title>Biography</title>
-      <link>https://xliusufe.gitee.io/about/</link>
+      <link>https://xliusufe.github.io/about/</link>
       <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/about/</guid>
+      <guid>https://xliusufe.github.io/about/</guid>
       <description>Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms for high-dimensional data analysis, tensor modelling, and their various applications in bioinformatics.</description>
     </item>
     
     <item>
       <title>Contents of my homepage</title>
-      <link>https://xliusufe.gitee.io/post/first/</link>
+      <link>https://xliusufe.github.io/post/first/</link>
       <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/first/</guid>
+      <guid>https://xliusufe.github.io/post/first/</guid>
       <description>contents of my homepage including
 Resume  Resume  Publications  Publications  Softwares  Softwares  Teaching  Teaching  Grants  Grants  </description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Softwares on Xu Liu</title>
-    <link>https://xliusufe.gitee.io/categories/softwares/</link>
+    <link>https://xliusufe.github.io/categories/softwares/</link>
     <description>Recent content in Softwares on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.gitee.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.gitee.io/post/softwares/</link>
+      <link>https://xliusufe.github.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.gitee.io/post/softwares/</guid>
+      <guid>https://xliusufe.github.io/post/softwares/</guid>
       <description>R packages   The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr.
  Refer to Feng, X., Huang, J. and Liu, X.* (2019). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*.    The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating Tucker decomposition for the symmetric tensor and the steepest gradient descent algorithm on Stiefel manifold.</description>
     </item>
