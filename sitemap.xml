@@ -3,39 +3,116 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://xliusufe.github.io/about/</loc>
+    <loc>https://xliusufe.gitee.io/post/biography/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/categories/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/tags/cv/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/categories/cv/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/grants/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/tags/hugo/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/categories/hugo/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/hugomath/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/publications/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/resume/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/tags/softwares/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/categories/softwares/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/softwares/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/tags/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/tags/teaching/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/categories/teaching/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/post/teaching/</loc>
+    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.gitee.io/about/</loc>
     <lastmod>2020-03-12T10:42:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/post/first/</loc>
+    <loc>https://xliusufe.gitee.io/post/first/</loc>
     <lastmod>2020-03-12T10:42:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/post/</loc>
+    <loc>https://xliusufe.gitee.io/</loc>
     <lastmod>2020-03-12T10:42:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/</loc>
-    <lastmod>2020-03-12T10:42:29+08:00</lastmod>
+    <loc>https://xliusufe.gitee.io/false/</loc>
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/false/</loc>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/tags/</loc>
+    <loc>https://xliusufe.gitee.io/series/</loc>
   </url>
   
 </urlset>

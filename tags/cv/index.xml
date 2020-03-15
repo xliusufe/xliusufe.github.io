@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xu Liu</title>
-    <link>https://xliusufe.gitee.io/</link>
-    <description>Recent content on Xu Liu</description>
+    <title>CV on Xu Liu</title>
+    <link>https://xliusufe.gitee.io/tags/cv/</link>
+    <description>Recent content in CV on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Mar 2020 10:42:29 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.gitee.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.gitee.io/tags/cv/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,15 +27,6 @@
       
       <guid>https://xliusufe.gitee.io/post/grants/</guid>
       <description>Grants  &amp;ldquo;Semiparametric modelling and statistical inference for gene data of complex disease&amp;rdquo; (NSF of China, 11771267), PI  Date of project: 01/01/2018 - 12/31/2021    Homepage  go back to Resume go back to home site  </description>
-    </item>
-    
-    <item>
-      <title>Math formula in hugo blog</title>
-      <link>https://xliusufe.gitee.io/post/hugomath/</link>
-      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
-      
-      <guid>https://xliusufe.gitee.io/post/hugomath/</guid>
-      <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     
     <item>
@@ -83,25 +74,6 @@
  Fall 2017 Fall 2018 Fall 2019    STT101828: Computer Programming (C/C++)
  Spring 2019 Spring 2020    STT310537: Topics on High-dimensional Data
  Spring 2017 Spring 2018 Fall 2019    Homepage  go back to Resume go back to home site  </description>
-    </item>
-    
-    <item>
-      <title>Biography</title>
-      <link>https://xliusufe.gitee.io/about/</link>
-      <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
-      
-      <guid>https://xliusufe.gitee.io/about/</guid>
-      <description>Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms for high-dimensional data analysis, tensor modelling, and their various applications in bioinformatics.</description>
-    </item>
-    
-    <item>
-      <title>Contents of my homepage</title>
-      <link>https://xliusufe.gitee.io/post/first/</link>
-      <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
-      
-      <guid>https://xliusufe.gitee.io/post/first/</guid>
-      <description>contents of my homepage including
-Resume  Resume  Publications  Publications  Softwares  Softwares  Teaching  Teaching  Grants  Grants  </description>
     </item>
     
   </channel>
