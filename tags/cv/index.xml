@@ -17,7 +17,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/biography/</guid>
-      <description>Introduction to myself Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms for high-dimensional data analysis, tensor modelling, and their various applications in bioinformatics.</description>
+      <description>Introduction to myself Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/grants/</guid>
-      <description>Grants  &amp;ldquo;Semiparametric modelling and statistical inference for gene data of complex disease&amp;rdquo; (NSF of China, 11771267), PI  Date of project: 01/01/2018 - 12/31/2021    Homepage  go back to Resume go back to home site  </description>
+      <description>Grants &amp;ldquo;Semiparametric modelling and statistical inference for gene data of complex disease&amp;rdquo; (NSF of China, 11771267), PI Date of project: 01/01/2018 - 12/31/2021 Homepage go back to go back to</description>
     </item>
     
     <item>
@@ -35,8 +35,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/publications/</guid>
-      <description>Published Papers($\color{red}{\small{*corresponding author,\underline{trainee}}} $)    Liu, X., Zheng, S. and Feng, X. (2020+). Estimation of error variance via ridge regression. Biometrika. In press. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar. DOI: 10.1093/biomet/asz074.
-  Gao, B.$^{\natural}$, Liu, X. $^{\natural}$, Li, H. and Cui, Y. (2020+). Integrative analysis of genetical genomics data incorporating network structures. Biometrics. ($^{\natural}$The first two authors contributed equally to this work) Published online DOI: 10.1111/biom.13072. An R-package &amp;ldquo;IVGC&amp;rdquo; is available at https://github.</description>
+      <description>Published Papers($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Liu, X., Zheng, S. and Feng, X. (2020+). Estimation of error variance via ridge regression. Biometrika. In press. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar. DOI: 10.1093/biomet/asz074. Gao, B.$^{\natural}$, Liu, X. $^{\natural}$, Li, H. and Cui, Y. (2020+). Integrative analysis of genetical genomics data incorporating network structures. Biometrics. ($^{\natural}$The first two authors contributed equally to this work) Published online DOI: 10.1111/biom.13072. An R-package &amp;ldquo;IVGC&amp;rdquo; is available</description>
     </item>
     
     <item>
@@ -45,11 +44,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/resume/</guid>
-      <description>Contact Information   Tel: (+86) 021-6590-1156
-  Email: liu.xu@sufe.edu.cn
-  Adress: No. 777, Guoding Rd., Shanghai 200433, China
- School of Statistics and Management (Rm. 2207), Shanghai University of Finance and Economics (SUFE),    Education  2011 received Ph.D. in Statistics, Yunnan University  Work Experience   09/2019 - Present, Associate Professor, School of Statistics and Management, SUFE,
-  06/2016 - 08/2019, Assistant Professor, School of Statistics and Management, SUFE,</description>
+      <description>Contact Information Tel: (+86) 021-6590-1156 Email: liu.xu@sufe.edu.cn Adress: No. 777, Guoding Rd., Shanghai 200433, China School of Statistics and Management (Rm. 2207), Shanghai University of Finance and Economics (SUFE), Education 2011 received Ph.D. in Statistics, Yunnan University Work Experience 09/2019 - Present, Associate Professor, School of Statistics and Management, SUFE, 06/2016 - 08/2019, Assistant Professor, School of Statistics and Management, SUFE, 08/2013 - 06/2016, Postdoc, Department of Statistics and Probability,</description>
     </item>
     
     <item>
@@ -58,8 +53,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/softwares/</guid>
-      <description>R packages   The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr.
- Refer to Feng, X., Huang, J. and Liu, X.* (2019). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*.    The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating Tucker decomposition for the symmetric tensor and the steepest gradient descent algorithm on Stiefel manifold.</description>
+      <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2019). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     
     <item>
@@ -68,12 +62,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/teaching/</guid>
-      <description>Shanghai University of Finance and Economics   STT102480: Mathematical Statistics
- Spring 2017 Spring 2018    STT311240: Advanced Mathematical Statistics
- Fall 2016 Fall 2017 Fall 2018 Fall 2019    STT213488: Data analysis and statistical modeling
- Fall 2017 Fall 2018 Fall 2019    STT101828: Computer Programming (C/C++)
- Spring 2019 Spring 2020    STT310537: Topics on High-dimensional Data
- Spring 2017 Spring 2018 Fall 2019    Homepage  go back to Resume go back to home site  </description>
+      <description>Shanghai University of Finance and Economics STT102480: Mathematical Statistics Spring 2017 Spring 2018 STT311240: Advanced Mathematical Statistics Fall 2016 Fall 2017 Fall 2018 Fall 2019 STT213488: Data analysis and statistical modeling Fall 2017 Fall 2018 Fall 2019 STT101828: Computer Programming (C/C++) Spring 2019 Spring 2020 STT310537: Topics on High-dimensional Data Spring 2017 Spring 2018 Fall 2019 Homepage go back to go back to</description>
     </item>
     
   </channel>

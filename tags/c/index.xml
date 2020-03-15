@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Softwares on Xu Liu</title>
-    <link>https://xliusufe.github.io/categories/softwares/</link>
-    <description>Recent content in Softwares on Xu Liu</description>
+    <title>C on Xu Liu</title>
+    <link>https://xliusufe.github.io/tags/c/</link>
+    <description>Recent content in C on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.github.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,31 +22,12 @@ The contents including Recognize C programs  toy examples  Data types  Data type
     </item>
     
     <item>
-      <title>Contents of R teaching</title>
-      <link>https://xliusufe.github.io/post/contents2r/</link>
-      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
-      
-      <guid>https://xliusufe.github.io/post/contents2r/</guid>
-      <description>A short course of R Language
-Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
-    </item>
-    
-    <item>
       <title>Introduction to C</title>
       <link>https://xliusufe.github.io/post/introduction2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/introduction2c/</guid>
       <description>Create your first C project  Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS  The course of Computer Programming  Computer Programming More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation Details can be found in Softwares   Homepage  go back to   </description>
-    </item>
-    
-    <item>
-      <title>Introduction to R</title>
-      <link>https://xliusufe.github.io/post/introduction2r/</link>
-      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
-      
-      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
-      <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  Details can be found in Softwares   Homepage  go back to   </description>
     </item>
     
     <item>

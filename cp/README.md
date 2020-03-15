@@ -1,16 +1,20 @@
 Introduction to C
 
+[![Resume](https://img.shields.io/badge/C-Language-ye.svg)](https://xliusufe.github.io/post/contents2c/)
+[![Publications](https://img.shields.io/badge/R-packages-yellow.svg)](https://xliusufe.github.io/post/softwares/)
+
+
 # Create your first C project
   - Visual Sdutio on [Windows OS](https://xliusufe.github.io/cp/createFirstProject_windows.pdf)
   - codeblocks on [Windows OS](https://xliusufe.github.io/cp/createFirstProject_codeblocks.pdf)
   - Xcode on [Mac OS](https://xliusufe.github.io/cp/createFirstProject_mac.pdf)
 
 # The course of **Computer Programming**
-  - [Computer Programming](https://xliusufe.github.io/cp/contents.html)
+  - [Computer Programming](https://xliusufe.github.io/post/contents2c/)
   
 # R packages  
   - All my R packages called C/C++ to implement inner loop to speed up the computation
-  - Details can be found in [Softwares](https://xliusufe.github.io/cv/Softwares.html)
+  - Details can be found in [Softwares](https://xliusufe.github.io/post/softwares/)
   
 # Homepage
 - go back to [home site](https://xliusufe.github.io) 
