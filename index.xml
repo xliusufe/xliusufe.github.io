@@ -64,7 +64,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/introduction2r/</guid>
-      <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  Details can be found in Softwares   Homepage  go back to   </description>
+      <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  Details can be found in Softwares  R shiny  Calculate large positive integer&amp;rsquo;s factorial. It takes only 0.45 seconds to compute 10000! (it approximates 2.8E+35660), and 0.98 seconds to compute 10000! and sum=1!+2!+3!+…+10000! simultaneously. Approximate π with very high precesion. It takes only 0.</description>
     </item>
     
     <item>
