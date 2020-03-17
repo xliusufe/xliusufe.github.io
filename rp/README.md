@@ -12,6 +12,10 @@ Introduction to R
   
 # R packages  
   - Details can be found in [Softwares](https://xliusufe.github.io/post/softwares)
+
+# R shiny
+- Details can be found [HERE](https://xliusufe.github.io/post/introduction2r)    
   
+---  
 # Homepage
-- go back to [![home site](https://img.shields.io/badge/个人主页-Homepage-ye.svg)](https://xliusufe.gitee.io)   
+- go back to [![home site](https://img.shields.io/badge/Home-Page-ye.svg)](https://xliusufe.github.io)   

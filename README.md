@@ -42,6 +42,9 @@
   
 - R packages  
   - Details can be found in [Softwares](https://xliusufe.github.io/post/softwares)
+
+- R shiny
+  - Details can be found [HERE](https://xliusufe.github.io/post/introduction2r/)  
   
 ## Work
 - [Work](http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm)
