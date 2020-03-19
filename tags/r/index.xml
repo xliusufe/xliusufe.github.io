@@ -36,7 +36,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/softwares/</guid>
-      <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2019). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
+      <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     
   </channel>
