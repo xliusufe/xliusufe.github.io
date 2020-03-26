@@ -6,10 +6,42 @@
     <description>Recent content in Posts on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>We are the world</title>
+      <link>https://xliusufe.github.io/post/wearetheword/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/wearetheword/</guid>
+      <description>We are the world  In the special time, this song sounds so sad, but dramatically warm. Since the world is so small, we need take care of each other. The world union is strongly required and more strongly than in the past. We are the world, we are the children.  There comes a time when we heed a certain call
+When the world must come together as one</description>
+    </item>
+    
+    <item>
+      <title>Install hugo on MAC OS</title>
+      <link>https://xliusufe.github.io/post/hugomac/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/hugomac/</guid>
+      <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
+ unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
+    </item>
+    
+    <item>
+      <title>blogdown</title>
+      <link>https://xliusufe.github.io/post/blogdown/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/blogdown/</guid>
+      <description>This is the first blog written by blogdown, and build and published by R studio.
+What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
+  R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
+  On git/terminal/shell, we type hugo sverver --theme=hyde --buildDrafts to continuously serve our website locally, which makes us to live preview the website locally.</description>
+    </item>
     
     <item>
       <title>Biography</title>

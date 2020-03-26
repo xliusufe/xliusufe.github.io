@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tags &middot; Xu Liu</title>
+  <title>blogdown &middot; Xu Liu</title>
   <meta name="description" content="" />
 
   
@@ -24,7 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="https://xliusufe.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Xu Liu" />
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -65,21 +64,32 @@
 </aside>
 
     <main class="content container">
-    <ul class="posts">
+    <div class="post">
+  <h1>blogdown</h1>
+  <time datetime=2020-03-20T00:00:00Z class="post-date">Fri, Mar 20, 2020</time>
+  <p>This is the first blog written by <a href="https://bookdown.org/yihui/blogdown/">blogdown</a>, and build and published by R studio.</p>
+<h1 id="what-is-the-blogdownhttpsbookdownorgyihuiblogdown">What is the <a href="https://bookdown.org/yihui/blogdown/">blogdown</a>?</h1>
+<ul>
 <li>
-    <span><a href="https://xliusufe.github.io/tags/hugo/">Hugo</a> <time class="pull-right post-list" datetime="2020-03-21T00:00:00Z">Sat, Mar 21, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/softwares/">Softwares</a> <time class="pull-right post-list" datetime="2020-03-21T00:00:00Z">Sat, Mar 21, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/r/">R</a> <time class="pull-right post-list" datetime="2020-03-20T00:00:00Z">Fri, Mar 20, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/c/">C</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/cv/">CV</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/teaching/">Teaching</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li>
+<p>It is an R package that can create websites using <a href="https://rmarkdown.rstudio.com/">R Markdown</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+</li>
+<li>
+<p><a href="https://www.rstudio.com/">R studio</a> is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.</p>
+</li>
+<li>
+<p>On git/terminal/shell, we type <code>hugo sverver --theme=hyde --buildDrafts</code> to continuously serve our website locally, which makes us to live preview the website locally. Now we can do the same thing in R studio by using <code>blogdown::serve_site()</code>, or clicking on <em>Addins&ndash;&gt;Serve Site</em>.</p>
+</li>
+<li>
+<p>One can click on <em>Addins&ndash;&gt;Update Metadata</em> to update the website in R studio. Or on the terminal embedded in R studio, we can use <code>hugo --theme=hyde --baseUrl=&quot;https://xliusufe.gitee.io/&quot; --buildDrafts</code> to update the website for the currently writting blog.</p>
+</li>
+<li>
+<p>One can refer to the <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> for more details.</p>
+</li>
 </ul>
+
+</div>
+
+
     </main>
 
     

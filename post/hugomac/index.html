@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tags &middot; Xu Liu</title>
+  <title>Install hugo on MAC OS &middot; Xu Liu</title>
   <meta name="description" content="" />
 
   
@@ -24,7 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="https://xliusufe.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Xu Liu" />
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -65,21 +64,58 @@
 </aside>
 
     <main class="content container">
-    <ul class="posts">
-<li>
-    <span><a href="https://xliusufe.github.io/tags/hugo/">Hugo</a> <time class="pull-right post-list" datetime="2020-03-21T00:00:00Z">Sat, Mar 21, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/softwares/">Softwares</a> <time class="pull-right post-list" datetime="2020-03-21T00:00:00Z">Sat, Mar 21, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/r/">R</a> <time class="pull-right post-list" datetime="2020-03-20T00:00:00Z">Fri, Mar 20, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/c/">C</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/cv/">CV</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/teaching/">Teaching</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li>
+    <div class="post">
+  <h1>Install hugo on MAC OS</h1>
+  <time datetime=2020-03-21T00:00:00Z class="post-date">Sat, Mar 21, 2020</time>
+  <h1 id="how-to-install-hugo-on-mac-os">How to install hugo on MAC OS?</h1>
+<ul>
+<li>there are three common methods, one of which may be helpful for you.</li>
 </ul>
+<ol>
+<li>
+<p>download hugo form <a href="https://github.com/gohugoio/hugo/releases/">github</a></p>
+<ul>
+<li>unzip downloaded file</li>
+<li>go to the currently unzipped fold and move <em>hugo</em> to <code>/usr/local/bin/</code>, on the terminal</li>
+</ul>
+<pre><code>sudo mv hugo /usr/local/bin/
+</code></pre><ul>
+<li>try <code>hugo version</code>. We can see the version if it succeeds.</li>
+</ul>
+<pre><code>hugo version
+</code></pre></li>
+<li>
+<p>install <em>hugo</em> via <em>brew</em></p>
+<ul>
+<li>install <a href="https://brew.sh/index_zh-cn/"><em>homebrew</em></a> if you do not have it yet</li>
+</ul>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><ul>
+<li>install <em>hugo</em>, on the terminal</li>
+</ul>
+<pre><code>brew install hugo
+</code></pre><ul>
+<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code>, on the terminal</li>
+</ul>
+<pre><code>hugo help
+</code></pre></li>
+<li>
+<p>install <em>hugo</em> via <em>blogdown</em> if you are an R user</p>
+<ul>
+<li>install <a href="https://bookdown.org/yihui/blogdown/"><em>blogdown</em></a></li>
+<li>install <em>hugo</em></li>
+</ul>
+<pre><code>blogdown:::install_hugo()
+</code></pre><ul>
+<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code> on the terminal embedded in R studio</li>
+</ul>
+<pre><code>hugo help
+</code></pre></li>
+</ol>
+
+</div>
+
+
     </main>
 
     

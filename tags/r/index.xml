@@ -6,10 +6,22 @@
     <description>Recent content in R on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blogdown</title>
+      <link>https://xliusufe.github.io/post/blogdown/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/blogdown/</guid>
+      <description>This is the first blog written by blogdown, and build and published by R studio.
+What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
+  R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
+  On git/terminal/shell, we type hugo sverver --theme=hyde --buildDrafts to continuously serve our website locally, which makes us to live preview the website locally.</description>
+    </item>
     
     <item>
       <title>Contents of R teaching</title>

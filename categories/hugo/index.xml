@@ -6,10 +6,20 @@
     <description>Recent content in Hugo on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install hugo on MAC OS</title>
+      <link>https://xliusufe.github.io/post/hugomac/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/hugomac/</guid>
+      <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
+ unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
+    </item>
     
     <item>
       <title>Math formula in hugo blog</title>
