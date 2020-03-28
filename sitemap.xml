@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://xliusufe.github.io/categories/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.github.io/post/pythonr/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xliusufe.github.io/post/</loc>
-    <lastmod>2020-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.github.io/tags/python/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.github.io/tags/r/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.github.io/categories/softwares/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xliusufe.github.io/tags/</loc>
+    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +43,7 @@
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/categories/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://xliusufe.github.io/tags/hugo/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/categories/hugo/</loc>
     <lastmod>2020-03-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,27 +53,7 @@
   </url>
   
   <url>
-    <loc>https://xliusufe.github.io/tags/softwares/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/tags/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://xliusufe.github.io/post/blogdown/</loc>
-    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/tags/r/</loc>
-    <lastmod>2020-03-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/categories/softwares/</loc>
     <lastmod>2020-03-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -74,11 +74,6 @@
   
   <url>
     <loc>https://xliusufe.github.io/post/contents2r/</loc>
-    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/tags/cv/</loc>
     <lastmod>2020-03-14T21:29:44+08:00</lastmod>
   </url>
   
@@ -119,11 +114,6 @@
   
   <url>
     <loc>https://xliusufe.github.io/post/softwares/</loc>
-    <lastmod>2020-03-14T21:29:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xliusufe.github.io/tags/teaching/</loc>
     <lastmod>2020-03-14T21:29:44+08:00</lastmod>
   </url>
   

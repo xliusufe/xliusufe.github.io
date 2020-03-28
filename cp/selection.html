@@ -506,6 +506,7 @@ int <span class="kw">isPerfectNumber</span>(int perfectNum){
 <li>Find all primes between <code>11</code> to <code>1000</code>.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#include &lt;stdio.h&gt;</span>
+<span class="co">#include &lt;math.h&gt;</span>
 int <span class="kw">main</span>(){
     <span class="op">/</span><span class="er">/</span><span class="st"> </span>Find all primes between <span class="dv">11</span> to x
     int i,j,x;
@@ -514,7 +515,7 @@ int <span class="kw">main</span>(){
     <span class="kw">scanf</span>(<span class="st">&quot;%d&quot;</span>,<span class="op">&amp;</span>x);
 
     <span class="cf">for</span>(<span class="dt">i=</span><span class="dv">11</span>; i<span class="op">&lt;=</span>x; i<span class="op">++</span>){
-        <span class="cf">for</span>(<span class="dt">j=</span><span class="dv">2</span>; j<span class="op">&lt;</span>i; j<span class="op">++</span>){
+        <span class="cf">for</span>(<span class="dt">j=</span><span class="dv">2</span>; j<span class="op">&lt;</span><span class="kw">sqrt</span>(<span class="fl">1.0</span><span class="op">*</span>i); j<span class="op">++</span>){
             <span class="cf">if</span>(i%j<span class="op">==</span><span class="dv">0</span>) <span class="cf">break</span>;
         }
         <span class="cf">if</span>(j<span class="op">&gt;=</span>i){

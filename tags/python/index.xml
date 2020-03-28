@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Xu Liu</title>
+    <link>https://xliusufe.github.io/tags/python/</link>
+    <description>Recent content in Python on Xu Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xliusufe.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Embedding R into Jupyter</title>
+      <link>https://xliusufe.github.io/post/pythonr/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/pythonr/</guid>
+      <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and anocoda with jupyter
+  Add the local path of Anocoda and Python to your system Environment, such as
+C:\Program Files\Python37\Scripts\and
+C:\ProgramData\Anaconda3\condabin\  On Rgui or Rstudio, type
+install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39;crayon&#39;, &#39;pbdZMQ&#39;, &#39;devtools&#39;, &#39;uuid&#39;, &#39;digest&#39;))devtools::install_github(&#39;IRkernel/IRkernel&#39;)  Keep typing</description>
+    </item>
+    
+  </channel>
+</rss>

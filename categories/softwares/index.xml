@@ -6,10 +6,33 @@
     <description>Recent content in Softwares on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Embedding R into Jupyter</title>
+      <link>https://xliusufe.github.io/post/pythonr/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/pythonr/</guid>
+      <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and anocoda with jupyter
+  Add the local path of Anocoda and Python to your system Environment, such as
+C:\Program Files\Python37\Scripts\and
+C:\ProgramData\Anaconda3\condabin\  On Rgui or Rstudio, type
+install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39;crayon&#39;, &#39;pbdZMQ&#39;, &#39;devtools&#39;, &#39;uuid&#39;, &#39;digest&#39;))devtools::install_github(&#39;IRkernel/IRkernel&#39;)  Keep typing</description>
+    </item>
+    
+    <item>
+      <title>Install hugo on MAC OS</title>
+      <link>https://xliusufe.github.io/post/hugomac/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/hugomac/</guid>
+      <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
+ unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
+    </item>
     
     <item>
       <title>blogdown</title>
@@ -59,6 +82,15 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       
       <guid>https://xliusufe.github.io/post/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
+    </item>
+    
+    <item>
+      <title>Math formula in hugo blog</title>
+      <link>https://xliusufe.github.io/post/hugomath/</link>
+      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/hugomath/</guid>
+      <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     
     <item>

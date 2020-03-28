@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tags &middot; Xu Liu</title>
+  <title>Embedding R into Jupyter &middot; Xu Liu</title>
   <meta name="description" content="" />
 
   
@@ -24,7 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="https://xliusufe.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="Xu Liu" />
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -65,17 +64,66 @@
 </aside>
 
     <main class="content container">
-    <ul class="posts">
-<li>
-    <span><a href="https://xliusufe.github.io/tags/python/">Python</a> <time class="pull-right post-list" datetime="2020-03-28T00:00:00Z">Sat, Mar 28, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/r/">R</a> <time class="pull-right post-list" datetime="2020-03-28T00:00:00Z">Sat, Mar 28, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/hugo/">Hugo</a> <time class="pull-right post-list" datetime="2020-03-21T00:00:00Z">Sat, Mar 21, 2020</time></span>
-  </li><li>
-    <span><a href="https://xliusufe.github.io/tags/c/">C</a> <time class="pull-right post-list" datetime="2020-03-14T21:29:44&#43;0800">Sat, Mar 14, 2020</time></span>
-  </li>
+    <div class="post">
+  <h1>Embedding R into Jupyter</h1>
+  <time datetime=2020-03-28T00:00:00Z class="post-date">Sat, Mar 28, 2020</time>
+  <h1 id="how-to-embed-r-into-jupyter">How to embed <em>R</em> into <em>Jupyter</em>?</h1>
+<ul>
+<li>There is a simple way to embed <em>R</em> into <em>Jupyter Notebook</em>.</li>
 </ul>
+<ol>
+<li>
+<p>Suppose you already have installed <em>R</em> and <em>anocoda</em> with <em>jupyter</em></p>
+</li>
+<li>
+<p>Add the local path of <em>Anocoda</em> and <em>Python</em> to your system <em>Environment</em>, such as</p>
+<pre><code>C:\Program Files\Python37\Scripts\
+</code></pre><p>and</p>
+<pre><code>C:\ProgramData\Anaconda3\condabin\
+</code></pre></li>
+<li>
+<p>On <em>Rgui</em> or <em>Rstudio</em>, type</p>
+<pre><code>install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+</code></pre></li>
+<li>
+<p>Keep typing</p>
+<pre><code>IRkernel::installspec()
+</code></pre><p>or</p>
+<pre><code>IRkernel::installspec(user = FALSE)
+</code></pre></li>
+<li>
+<p>Embedding <em>R</em> into <em>Jupyter</em> will be done if it succeeds so far. If there is an error</p>
+<pre><code>&quot;Error in IRkernel::installspec() : 
+jupyter-client has to be installed but “jupyter kernelspec --version” exited with code 127.&quot;
+</code></pre><p>or you still cannot find an <em>R</em> kernel within <em>Jupyter-Notebook</em>. There is a simple solution. The following steps are required.</p>
+</li>
+<li>
+<p>Start the <strong>Anaconda prompt</strong>, not the <em>Windows command prompt</em> or the <em>Anaconda Navigator</em></p>
+</li>
+<li>
+<p>Find the local path of the executable file of R, looks like <code>C:\Program Files\R\R-3.5.3\bin</code>.</p>
+</li>
+<li>
+<p>Type follows on the <em>Anaconda prompt</em>.</p>
+<pre><code>C:\Program Files\R\R-3.5.3\bin
+</code></pre></li>
+<li>
+<p>Type R to start <em>R</em> on the <em>Anaconda prompt</em>.</p>
+<pre><code>R
+</code></pre></li>
+<li>
+<p>Then type <code>IRkernel::installspec()</code></p>
+<pre><code>IRkernel::installspec()
+</code></pre></li>
+<li>
+<p>Now it should be done, and you can find an <em>R</em> kernel within <em>Jupyter-Notebook</em>.</p>
+</li>
+</ol>
+
+</div>
+
+
     </main>
 
     
