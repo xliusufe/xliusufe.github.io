@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Xu Liu</title>
-    <link>https://xliusufe.github.io/categories/</link>
+    <link>https://xliusufe.githubb.io/categories/</link>
     <description>Recent content in Categories on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://xliusufe.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.githubb.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.github.io/categories/softwares/</link>
-      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      <link>https://xliusufe.githubb.io/categories/softwares/</link>
+      <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/categories/softwares/</guid>
+      <guid>https://xliusufe.githubb.io/categories/softwares/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CV</title>
-      <link>https://xliusufe.github.io/categories/cv/</link>
+      <link>https://xliusufe.githubb.io/categories/cv/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/categories/cv/</guid>
+      <guid>https://xliusufe.githubb.io/categories/cv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://xliusufe.github.io/categories/teaching/</link>
+      <link>https://xliusufe.githubb.io/categories/teaching/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/categories/teaching/</guid>
+      <guid>https://xliusufe.githubb.io/categories/teaching/</guid>
       <description></description>
     </item>
     

@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on Xu Liu</title>
-    <link>https://xliusufe.github.io/tags/c/</link>
+    <link>https://xliusufe.githubb.io/tags/c/</link>
     <description>Recent content in C on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.githubb.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contents of C teaching</title>
-      <link>https://xliusufe.github.io/post/contents2c/</link>
+      <link>https://xliusufe.githubb.io/post/contents2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2c/</guid>
+      <guid>https://xliusufe.githubb.io/post/contents2c/</guid>
       <description>The course of Computer Programming (C)
 The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for   Homepage  go back to  go back to   </description>
     </item>
     
     <item>
       <title>Introduction to C</title>
-      <link>https://xliusufe.github.io/post/introduction2c/</link>
+      <link>https://xliusufe.githubb.io/post/introduction2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2c/</guid>
+      <guid>https://xliusufe.githubb.io/post/introduction2c/</guid>
       <description>Create your first C project  Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS  The course of Computer Programming  Computer Programming More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK.</description>
     </item>
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.github.io/post/softwares/</link>
+      <link>https://xliusufe.githubb.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/softwares/</guid>
+      <guid>https://xliusufe.githubb.io/post/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     

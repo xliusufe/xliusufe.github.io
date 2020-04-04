@@ -2,68 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Teaching on Xu Liu</title>
-    <link>https://xliusufe.github.io/categories/teaching/</link>
+    <link>https://xliusufe.githubb.io/categories/teaching/</link>
     <description>Recent content in Teaching on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Mar 2020 21:29:44 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.github.io/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.githubb.io/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contents of C teaching</title>
-      <link>https://xliusufe.github.io/post/contents2c/</link>
+      <link>https://xliusufe.githubb.io/post/contents2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2c/</guid>
+      <guid>https://xliusufe.githubb.io/post/contents2c/</guid>
       <description>The course of Computer Programming (C)
 The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for   Homepage  go back to  go back to   </description>
     </item>
     
     <item>
       <title>Contents of R teaching</title>
-      <link>https://xliusufe.github.io/post/contents2r/</link>
+      <link>https://xliusufe.githubb.io/post/contents2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2r/</guid>
+      <guid>https://xliusufe.githubb.io/post/contents2r/</guid>
       <description>A short course of R Language
 Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
     </item>
     
     <item>
       <title>Introduction to C</title>
-      <link>https://xliusufe.github.io/post/introduction2c/</link>
+      <link>https://xliusufe.githubb.io/post/introduction2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2c/</guid>
+      <guid>https://xliusufe.githubb.io/post/introduction2c/</guid>
       <description>Create your first C project  Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS  The course of Computer Programming  Computer Programming More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK.</description>
     </item>
     
     <item>
       <title>Introduction to R</title>
-      <link>https://xliusufe.github.io/post/introduction2r/</link>
+      <link>https://xliusufe.githubb.io/post/introduction2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
+      <guid>https://xliusufe.githubb.io/post/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
     </item>
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.github.io/post/softwares/</link>
+      <link>https://xliusufe.githubb.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/softwares/</guid>
+      <guid>https://xliusufe.githubb.io/post/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://xliusufe.github.io/post/teaching/</link>
+      <link>https://xliusufe.githubb.io/post/teaching/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/teaching/</guid>
+      <guid>https://xliusufe.githubb.io/post/teaching/</guid>
       <description>Shanghai University of Finance and Economics STT102480: Mathematical Statistics Spring 2017 Spring 2018 STT311240: Advanced Mathematical Statistics Fall 2016 Fall 2017 Fall 2018 Fall 2019 STT213488: Data analysis and statistical modeling Fall 2017 Fall 2018 Fall 2019 STT101828: Computer Programming (C/C++) Spring 2019 Spring 2020 STT310537: Topics on High-dimensional Data Spring 2017 Spring 2018 Fall 2019 Homepage go back to go back to</description>
     </item>
     

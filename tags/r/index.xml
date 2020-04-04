@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Xu Liu</title>
-    <link>https://xliusufe.github.io/tags/r/</link>
+    <link>https://xliusufe.githubb.io/tags/r/</link>
     <description>Recent content in R on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://xliusufe.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.githubb.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Embedding R into Jupyter</title>
-      <link>https://xliusufe.github.io/post/pythonr/</link>
+      <link>https://xliusufe.githubb.io/post/pythonr/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/pythonr/</guid>
+      <guid>https://xliusufe.githubb.io/post/pythonr/</guid>
       <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and Anacoda with jupyter
   Add the local paths of Anacoda and Python to your system Environment, such as
 C:\Program Files\Python37\Scripts\and
@@ -26,10 +26,10 @@ install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39
     
     <item>
       <title>blogdown</title>
-      <link>https://xliusufe.github.io/post/blogdown/</link>
+      <link>https://xliusufe.githubb.io/post/blogdown/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/blogdown/</guid>
+      <guid>https://xliusufe.githubb.io/post/blogdown/</guid>
       <description>This is the first blog written by blogdown, and build and published by R studio.
 What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
   R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
@@ -38,29 +38,29 @@ What is the blogdown?   It is an R package that can create websites using R Mark
     
     <item>
       <title>Contents of R teaching</title>
-      <link>https://xliusufe.github.io/post/contents2r/</link>
+      <link>https://xliusufe.githubb.io/post/contents2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2r/</guid>
+      <guid>https://xliusufe.githubb.io/post/contents2r/</guid>
       <description>A short course of R Language
 Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
     </item>
     
     <item>
       <title>Introduction to R</title>
-      <link>https://xliusufe.github.io/post/introduction2r/</link>
+      <link>https://xliusufe.githubb.io/post/introduction2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
+      <guid>https://xliusufe.githubb.io/post/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
     </item>
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.github.io/post/softwares/</link>
+      <link>https://xliusufe.githubb.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/softwares/</guid>
+      <guid>https://xliusufe.githubb.io/post/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     

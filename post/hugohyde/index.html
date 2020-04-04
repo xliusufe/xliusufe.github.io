@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Install hugo on MAC OS &middot; Xu Liu</title>
+  <title>Adjust the size of sidebar &middot; Xu Liu</title>
   <meta name="description" content="" />
 
   
@@ -65,54 +65,52 @@
 
     <main class="content container">
     <div class="post">
-  <h1>Install hugo on MAC OS</h1>
-  <time datetime=2020-03-21T00:00:00Z class="post-date">Sat, Mar 21, 2020</time>
-  <h1 id="how-to-install-hugo-on-mac-os">How to install hugo on MAC OS?</h1>
+  <h1>Adjust the size of sidebar</h1>
+  <time datetime=2020-04-04T00:00:00Z class="post-date">Sat, Apr 4, 2020</time>
+  <ul>
+<li>Today is a special day, April 4, 2020, Staturday. I will remember today forever.
 <ul>
-<li>there are three common methods, one of which may be helpful for you.</li>
+<li>China held a national mourning Saturday for martyrs who died in the fight against the novel coronavirus disease (COVID-19) outbreak and compatriots died of the disease.</li>
+<li>During the commemoration, national flags flied at half-mast across the country and in all Chinese embassies and consulates abroad, and public recreational activities suspended across the country.</li>
+<li>At 10:00 am today, Chinese people nationwide observed three-minute silence to mourn for the deceased, while air raid sirens and horns of automobiles, trains and ships wailed in grief.</li>
 </ul>
-<ol>
-<li>
-<p>download hugo form <a href="https://github.com/gohugoio/hugo/releases/">github</a></p>
+</li>
+<li>Thus, I adjust my homepage to be black.</li>
+</ul>
+<h1 id="adjust-the-width-of-sidebar-of-hugo">Adjust the width of sidebar of <code>hugo</code></h1>
 <ul>
-<li>unzip downloaded file</li>
-<li>go to the currently unzipped fold and move <em>hugo</em> to <code>/usr/local/bin/</code>, on the terminal</li>
+<li>open <code>site\themes\hyde\static\css\hyde.css</code></li>
+<li>find and adjust <code>width</code>. The default is <code>18rem</code> here.</li>
 </ul>
-<pre><code>sudo mv hugo /usr/local/bin/
-</code></pre><ul>
-<li>try <code>hugo version</code>. We can see the version if it succeeds.</li>
-</ul>
-<pre><code>hugo version
-</code></pre></li>
-<li>
-<p>install <em>hugo</em> via <em>brew</em></p>
+<pre><code>@media (min-width: 48em) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 13rem;
+    text-align: left;
+  }
+}
+</code></pre><h1 id="color-the-sidebar-and-links-of-hugo">Color the sidebar and links of <code>hugo</code></h1>
 <ul>
-<li>install <a href="https://brew.sh/index_zh-cn/"><em>homebrew</em></a> if you do not have it yet</li>
+<li>open <code>site\themes\hyde\static\css\hyde.css</code></li>
+<li>add following codes in the end of <code>hyde.css</code>, which colors the sidebar and links within blog posts to be black.</li>
 </ul>
-<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<pre><code>/* Black */
+.theme-base-0g .sidebar {
+  background-color: #000000;
+}
+.theme-base-0g .content a,
+.theme-base-0g .related-posts li a:hover {
+  color: #000000;
+}
 </code></pre><ul>
-<li>install <em>hugo</em>, on the terminal</li>
+<li>Then, one can revise <code>site\config.toml</code> as follows</li>
 </ul>
-<pre><code>brew install hugo
-</code></pre><ul>
-<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code>, on the terminal</li>
-</ul>
-<pre><code>hugo help
-</code></pre></li>
-<li>
-<p>install <em>hugo</em> via <em>blogdown</em> if you are an R user</p>
-<ul>
-<li>install <a href="https://bookdown.org/yihui/blogdown/"><em>blogdown</em></a></li>
-<li>install <em>hugo</em></li>
-</ul>
-<pre><code>blogdown:::install_hugo()
-</code></pre><ul>
-<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code> on the terminal embedded in R studio</li>
-</ul>
-<pre><code>hugo help
-</code></pre></li>
-</ol>
-
+<pre><code>[params]
+  themeColor = &quot;theme-base-0g&quot; # Black
+</code></pre>
 </div>
 
 

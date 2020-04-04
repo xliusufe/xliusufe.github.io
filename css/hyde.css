@@ -65,7 +65,7 @@ html {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: 13rem;
     text-align: left;
   }
 }
@@ -147,6 +147,7 @@ a.sidebar-nav-item:focus {
  *
  * Flip the orientation of the page by placing the `.sidebar` on the right.
  */
+
 
 @media (min-width: 48em) {
   .layout-reverse .sidebar {
@@ -247,4 +248,14 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+
+/* Black */
+.theme-base-0g .sidebar {
+  background-color: #000000;
+}
+.theme-base-0g .content a,
+.theme-base-0g .related-posts li a:hover {
+  color: #000000;
 }
