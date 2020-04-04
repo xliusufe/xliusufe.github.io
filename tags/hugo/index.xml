@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Xu Liu</title>
-    <link>https://xliusufe.githubb.io/tags/hugo/</link>
+    <link>https://xliusufe.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://xliusufe.githubb.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Adjust the size of sidebar</title>
-      <link>https://xliusufe.githubb.io/post/hugohyde/</link>
+      <link>https://xliusufe.github.io/post/hugohyde/</link>
       <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugohyde/</guid>
+      <guid>https://xliusufe.github.io/post/hugohyde/</guid>
       <description>Today is a special day, April 4, 2020, Staturday. I will remember today forever.  China held a national mourning Saturday for martyrs who died in the fight against the novel coronavirus disease (COVID-19) outbreak and compatriots died of the disease. During the commemoration, national flags flied at half-mast across the country and in all Chinese embassies and consulates abroad, and public recreational activities suspended across the country. At 10:00 am today, Chinese people nationwide observed three-minute silence to mourn for the deceased, while air raid sirens and horns of automobiles, trains and ships wailed in grief.</description>
     </item>
     
     <item>
       <title>Install hugo on MAC OS</title>
-      <link>https://xliusufe.githubb.io/post/hugomac/</link>
+      <link>https://xliusufe.github.io/post/hugomac/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugomac/</guid>
+      <guid>https://xliusufe.github.io/post/hugomac/</guid>
       <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
  unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
     </item>
     
     <item>
       <title>Math formula in hugo blog</title>
-      <link>https://xliusufe.githubb.io/post/hugomath/</link>
+      <link>https://xliusufe.github.io/post/hugomath/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugomath/</guid>
+      <guid>https://xliusufe.github.io/post/hugomath/</guid>
       <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     

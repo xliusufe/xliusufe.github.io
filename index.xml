@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xu Liu</title>
-    <link>https://xliusufe.githubb.io/</link>
+    <link>https://xliusufe.github.io/</link>
     <description>Recent content on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 12 Mar 2020 10:42:29 +0800</lastBuildDate>
     
-	<atom:link href="https://xliusufe.githubb.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xliusufe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Adjust the size of sidebar</title>
-      <link>https://xliusufe.githubb.io/post/hugohyde/</link>
+      <link>https://xliusufe.github.io/post/hugohyde/</link>
       <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugohyde/</guid>
+      <guid>https://xliusufe.github.io/post/hugohyde/</guid>
       <description>Today is a special day, April 4, 2020, Staturday. I will remember today forever.  China held a national mourning Saturday for martyrs who died in the fight against the novel coronavirus disease (COVID-19) outbreak and compatriots died of the disease. During the commemoration, national flags flied at half-mast across the country and in all Chinese embassies and consulates abroad, and public recreational activities suspended across the country. At 10:00 am today, Chinese people nationwide observed three-minute silence to mourn for the deceased, while air raid sirens and horns of automobiles, trains and ships wailed in grief.</description>
     </item>
     
     <item>
       <title>Embedding R into Jupyter</title>
-      <link>https://xliusufe.githubb.io/post/pythonr/</link>
+      <link>https://xliusufe.github.io/post/pythonr/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/pythonr/</guid>
+      <guid>https://xliusufe.github.io/post/pythonr/</guid>
       <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and Anacoda with jupyter
   Add the local paths of Anacoda and Python to your system Environment, such as
 C:\Program Files\Python37\Scripts\and
@@ -35,40 +35,40 @@ install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39
     
     <item>
       <title>We are the world</title>
-      <link>https://xliusufe.githubb.io/post/wearetheword/</link>
+      <link>https://xliusufe.github.io/post/wearetheword/</link>
       <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/wearetheword/</guid>
+      <guid>https://xliusufe.github.io/post/wearetheword/</guid>
       <description>We are the world  In the special time, this song sounds so sad, but dramatically warm. Since the world is so small, we need take care of each other. The world union is strongly required and more strongly than in the past. We are the world, we are the children.  There comes a time when we heed a certain call
 When the world must come together as one</description>
     </item>
     
     <item>
       <title>Contents of Python Learning</title>
-      <link>https://xliusufe.githubb.io/post/contents2py/</link>
+      <link>https://xliusufe.github.io/post/contents2py/</link>
       <pubDate>Sat, 21 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/contents2py/</guid>
+      <guid>https://xliusufe.github.io/post/contents2py/</guid>
       <description>The course of Python
 The contents including class101  syntax and examples  Recognize matplotlib  toy examples   Homepage  go back to   </description>
     </item>
     
     <item>
       <title>Install hugo on MAC OS</title>
-      <link>https://xliusufe.githubb.io/post/hugomac/</link>
+      <link>https://xliusufe.github.io/post/hugomac/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugomac/</guid>
+      <guid>https://xliusufe.github.io/post/hugomac/</guid>
       <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
  unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
     </item>
     
     <item>
       <title>blogdown</title>
-      <link>https://xliusufe.githubb.io/post/blogdown/</link>
+      <link>https://xliusufe.github.io/post/blogdown/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/blogdown/</guid>
+      <guid>https://xliusufe.github.io/post/blogdown/</guid>
       <description>This is the first blog written by blogdown, and build and published by R studio.
 What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
   R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
@@ -77,120 +77,120 @@ What is the blogdown?   It is an R package that can create websites using R Mark
     
     <item>
       <title>Biography</title>
-      <link>https://xliusufe.githubb.io/post/biography/</link>
+      <link>https://xliusufe.github.io/post/biography/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/biography/</guid>
+      <guid>https://xliusufe.github.io/post/biography/</guid>
       <description>Introduction to myself Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include</description>
     </item>
     
     <item>
       <title>Contents of C teaching</title>
-      <link>https://xliusufe.githubb.io/post/contents2c/</link>
+      <link>https://xliusufe.github.io/post/contents2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/contents2c/</guid>
+      <guid>https://xliusufe.github.io/post/contents2c/</guid>
       <description>The course of Computer Programming (C)
 The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for   Homepage  go back to  go back to   </description>
     </item>
     
     <item>
       <title>Contents of R teaching</title>
-      <link>https://xliusufe.githubb.io/post/contents2r/</link>
+      <link>https://xliusufe.github.io/post/contents2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/contents2r/</guid>
+      <guid>https://xliusufe.github.io/post/contents2r/</guid>
       <description>A short course of R Language
 Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
     </item>
     
     <item>
       <title>Grants</title>
-      <link>https://xliusufe.githubb.io/post/grants/</link>
+      <link>https://xliusufe.github.io/post/grants/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/grants/</guid>
+      <guid>https://xliusufe.github.io/post/grants/</guid>
       <description>Grants &amp;ldquo;Semiparametric modelling and statistical inference for gene data of complex disease&amp;rdquo; (NSF of China, 11771267), PI Date of project: 01/01/2018 - 12/31/2021 Homepage go back to go back to</description>
     </item>
     
     <item>
       <title>Introduction to C</title>
-      <link>https://xliusufe.githubb.io/post/introduction2c/</link>
+      <link>https://xliusufe.github.io/post/introduction2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/introduction2c/</guid>
+      <guid>https://xliusufe.github.io/post/introduction2c/</guid>
       <description>Create your first C project  Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS  The course of Computer Programming  Computer Programming More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK.</description>
     </item>
     
     <item>
       <title>Introduction to R</title>
-      <link>https://xliusufe.githubb.io/post/introduction2r/</link>
+      <link>https://xliusufe.github.io/post/introduction2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/introduction2r/</guid>
+      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
     </item>
     
     <item>
       <title>Math formula in hugo blog</title>
-      <link>https://xliusufe.githubb.io/post/hugomath/</link>
+      <link>https://xliusufe.github.io/post/hugomath/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/hugomath/</guid>
+      <guid>https://xliusufe.github.io/post/hugomath/</guid>
       <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>https://xliusufe.githubb.io/post/publications/</link>
+      <link>https://xliusufe.github.io/post/publications/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/publications/</guid>
+      <guid>https://xliusufe.github.io/post/publications/</guid>
       <description>Published Papers($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Liu, X., Zheng, S. and Feng, X. (2020+). Estimation of error variance via ridge regression. Biometrika. In press. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar. DOI: 10.1093/biomet/asz074. Gao, B.$^{\natural}$, Liu, X. $^{\natural}$, Li, H. and Cui, Y. (2020+). Integrative analysis of genetical genomics data incorporating network structures. Biometrics. ($^{\natural}$The first two authors contributed equally to this work) Published online DOI: 10.1111/biom.13072. An R-package &amp;ldquo;IVGC&amp;rdquo; is available</description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://xliusufe.githubb.io/post/resume/</link>
+      <link>https://xliusufe.github.io/post/resume/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/resume/</guid>
+      <guid>https://xliusufe.github.io/post/resume/</guid>
       <description>Contact Information Tel: (+86) 021-6590-1156 Email: liu.xu@sufe.edu.cn Adress: No. 777, Guoding Rd., Shanghai 200433, China School of Statistics and Management (Rm. 2207), Shanghai University of Finance and Economics (SUFE), Education 2011 received Ph.D. in Statistics, Yunnan University Work Experience 09/2019 - Present, Associate Professor, School of Statistics and Management, SUFE, 06/2016 - 08/2019, Assistant Professor, School of Statistics and Management, SUFE, 08/2013 - 06/2016, Postdoc, Department of Statistics and Probability,</description>
     </item>
     
     <item>
       <title>Softwares</title>
-      <link>https://xliusufe.githubb.io/post/softwares/</link>
+      <link>https://xliusufe.github.io/post/softwares/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/softwares/</guid>
+      <guid>https://xliusufe.github.io/post/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://xliusufe.githubb.io/post/teaching/</link>
+      <link>https://xliusufe.github.io/post/teaching/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/teaching/</guid>
+      <guid>https://xliusufe.github.io/post/teaching/</guid>
       <description>Shanghai University of Finance and Economics STT102480: Mathematical Statistics Spring 2017 Spring 2018 STT311240: Advanced Mathematical Statistics Fall 2016 Fall 2017 Fall 2018 Fall 2019 STT213488: Data analysis and statistical modeling Fall 2017 Fall 2018 Fall 2019 STT101828: Computer Programming (C/C++) Spring 2019 Spring 2020 STT310537: Topics on High-dimensional Data Spring 2017 Spring 2018 Fall 2019 Homepage go back to go back to</description>
     </item>
     
     <item>
       <title>Biography</title>
-      <link>https://xliusufe.githubb.io/about/</link>
+      <link>https://xliusufe.github.io/about/</link>
       <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/about/</guid>
+      <guid>https://xliusufe.github.io/about/</guid>
       <description>Xu Liu is currently an Associate Professor in the School of Statistics and Management at Shanghai University of Finance and Economics. He received Ph.D. in Statistics at Yunnan University in January 2011. Xu was an NSF postdoctoral fellow in the Department of Statistics at Northwestern University during 2011-2013, and in the Department of Statistics and Probablity at Michigan State University during 2013-2016. His current research interests include theory and algorithms</description>
     </item>
     
     <item>
       <title>Contents of my homepage</title>
-      <link>https://xliusufe.githubb.io/post/first/</link>
+      <link>https://xliusufe.github.io/post/first/</link>
       <pubDate>Thu, 12 Mar 2020 10:42:29 +0800</pubDate>
       
-      <guid>https://xliusufe.githubb.io/post/first/</guid>
+      <guid>https://xliusufe.github.io/post/first/</guid>
       <description>contents of my homepage including Resume Publications Softwares Teaching Grants</description>
     </item>
     
