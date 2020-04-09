@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Configure  VS code to use Python, R and C/C&#43;&#43; &middot; Xu Liu</title>
+  <meta name="description" content="Configure  VS code to use Python, R and C/C&#43;&#43;" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Configure  VS code to use Python, R and C/C&#43;&#43;</h1>
+  <time datetime=2020-04-06T21:29:44&#43;0800 class="post-date">Mon, Apr 6, 2020</time>
+  <h1 id="configure--visual-studio-code-to-use-familiar-softwares">Configure  Visual Studio code to use familiar softwares</h1>
+<ul>
+<li>such as <code>Python</code>, <code>R</code> and <code>C/C++</code></li>
+<li>More details can be found <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+</ul>
+<h2 id="configure--vs-code-to-use-python">Configure  VS code to use <code>Python</code></h2>
+<ul>
+<li>
+<p>Prerequisites</p>
+<ul>
+<li>VS Code</li>
+<li>VS Code Python extension</li>
+<li>Python 3</li>
+</ul>
+</li>
+<li>
+<p>Install the Python Extension</p>
+<ul>
+<li>install the <code>Python extension</code> for VS Code from the Visual Studio Marketplace. The Python extension is named <code>Python</code> and it&rsquo;s published by Microsoft.</li>
+</ul>
+</li>
+<li>
+<p>Install a Python interpreter</p>
+<ul>
+<li>Suppose you already had installed <code>Python 3</code></li>
+</ul>
+</li>
+<li>
+<p>Start VS Code in a project (workspace) folder</p>
+<ul>
+<li>Using a command prompt or terminal, create an empty folder called &ldquo;hello&rdquo;, navigate into it, and open VS Code (<code>code</code>) in that folder (<code>.</code>) by entering the following commands:
+<pre><code>mkdir hello
+cd hello
+code .
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Create a Python Hello World source code file</p>
+<ul>
+<li>From the File Explorer toolbar, select the <code>New File</code> button on the <code>hello</code> folder</li>
+<li>Name the file <code>hello.py</code>, and it automatically opens in the editor</li>
+<li>Now that you have a code file in your Workspace, enter the following source code in <code>hello.py</code>:</li>
+</ul>
+<pre><code>data = [('SUFE','Shanghai University of Finance and Economics','8000'),('MSU','Michigan State University','30000'),('NWU','Northwestern University','9000')]
+tmp1 = []
+tmp2 = []
+for i in range(3):
+    tmp1.append(data[i][0])
+    tmp2.append(data[i][2])
+
+d = dict(zip(tmp1,tmp2))
+print(d)
+</code></pre></li>
+<li>
+<p>Run the codes</p>
+<ul>
+<li>It&rsquo;s simple to run <code>hello.py</code> with Python. Just click the <code>Run Python File</code> in <code>Terminal</code> play button in the top-right side of the editor.</li>
+<li>There are three other ways you can run Python code within VS Code:
+<ul>
+<li>Right-click anywhere in the editor window and select <code>Run Python File in Terminal</code> (which saves the file automatically)</li>
+<li>Select one or more lines, then press <code>Shift+Enter</code> or right-click and select <code>Run Selection/Line in Python Terminal</code>. This command is convenient for testing just a part of a file.</li>
+<li>From the Command Palette (<code>Ctrl+Shift+P</code>), select the <code>Python: Start REPL</code> command to open a REPL terminal for the currently selected Python interpreter. In the <code>REPL</code>, you can then enter and run lines of code one at a time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>More details can be found <a href="https://code.visualstudio.com/docs/python/python-tutorial">HERE</a></p>
+</li>
+</ul>
+<h2 id="configure--vs-code-to-use-cc">Configure  VS code to use <code>C/C++</code></h2>
+<ul>
+<li>
+<p>Prerequisites</p>
+<ul>
+<li>VS code installed the <code>C/C++</code> extension.</li>
+<li><code>Mingw-w64</code>, and add the path to your <code>Mingw-w64</code> bin folder to the Windows PATH environment variable</li>
+</ul>
+</li>
+<li>
+<p>Create first project</p>
+<ul>
+<li>create an empty folder called projects where you can place all your VS Code projects.</li>
+<li>open VS Code in that folder by entering the following commands:</li>
+</ul>
+<pre><code>mkdir projects
+code .
+</code></pre><p>-The &ldquo;code .&rdquo; command opens VS Code in the current working folder, which becomes your &ldquo;workspace&rdquo;.</p>
+</li>
+<li>
+<p>Add a source code file</p>
+<ul>
+<li>select the <code>New File</code> button and name the file <code>helloworld.c</code>.</li>
+<li>Copy and paste in this source code:</li>
+</ul>
+<pre><code>// Collatz Problem
+#include&lt;stdio.h&gt;
+int chainLen(int n){
+    int len=1;
+    while(n&gt;1){
+        if(n%2) n=3*n+1;
+        else n=n/2;
+        len++;
+    }
+    return len;
+}
+
+int main(){
+    int n;
+    printf(&quot;Input a natural number n = &quot;);
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;The length of chain is %d\n&quot;,chainLen(n));
+    return 0;
+}
+</code></pre></li>
+<li>
+<p>Build <code>helloworld.c</code></p>
+<ul>
+<li>Next, you will create a tasks.json file to tell VS Code how to build (compile) the program. This task will invoke the <code>g++</code> compiler to create an executable file based on the source code.</li>
+<li>From the main menu, choose Terminal &gt; Configure Default Build Task.</li>
+<li>Choose g++.exe build active file, which will build the file that is currently displayed (active) in the editor.</li>
+</ul>
+</li>
+<li>
+<p>Running the build</p>
+<ul>
+<li>
+<p>Go back to <code>helloworld.c</code>. Your task builds the active file and you want to build <code>helloworld.c</code>.</p>
+</li>
+<li>
+<p>To run the build task defined in <code>tasks.json</code>, press    <code>Ctrl+Shift+B</code> or from the Terminal main menu choose <code>Tasks: Run Build Task</code>.</p>
+</li>
+<li>
+<p>Create a new terminal using the + button and you&rsquo;ll have a new terminal (running PowerShell) with the <code>helloworld</code> folder as the working directory. Run <code>dir</code> and you should now see the executable <code>helloworld.exe</code>.</p>
+</li>
+<li>
+<p>You can run <code>helloworld</code> in the terminal by typing <code>.\helloworld.exe</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Start a debugging session</p>
+<ul>
+<li>Go back to <code>helloworld.c</code> so that it is the active file.</li>
+<li>Press <code>F5</code> or from the main menu choose <code>Run &gt; Start Debugging</code>.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found <a href="https://code.visualstudio.com/docs/cpp/config-mingw">HERE</a>.</p>
+</li>
+</ul>
+<h2 id="configure--vs-code-to-use-r">Configure  VS code to use <code>R</code></h2>
+<ul>
+<li>Using a command prompt or terminal, create an empty folder called &ldquo;hello&rdquo;, navigate into it, and open VS Code (<code>code</code>) in that folder (<code>.</code>) by entering the following commands:
+<pre><code>mkdir hello
+cd hello
+code .
+</code></pre></li>
+<li>Create a <code>R</code> &ldquo;Hello World&rdquo; source code file.
+<ul>
+<li>From the File Explorer toolbar, select the <code>New File</code> button on the <code>hello</code> folder.</li>
+<li>Name the file <code>hello.r</code>, and it automatically opens in the editor.</li>
+</ul>
+<pre><code>msg = &quot;Hello world!&quot;
+print(msg)
+</code></pre><ul>
+<li>It&rsquo;s simple to run <code>hello.r</code> with <code>R</code>. Just click the <code>Run Source</code> in Terminal play button in the top-right side of the editor, or press <code>Ctrl+Shift+S</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="homepage">Homepage</h1>
+<ul>
+<li>go back to <a href="https://xliusufe.gitee.io"><img src="https://img.shields.io/badge/Home-site-ye.svg" alt="home site"></a></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

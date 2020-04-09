@@ -6,10 +6,21 @@
     <description>Recent content in R on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 21:29:44 +0800</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Configure  VS code to use Python, R and C/C&#43;&#43;</title>
+      <link>https://xliusufe.github.io/post/vscode/</link>
+      <pubDate>Mon, 06 Apr 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/vscode/</guid>
+      <description>Configure Visual Studio code to use familiar softwares  such as Python, R and C/C++ More details can be found https://code.visualstudio.com/  Configure VS code to use Python   Prerequisites
+ VS Code VS Code Python extension Python 3    Install the Python Extension
+ install the Python extension for VS Code from the Visual Studio Marketplace. The Python extension is named Python and it&amp;rsquo;s published by Microsoft.</description>
+    </item>
     
     <item>
       <title>Embedding R into Jupyter</title>

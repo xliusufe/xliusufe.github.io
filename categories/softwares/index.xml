@@ -6,10 +6,21 @@
     <description>Recent content in Softwares on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 21:29:44 +0800</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Configure  VS code to use Python, R and C/C&#43;&#43;</title>
+      <link>https://xliusufe.github.io/post/vscode/</link>
+      <pubDate>Mon, 06 Apr 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/vscode/</guid>
+      <description>Configure Visual Studio code to use familiar softwares  such as Python, R and C/C++ More details can be found https://code.visualstudio.com/  Configure VS code to use Python   Prerequisites
+ VS Code VS Code Python extension Python 3    Install the Python Extension
+ install the Python extension for VS Code from the Visual Studio Marketplace. The Python extension is named Python and it&amp;rsquo;s published by Microsoft.</description>
+    </item>
     
     <item>
       <title>Black the sidebar and links</title>
@@ -40,7 +51,7 @@ install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39
       
       <guid>https://xliusufe.github.io/post/contents2py/</guid>
       <description>The course of Python
-The contents including class101  syntax and examples  dictionary  syntax, usage and examples  Scipy and Numpy  useful functions and examples  Recognize matplotlib  toy examples   Homepage  go back to   </description>
+The contents including class101  syntax and examples  dictionary  syntax, usage and examples  Scipy and Numpy  useful functions and examples  web crawler  catch data from web  Recognize matplotlib  toy examples   Homepage  go back to   </description>
     </item>
     
     <item>
@@ -72,7 +83,7 @@ What is the blogdown?   It is an R package that can create websites using R Mark
       
       <guid>https://xliusufe.github.io/post/contents2c/</guid>
       <description>The course of Computer Programming (C)
-The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for   Homepage  go back to  go back to   </description>
+The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for More examples   Homepage  go back to  go back to   </description>
     </item>
     
     <item>
