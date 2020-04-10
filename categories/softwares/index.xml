@@ -13,10 +13,10 @@
     
     <item>
       <title>Configure  VS code to use Python, R and C/C&#43;&#43;</title>
-      <link>https://xliusufe.github.io/post/vscode/</link>
+      <link>https://xliusufe.github.io/post/sfs/vscode/</link>
       <pubDate>Mon, 06 Apr 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/vscode/</guid>
+      <guid>https://xliusufe.github.io/post/sfs/vscode/</guid>
       <description>Configure Visual Studio code to use familiar softwares  such as Python, R and C/C++ More details can be found https://code.visualstudio.com/  Configure VS code to use Python   Prerequisites
  VS Code VS Code Python extension Python 3    Install the Python Extension
  install the Python extension for VS Code from the Visual Studio Marketplace. The Python extension is named Python and it&amp;rsquo;s published by Microsoft.</description>
@@ -24,19 +24,19 @@
     
     <item>
       <title>Black the sidebar and links</title>
-      <link>https://xliusufe.github.io/post/hugohyde/</link>
+      <link>https://xliusufe.github.io/post/hugo/hugohyde/</link>
       <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/hugohyde/</guid>
+      <guid>https://xliusufe.github.io/post/hugo/hugohyde/</guid>
       <description>Today is a special day, April 4, 2020, Staturday. I will remember today forever.  China held a national mourning Saturday for martyrs who died in the fight against the novel coronavirus disease (COVID-19) outbreak and compatriots died of the disease. During the commemoration, national flags flied at half-mast across the country and in all Chinese embassies and consulates abroad, and public recreational activities suspended across the country. At 10:00 am today, Chinese people nationwide observed three-minute silence to mourn for the deceased, while air raid sirens and horns of automobiles, trains and ships wailed in grief.</description>
     </item>
     
     <item>
       <title>Embedding R into Jupyter</title>
-      <link>https://xliusufe.github.io/post/pythonr/</link>
+      <link>https://xliusufe.github.io/post/py/pythonr/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/pythonr/</guid>
+      <guid>https://xliusufe.github.io/post/py/pythonr/</guid>
       <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and Anacoda with jupyter
   Add the local paths of Anacoda and Python to your system Environment, such as
 C:\Program Files\Python37\Scripts\and
@@ -46,30 +46,30 @@ install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39
     
     <item>
       <title>Contents of Python Learning</title>
-      <link>https://xliusufe.github.io/post/contents2py/</link>
+      <link>https://xliusufe.github.io/post/py/contents2py/</link>
       <pubDate>Sat, 21 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2py/</guid>
+      <guid>https://xliusufe.github.io/post/py/contents2py/</guid>
       <description>The course of Python
 The contents including class101  syntax and examples  dictionary  syntax, usage and examples  Scipy and Numpy  useful functions and examples  web crawler  catch data from web  Recognize matplotlib  toy examples   Homepage  go back to   </description>
     </item>
     
     <item>
       <title>Install hugo on MAC OS</title>
-      <link>https://xliusufe.github.io/post/hugomac/</link>
+      <link>https://xliusufe.github.io/post/hugo/hugomac/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/hugomac/</guid>
+      <guid>https://xliusufe.github.io/post/hugo/hugomac/</guid>
       <description>How to install hugo on MAC OS?  there are three common methods, one of which may be helpful for you.    download hugo form github
  unzip downloaded file go to the currently unzipped fold and move hugo to /usr/local/bin/, on the terminal  sudo mv hugo /usr/local/bin/ try hugo version. We can see the version if it succeeds.  hugo version  install hugo via brew</description>
     </item>
     
     <item>
       <title>blogdown</title>
-      <link>https://xliusufe.github.io/post/blogdown/</link>
+      <link>https://xliusufe.github.io/post/sfs/blogdown/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/blogdown/</guid>
+      <guid>https://xliusufe.github.io/post/sfs/blogdown/</guid>
       <description>This is the first blog written by blogdown, and build and published by R studio.
 What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
   R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
@@ -78,57 +78,66 @@ What is the blogdown?   It is an R package that can create websites using R Mark
     
     <item>
       <title>Contents of C teaching</title>
-      <link>https://xliusufe.github.io/post/contents2c/</link>
+      <link>https://xliusufe.github.io/post/cp/contents2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2c/</guid>
+      <guid>https://xliusufe.github.io/post/cp/contents2c/</guid>
       <description>The course of Computer Programming (C)
 The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for More examples   Homepage  go back to  go back to   </description>
     </item>
     
     <item>
       <title>Contents of R teaching</title>
-      <link>https://xliusufe.github.io/post/contents2r/</link>
+      <link>https://xliusufe.github.io/post/rp/contents2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2r/</guid>
+      <guid>https://xliusufe.github.io/post/rp/contents2r/</guid>
       <description>A short course of R Language
 Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
     </item>
     
     <item>
       <title>Introduction to C</title>
-      <link>https://xliusufe.github.io/post/introduction2c/</link>
+      <link>https://xliusufe.github.io/post/cp/introduction2c/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2c/</guid>
+      <guid>https://xliusufe.github.io/post/cp/introduction2c/</guid>
       <description>Create your first C project  Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS  The course of Computer Programming  Computer Programming More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK.</description>
     </item>
     
     <item>
       <title>Introduction to R</title>
-      <link>https://xliusufe.github.io/post/introduction2r/</link>
+      <link>https://xliusufe.github.io/post/rp/introduction2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
+      <guid>https://xliusufe.github.io/post/rp/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
     </item>
     
     <item>
       <title>Math formula in hugo blog</title>
-      <link>https://xliusufe.github.io/post/hugomath/</link>
+      <link>https://xliusufe.github.io/post/hugo/hugomath/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/hugomath/</guid>
+      <guid>https://xliusufe.github.io/post/hugo/hugomath/</guid>
       <description>Markdown supports math formula as latex style  example: sqrt of n, $\sqrt{n}$, can be written as $\sqrt{n}$  Insert math formula in hugo blog  Usually hugo bloc does not support math formula Choose theme hyde as an example open themes&amp;ndash;&amp;gt;hyde&amp;ndash;&amp;gt;layouts&amp;ndash;&amp;gt;partials&amp;ndash;&amp;gt;hook_head_end.html, and insert following codes  &amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: {equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; },extensions: [&amp;quot;AMSmath.</description>
     </item>
     
     <item>
-      <title>Softwares</title>
-      <link>https://xliusufe.github.io/post/softwares/</link>
+      <title>Others Calling C/C&#43;&#43;</title>
+      <link>https://xliusufe.github.io/post/rp/rpg/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/softwares/</guid>
+      <guid>https://xliusufe.github.io/post/rp/rpg/</guid>
+      <description>Rpk&amp;rsquo;s devolopment  There are many methods to develop a R-pacakge  extension function  An introduction of Writing R Extensions  R call C/C++  Build foo.dll on Windows or foo.so on MacOS/LinuxOS  R CMD SHLIB foo.cExamples  An example in VectProduce.c:  #include &amp;lt;math.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;#34;Rinternals.h&amp;#34; #include &amp;#34;R_ext/Rdynload.h&amp;#34; #include &amp;lt;R.h&amp;gt; #include &amp;lt;R_ext/Applic.h&amp;gt; void VectProduce(double *A, int *n1_, double *v, int *n2_, double *outMatrix){int i,j,n1, n2;n1 = n1_[0];n2 = n2_[0];for (i=0;i&amp;lt;n1;i++){for(j=0;j&amp;lt;n2;j++)	outMatrix[j*n1+i]=A[i]*v[j];}}static const R_CMethodDef cMethods[] = {{&amp;#34;VectProduce&amp;#34;, (DL_FUNC) &amp;amp;VectProduce, 5},NULL};void R_init_VectProduce(DllInfo *info){R_registerRoutines(info,cMethods,NULL,NULL,NULL);} Or in VectProduce1.</description>
+    </item>
+    
+    <item>
+      <title>Softwares</title>
+      <link>https://xliusufe.github.io/post/cv/softwares/</link>
+      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/cv/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     

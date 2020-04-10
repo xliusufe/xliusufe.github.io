@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Embedding R into Jupyter &middot; Xu Liu</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/rp/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/cp/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Embedding R into Jupyter</h1>
+  <time datetime=2020-03-28T00:00:00Z class="post-date">Sat, Mar 28, 2020</time>
+  <h1 id="how-to-embed-r-into-jupyter">How to embed <em>R</em> into <em>Jupyter</em>?</h1>
+<ul>
+<li>There is a simple way to embed <em>R</em> into <em>Jupyter Notebook</em>.</li>
+</ul>
+<ol>
+<li>
+<p>Suppose you already have installed <em>R</em> and <em>Anacoda</em> with <em>jupyter</em></p>
+</li>
+<li>
+<p>Add the local paths of <em>Anacoda</em> and <em>Python</em> to your system <em>Environment</em>, such as</p>
+<pre><code>C:\Program Files\Python37\Scripts\
+</code></pre><p>and</p>
+<pre><code>C:\ProgramData\Anaconda3\condabin\
+</code></pre></li>
+<li>
+<p>On the Console of <em>Rgui</em> or <em>Rstudio</em>, type</p>
+<pre><code>install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+</code></pre></li>
+<li>
+<p>Keep typing</p>
+<pre><code>IRkernel::installspec()
+</code></pre><p>or</p>
+<pre><code>IRkernel::installspec(user = FALSE)
+</code></pre></li>
+<li>
+<p>Embedding <em>R</em> into <em>Jupyter</em> will be done if it succeeds. If there is an error</p>
+<pre><code>&quot;Error in IRkernel::installspec() : 
+jupyter-client has to be installed but “jupyter kernelspec --version” exited with code 127.&quot;
+</code></pre><p>or you still cannot find an <em>R</em> kernel within <em>Jupyter-Notebook</em>. There is a simple solution. The following steps are required.</p>
+</li>
+<li>
+<p>Start the <strong>Anaconda prompt</strong>, not the <em>Windows command prompt</em> or the <em>Anaconda Navigator</em></p>
+</li>
+<li>
+<p>Find the local path of the executable file of R, eg: <code>C:\Program Files\R\R-3.5.3\bin</code>.</p>
+</li>
+<li>
+<p>Type follows on the <em>Anaconda prompt</em>.</p>
+<pre><code>C:\Program Files\R\R-3.5.3\bin
+</code></pre></li>
+<li>
+<p>Type R to start <em>R</em> on the <em>Anaconda prompt</em>.</p>
+<pre><code>R
+</code></pre></li>
+<li>
+<p>Then type <code>IRkernel::installspec()</code></p>
+<pre><code>IRkernel::installspec()
+</code></pre></li>
+<li>
+<p>Now it should be done, and you can find an <em>R</em> kernel within <em>Jupyter-Notebook</em>.</p>
+</li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

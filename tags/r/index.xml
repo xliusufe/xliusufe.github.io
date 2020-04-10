@@ -13,10 +13,10 @@
     
     <item>
       <title>Configure  VS code to use Python, R and C/C&#43;&#43;</title>
-      <link>https://xliusufe.github.io/post/vscode/</link>
+      <link>https://xliusufe.github.io/post/sfs/vscode/</link>
       <pubDate>Mon, 06 Apr 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/vscode/</guid>
+      <guid>https://xliusufe.github.io/post/sfs/vscode/</guid>
       <description>Configure Visual Studio code to use familiar softwares  such as Python, R and C/C++ More details can be found https://code.visualstudio.com/  Configure VS code to use Python   Prerequisites
  VS Code VS Code Python extension Python 3    Install the Python Extension
  install the Python extension for VS Code from the Visual Studio Marketplace. The Python extension is named Python and it&amp;rsquo;s published by Microsoft.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Embedding R into Jupyter</title>
-      <link>https://xliusufe.github.io/post/pythonr/</link>
+      <link>https://xliusufe.github.io/post/py/pythonr/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/pythonr/</guid>
+      <guid>https://xliusufe.github.io/post/py/pythonr/</guid>
       <description>How to embed R into Jupyter?  There is a simple way to embed R into Jupyter Notebook.    Suppose you already have installed R and Anacoda with jupyter
   Add the local paths of Anacoda and Python to your system Environment, such as
 C:\Program Files\Python37\Scripts\and
@@ -37,10 +37,10 @@ install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39
     
     <item>
       <title>blogdown</title>
-      <link>https://xliusufe.github.io/post/blogdown/</link>
+      <link>https://xliusufe.github.io/post/sfs/blogdown/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xliusufe.github.io/post/blogdown/</guid>
+      <guid>https://xliusufe.github.io/post/sfs/blogdown/</guid>
       <description>This is the first blog written by blogdown, and build and published by R studio.
 What is the blogdown?   It is an R package that can create websites using R Markdown and Hugo.
   R studio is an Integrated Development Environment with R. Now, it integrates R, git, hugo together, which is very convenient to build, enrich and maintain your website.
@@ -49,29 +49,38 @@ What is the blogdown?   It is an R package that can create websites using R Mark
     
     <item>
       <title>Contents of R teaching</title>
-      <link>https://xliusufe.github.io/post/contents2r/</link>
+      <link>https://xliusufe.github.io/post/rp/contents2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/contents2r/</guid>
+      <guid>https://xliusufe.github.io/post/rp/contents2r/</guid>
       <description>A short course of R Language
 Introduction to R  What is R How to start Getting help Workspace Input and output Packages A short tutorial  Creating dataset  Data structures Data input Annotating Datasets Useful functions  R language  An overview R syntax  R objects  Vectors List Other objects Functions  Preparing data  Combing datasets Transformations Binning data Summarizing functions Data cleaning  Graphics  An overview of R graphics Scatter Plots Plotting time series Bar charts Other Plots  Advanced graphics  Lattice ggplot2  Statistics  Analyzing data Probability distributions Statistical tests Power tests Regression models Logistic regression  Time series analysis  Autocorrelation functions Time series models More examples  R packages  Development through Rstudio project Development through package.</description>
     </item>
     
     <item>
       <title>Introduction to R</title>
-      <link>https://xliusufe.github.io/post/introduction2r/</link>
+      <link>https://xliusufe.github.io/post/rp/introduction2r/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/introduction2r/</guid>
+      <guid>https://xliusufe.github.io/post/rp/introduction2r/</guid>
       <description>R tutorial  R tutorial  A short course of R  A course of R More details can be found in Rpubs  R packages  All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the tutorial for matlab calling C/C++.  R shiny  Calculate large positive integer&amp;rsquo;s factorial.</description>
     </item>
     
     <item>
-      <title>Softwares</title>
-      <link>https://xliusufe.github.io/post/softwares/</link>
+      <title>Others Calling C/C&#43;&#43;</title>
+      <link>https://xliusufe.github.io/post/rp/rpg/</link>
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
-      <guid>https://xliusufe.github.io/post/softwares/</guid>
+      <guid>https://xliusufe.github.io/post/rp/rpg/</guid>
+      <description>Rpk&amp;rsquo;s devolopment  There are many methods to develop a R-pacakge  extension function  An introduction of Writing R Extensions  R call C/C++  Build foo.dll on Windows or foo.so on MacOS/LinuxOS  R CMD SHLIB foo.cExamples  An example in VectProduce.c:  #include &amp;lt;math.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;#34;Rinternals.h&amp;#34; #include &amp;#34;R_ext/Rdynload.h&amp;#34; #include &amp;lt;R.h&amp;gt; #include &amp;lt;R_ext/Applic.h&amp;gt; void VectProduce(double *A, int *n1_, double *v, int *n2_, double *outMatrix){int i,j,n1, n2;n1 = n1_[0];n2 = n2_[0];for (i=0;i&amp;lt;n1;i++){for(j=0;j&amp;lt;n2;j++)	outMatrix[j*n1+i]=A[i]*v[j];}}static const R_CMethodDef cMethods[] = {{&amp;#34;VectProduce&amp;#34;, (DL_FUNC) &amp;amp;VectProduce, 5},NULL};void R_init_VectProduce(DllInfo *info){R_registerRoutines(info,cMethods,NULL,NULL,NULL);} Or in VectProduce1.</description>
+    </item>
+    
+    <item>
+      <title>Softwares</title>
+      <link>https://xliusufe.github.io/post/cv/softwares/</link>
+      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/cv/softwares/</guid>
       <description>R packages The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment effects. &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Refer to Feng, X., Huang, J. and Liu, X.* (2020). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. *Statistica Sinica*. The R-package &amp;ldquo;tensorMQR&amp;rdquo; estimates the coefficients as a symmetric tensor for high-dimensional multiresponse quadratic regression models incorporating</description>
     </item>
     

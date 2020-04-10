@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Black the sidebar and links &middot; Xu Liu</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/rp/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/cp/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Black the sidebar and links</h1>
+  <time datetime=2020-04-04T00:00:00Z class="post-date">Sat, Apr 4, 2020</time>
+  <ul>
+<li>Today is a special day, April 4, 2020, Staturday. I will remember today forever. <img src="/img/image_20200404.jpg" alt="mourning Saturday">
+<ul>
+<li>China held a national mourning Saturday for martyrs who died in the fight against the novel coronavirus disease (COVID-19) outbreak and compatriots died of the disease.</li>
+<li>During the commemoration, national flags flied at half-mast across the country and in all Chinese embassies and consulates abroad, and public recreational activities suspended across the country.</li>
+<li>At 10:00 am today, Chinese people nationwide observed three-minute silence to mourn for the deceased, while air raid sirens and horns of automobiles, trains and ships wailed in grief.</li>
+</ul>
+</li>
+<li>Thus, I blacked my homepage.</li>
+</ul>
+<h1 id="black-the-sidebar-and-links-of-the-blog">Black the sidebar and links of the blog</h1>
+<ul>
+<li>open <code>site\themes\hyde\static\css\hyde.css</code></li>
+<li>add following codes in the end of <code>hyde.css</code>, which colors the sidebar and links within blog posts to be black.</li>
+</ul>
+<pre><code>/* Black */
+.theme-base-0g .sidebar {
+  background-color: #000000;
+}
+.theme-base-0g .content a,
+.theme-base-0g .related-posts li a:hover {
+  color: #000000;
+}
+</code></pre><ul>
+<li>then, one can revise <code>site\config.toml</code> as follows</li>
+</ul>
+<pre><code>[params]
+  themeColor = &quot;theme-base-0g&quot; # Black
+</code></pre><ul>
+<li>of cause, one can color them in others.</li>
+</ul>
+<h1 id="adjust-the-width-of-sidebar-of-the-blog">Adjust the width of sidebar of the blog</h1>
+<ul>
+<li>open <code>site\themes\hyde\static\css\hyde.css</code></li>
+<li>find and adjust <code>width</code>. The default is <code>18rem</code> here.</li>
+</ul>
+<pre><code>@media (min-width: 48em) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 14rem;
+    text-align: left;
+  }
+}
+</code></pre><ul>
+<li>then find and adjust <code>Container</code> as follows.</li>
+</ul>
+<pre><code>@media (min-width: 48em) {
+  .content {
+    /*max-width: 38rem;
+    margin-left: 20rem;*/
+	max-width: 44rem;
+	margin-left: 20rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    /*margin-left: 22rem;*/
+	margin-left: 18rem;
+    margin-right: 4rem;
+  }
+}
+</code></pre>
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

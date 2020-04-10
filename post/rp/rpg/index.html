@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Others Calling C/C&#43;&#43; &middot; Xu Liu</title>
+  <meta name="description" content="Contents of R teaching" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/rp/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/cp/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Others Calling C/C&#43;&#43;</h1>
+  <time datetime=2020-03-14T21:29:44&#43;0800 class="post-date">Sat, Mar 14, 2020</time>
+  <h1 id="rpks-devolopment">Rpk&rsquo;s devolopment</h1>
+<ul>
+<li>There are many methods to develop a R-pacakge</li>
+</ul>
+<h2 id="extension-function">extension function</h2>
+<ul>
+<li>An introduction of <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html">Writing R Extensions</a></li>
+</ul>
+<h2 id="r-call-cc">R call C/C++</h2>
+<ul>
+<li>Build foo.dll on Windows or foo.so on MacOS/LinuxOS</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">R CMD SHLIB foo.c
+</code></pre></div><h3 id="examples">Examples</h3>
+<ul>
+<li>An example in VectProduce.c:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &lt;math.h&gt;</span>
+<span style="color:#75715e">#include &lt;string.h&gt;</span>
+<span style="color:#75715e">#include &#34;Rinternals.h&#34;</span>
+<span style="color:#75715e">#include &#34;R_ext/Rdynload.h&#34;</span>
+<span style="color:#75715e">#include &lt;R.h&gt;</span>
+<span style="color:#75715e">#include &lt;R_ext/Applic.h&gt;</span>
+
+void <span style="color:#a6e22e">VectProduce</span>(double <span style="color:#f92672">*</span>A, int <span style="color:#f92672">*</span>n1_, double <span style="color:#f92672">*</span>v, int <span style="color:#f92672">*</span>n2_, double <span style="color:#f92672">*</span>outMatrix)
+{
+	int i,j,n1, n2;
+    n1 <span style="color:#f92672">=</span> n1_[0];
+	n2 <span style="color:#f92672">=</span> n2_[0];
+	<span style="color:#a6e22e">for </span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n1;i<span style="color:#f92672">++</span>){
+		<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>n2;j<span style="color:#f92672">++</span>)	outMatrix[j<span style="color:#f92672">*</span>n1<span style="color:#f92672">+</span>i]<span style="color:#f92672">=</span>A[i]<span style="color:#f92672">*</span>v[j];
+	}
+}
+
+static const R_CMethodDef cMethods[] <span style="color:#f92672">=</span> {
+  {<span style="color:#e6db74">&#34;VectProduce&#34;</span>, (DL_FUNC) <span style="color:#f92672">&amp;</span>VectProduce, <span style="color:#ae81ff">5</span>},
+  <span style="color:#66d9ef">NULL</span>
+};
+
+void <span style="color:#a6e22e">R_init_VectProduce</span>(DllInfo <span style="color:#f92672">*</span>info)
+{
+  <span style="color:#a6e22e">R_registerRoutines</span>(info,cMethods,<span style="color:#66d9ef">NULL</span>,<span style="color:#66d9ef">NULL</span>,<span style="color:#66d9ef">NULL</span>);
+}
+</code></pre></div><ul>
+<li>Or in VectProduce1.c, see Rpk &ldquo;<a href="https://github.com/xliusufe/err">err</a>&quot;:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &lt;R.h&gt;</span>
+<span style="color:#75715e">#include &lt;Rinternals.h&gt;  </span>
+
+void <span style="color:#a6e22e">VectP</span>(double <span style="color:#f92672">*</span>A, int n1, double <span style="color:#f92672">*</span>v, int n2, double <span style="color:#f92672">*</span>outMatrix)
+{
+	int i,j;
+	<span style="color:#a6e22e">for </span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n1;i<span style="color:#f92672">++</span>){
+		<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>n2;j<span style="color:#f92672">++</span>)	outMatrix[j<span style="color:#f92672">*</span>n1<span style="color:#f92672">+</span>i]<span style="color:#f92672">=</span>A[i]<span style="color:#f92672">*</span>v[j];
+	}
+}
+
+SEXP <span style="color:#a6e22e">VectProduce</span>(SEXP x, SEXP y)
+{
+	int nx <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(x), ny <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(y);
+	double <span style="color:#f92672">*</span>A <span style="color:#f92672">=</span> <span style="color:#a6e22e">REAL</span>(x), <span style="color:#f92672">*</span>B <span style="color:#f92672">=</span> <span style="color:#a6e22e">REAL</span>(y), <span style="color:#f92672">*</span>Y;
+	SEXP outmatrix;
+
+	<span style="color:#a6e22e">PROTECT</span>(outmatrix <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocMatrix</span>(REALSXP, nx, ny));  
+	Y <span style="color:#f92672">=</span> <span style="color:#a6e22e">REAL</span>(outmatrix);
+	<span style="color:#a6e22e">VectP</span>(A, nx, B, ny, Y);
+
+	<span style="color:#a6e22e">UNPROTECT</span>(<span style="color:#ae81ff">1</span>);  
+	<span style="color:#a6e22e">return</span>(outmatrix);
+}
+</code></pre></div><ul>
+<li>or VectProduce2.cpp, see Rpk &ldquo;<a href="https://github.com/xliusufe/IVGC">IVGC</a>&quot;:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &lt;R.h&gt;</span>
+<span style="color:#75715e">#include &lt;Rinternals.h&gt;  </span>
+extern <span style="color:#e6db74">&#34;C&#34;</span>{
+void <span style="color:#a6e22e">VectP</span>(double <span style="color:#f92672">*</span>A, int n1, double <span style="color:#f92672">*</span>v, int n2, double <span style="color:#f92672">*</span>outMatrix)
+{
+	int i,j;
+	<span style="color:#a6e22e">for </span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n1;i<span style="color:#f92672">++</span>){
+		<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>n2;j<span style="color:#f92672">++</span>)	outMatrix[j<span style="color:#f92672">*</span>n1<span style="color:#f92672">+</span>i]<span style="color:#f92672">=</span>A[i]<span style="color:#f92672">*</span>v[j];
+	}
+}
+}
+</code></pre></div><ul>
+<li>Or return a list in Test_list.c, see Rpk &ldquo;<a href="https://github.com/xliusufe/plvs">plvs</a>&quot;:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &lt;R.h&gt;</span>
+<span style="color:#f92672">//</span><span style="color:#75715e">#include &lt;Rinternals.h&gt;  </span>
+<span style="color:#75715e">#include &lt;Rdefines.h&gt;</span>
+
+SEXP <span style="color:#a6e22e">setList</span>() {
+   int <span style="color:#f92672">*</span>p_myint, i;                       <span style="color:#f92672">//</span> variable declarations
+   double <span style="color:#f92672">*</span>p_double;
+   SEXP mydouble, myint, list, list_names;
+   char <span style="color:#f92672">*</span>names[2] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;integer&#34;</span>, <span style="color:#e6db74">&#34;numeric&#34;</span>};
+
+   <span style="color:#a6e22e">PROTECT</span>(myint <span style="color:#f92672">=</span> <span style="color:#a6e22e">NEW_INTEGER</span>(<span style="color:#ae81ff">5</span>));       <span style="color:#f92672">//</span> creating an integer vector
+   p_myint <span style="color:#f92672">=</span> <span style="color:#a6e22e">INTEGER_POINTER</span>(myint);
+   <span style="color:#a6e22e">PROTECT</span>(mydouble <span style="color:#f92672">=</span> <span style="color:#a6e22e">NEW_NUMERIC</span>(<span style="color:#ae81ff">5</span>));    <span style="color:#f92672">//</span> <span style="color:#66d9ef">...</span> and a vector of real numbers
+   p_double <span style="color:#f92672">=</span> <span style="color:#a6e22e">NUMERIC_POINTER</span>(mydouble);
+   <span style="color:#a6e22e">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+     p_double[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>(double)(i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+     p_myint[i] <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+   }
+
+   <span style="color:#f92672">//</span> a character string vector of the <span style="color:#e6db74">&#34;names&#34;</span> attribute of the objects in our list
+   <span style="color:#a6e22e">PROTECT</span>(list_names <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocVector</span>(STRSXP, <span style="color:#ae81ff">2</span>));
+   <span style="color:#a6e22e">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>; i<span style="color:#f92672">++</span>)
+      <span style="color:#a6e22e">SET_STRING_ELT</span>(list_names, i,  <span style="color:#a6e22e">mkChar</span>(names[i]));
+ 
+   <span style="color:#a6e22e">PROTECT</span>(list <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocVector</span>(VECSXP, <span style="color:#ae81ff">2</span>)); <span style="color:#f92672">//</span> Creating a list with <span style="color:#ae81ff">2</span> vector elements
+   <span style="color:#a6e22e">SET_VECTOR_ELT</span>(list, <span style="color:#ae81ff">0</span>, myint);         <span style="color:#f92672">//</span> attaching myint vector to list
+   <span style="color:#a6e22e">SET_VECTOR_ELT</span>(list, <span style="color:#ae81ff">1</span>, mydouble);      <span style="color:#f92672">//</span> attaching mydouble vector to list
+   <span style="color:#a6e22e">setAttrib</span>(list, R_NamesSymbol, list_names); <span style="color:#f92672">//</span>and attaching the vector names
+   <span style="color:#a6e22e">UNPROTECT</span>(<span style="color:#ae81ff">4</span>);
+   <span style="color:#a6e22e">return </span>(list);
+}
+</code></pre></div><ul>
+<li>The corresponding vp.R calling above three foo.dll on Windows (or foo.so on MacOS or LinuxOS):</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">VectProduce <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, y)
+{
+    <span style="color:#a6e22e">dyn.load</span>(<span style="color:#e6db74">&#34;VectProduce.dll&#34;</span>) 
+    X <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#ae81ff">0</span>, nrow <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(x), ncol <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(y))
+    n <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(x)
+    p <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(y)
+    out <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">.C</span>(<span style="color:#e6db74">&#34;VectProduce&#34;</span>, x, <span style="color:#a6e22e">as.integer</span>(n), y, <span style="color:#a6e22e">as.integer</span>(p), X)
+
+    <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">list</span>( VP <span style="color:#f92672">=</span> out[[5]] ))
+}
+
+
+VectProduce1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, y)
+{
+    <span style="color:#a6e22e">dyn.load</span>(<span style="color:#e6db74">&#34;VectProduce1.dll&#34;</span>)  
+    out <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">.Call</span>(<span style="color:#e6db74">&#34;VectProduce&#34;</span>, x, y)
+    out
+}
+
+VectProduce2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, y)
+{
+    <span style="color:#a6e22e">dyn.load</span>(<span style="color:#e6db74">&#34;VectProduce2.dll&#34;</span>)  
+    out <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">.C</span>(<span style="color:#e6db74">&#34;VectProduce&#34;</span>, x, y)
+    out
+}
+
+VectProduce <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, y)
+{
+    <span style="color:#a6e22e">dyn.load</span>(<span style="color:#e6db74">&#34;Test_list.dll&#34;</span>) 
+    out1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">.Call</span>(<span style="color:#e6db74">&#34;out&#34;</span>, x, y)
+    out1
+}
+</code></pre></div><h3 id="how-to-develop-rpk">How to develop Rpk?</h3>
+<ul>
+<li>Rstudio</li>
+<li>R command-line:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    <span style="color:#a6e22e">package.skeleton</span>(<span style="color:#e6db74">&#34;myrpk&#34;</span>)
+</code></pre></div><h3 id="how-to-pack-rpks">How to pack Rpks?</h3>
+<ul>
+<li>cmd (windows) or terminal (MacOS/Linux):</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    R CMD build myrpk
+    R CMD Rd2pdf myrpk
+    R CMD check myrpk
+</code></pre></div><h3 id="where-and-how-to-share-rpks">Where and How to share Rpks?</h3>
+<ul>
+<li>cran: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a></li>
+<li>github: <a href="https://github.com/">https://github.com/</a></li>
+<li>Bioconductor: <a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></li>
+<li>Omegahat: <a href="http://www.omegahat.net/">http://www.omegahat.net/</a></li>
+</ul>
+<h3 id="example-factsumhttpsgithubcomxliusufefactsum">Example: <a href="https://github.com/xliusufe/FactSum">FactSum</a></h3>
+<h2 id="call-fooc-in-rpks">Call foo.c in Rpks</h2>
+<ul>
+<li>
+<p>Put all C/C++ files (eg. VectProduce.c) in sub-directory &ldquo;src&rdquo; of Rpg</p>
+</li>
+<li>
+<p>Remember to include &ldquo;R.h&rdquo; in the header of foo.c</p>
+<ul>
+<li>For example, see also Rpk &ldquo;<a href="https://github.com/xliusufe/FactSum">FactSum</a>&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &lt;math.h&gt;</span>
+<span style="color:#75715e">#include &lt;string.h&gt;</span>
+<span style="color:#75715e">#include &lt;stdio.h&gt;</span>
+<span style="color:#75715e">#include &lt;stdlib.h&gt;</span>
+<span style="color:#75715e">#include &lt;R.h&gt;</span>
+<span style="color:#75715e">#include &lt;Rinternals.h&gt;  </span>
+</code></pre></div></li>
+</ul>
+<h2 id="call-executable-files-in-rpk">Call executable files in Rpk</h2>
+<ul>
+<li>executable files (PIexe-unix.exe, or PIexe-linux.exe, or PIexe-windows.exe) in Rpk named &ldquo;PI&rdquo;</li>
+<li>Put all executable files (eg. PIexe.exe) in sub-directory &ldquo;exec&rdquo; or &ldquo;inst/exec&rdquo; of Rpg</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Pi <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(n<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>){
+  <span style="color:#a6e22e">if</span>(n<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">stop</span>(<span style="color:#e6db74">&#34;n must be a non negative integer!&#34;</span>)
+  progname <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;PIexe-&#34;</span>,.Platform<span style="color:#f92672">$</span>OS.type,<span style="color:#e6db74">&#34;.exe&#34;</span>,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+  progpath <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">system.file</span>(<span style="color:#e6db74">&#34;exec&#34;</span>,progname,package<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PI&#34;</span>)
+  
+  <span style="color:#a6e22e">if </span>(.Platform<span style="color:#f92672">$</span>OS.type<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;unix&#34;</span>) {
+      pi_str <span style="color:#f92672">=</span> <span style="color:#a6e22e">system2</span>(progpath,args<span style="color:#f92672">=</span><span style="color:#a6e22e">as.character</span>(n),stdout<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+  }
+  <span style="color:#66d9ef">pi</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;3&#34;</span>,pi_str,collapse <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>)
+  <span style="color:#66d9ef">pi</span>
+}
+</code></pre></div><h3 id="drawbacks">Drawbacks:</h3>
+<ul>
+<li>Require different platform&rsquo;s executable files</li>
+<li>It is portable on cran: &ldquo;A source package if possible should not contain binary executable files: they are not portable,
+and a security risk if they are of the appropriate architecture.&rdquo;</li>
+<li>But github is portable.</li>
+</ul>
+<h3 id="advantages">Advantages:</h3>
+<ul>
+<li>Can call the third C/C++ packages, such as &ldquo;gmp&rdquo;.</li>
+<li>Can hide your secret and important codes</li>
+</ul>
+<h3 id="an-example-can-be-found-in-pihttpsgithubcomxliusufepi">An example can be found in <a href="https://github.com/xliusufe/PI">PI</a></h3>
+<ul>
+<li>
+<p>The web-based calculator <a href="https://xliusufe.shinyapps.io/PIapprox/">PI</a> is available too</p>
+</li>
+<li>
+<p>The R package PI is developed by using <a href="http://rpubs.com/xliusufe/gmp">GMP</a></p>
+</li>
+<li>
+<p>Test on Ubuntu</p>
+<ul>
+<li>Intall <a href="https://cran.r-project.org/">R on Ubuntu</a></li>
+<li>add &ldquo;deb <a href="https://cloud.r-project.org/bin/linux/ubuntu">https://cloud.r-project.org/bin/linux/ubuntu</a> disco-cran35/&rdquo; to &ldquo;/etc/apt/sources.list&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">sudo vi <span style="color:#f92672">/</span>etc<span style="color:#f92672">/</span>apt<span style="color:#f92672">/</span>sources.list
+</code></pre></div><ul>
+<li>Install R</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">sudo apt<span style="color:#f92672">-</span>get install r<span style="color:#f92672">-</span>base<span style="color:#f92672">-</span>dev
+</code></pre></div></li>
+</ul>
+<h2 id="rcpp">Rcpp</h2>
+<ul>
+<li>It is a R package &ldquo;<a href="https://cran.r-project.org/web/packages/Rcpp/index.html">Rcpp</a>&rdquo;</li>
+<li>Seamless R and C++ Integration: <a href="http://www.rcpp.org/">Introduction</a></li>
+</ul>
+<h3 id="how-to-use-rcpphttpadv-rhadconzrcpphtml">How to use <a href="http://adv-r.had.co.nz/Rcpp.html">Rcpp</a>?</h3>
+<ul>
+<li><a href="http://arma.sourceforge.net/">Armadillo</a></li>
+<li><a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a></li>
+</ul>
+<h3 id="an-example-tensormamhttpsgithubcomxliusufetensormam">An example: <a href="https://github.com/xliusufe/tensorMam">tensorMam</a></h3>
+<ul>
+<li>Include Rcpp.h</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">//</span>[[Rcpp<span style="color:#f92672">::</span><span style="color:#a6e22e">depends</span>(RcppEigen)]]
+<span style="color:#75715e">#include &lt;Rcpp.h&gt;</span>
+<span style="color:#75715e">#include &lt;RcppEigen.h&gt;</span>
+<span style="color:#75715e">#include &lt;cmath&gt;</span>
+<span style="color:#75715e">#include &lt;Eigen/Dense&gt;</span>
+<span style="color:#75715e">#include &lt;iostream&gt;</span>
+<span style="color:#75715e">#include &lt;Eigen/SVD&gt;</span>
+<span style="color:#75715e">#include &lt;Eigen/Cholesky&gt;</span>
+<span style="color:#75715e">#include &lt;Eigen/LU&gt;</span>
+<span style="color:#75715e">#include &lt;list&gt;</span>
+using namespace Rcpp;
+using namespace Eigen;
+
+<span style="color:#f92672">//----------------------------------------------------------------**</span>
+<span style="color:#f92672">//***----------------------------</span>sequece<span style="color:#f92672">--------------------------**</span>
+<span style="color:#f92672">//</span> [[Rcpp<span style="color:#f92672">::</span>export]]
+VectorXd <span style="color:#a6e22e">SEQ</span>(double min, double max, double by)
+{
+	int leng <span style="color:#f92672">=</span> static_cast<span style="color:#f92672">&lt;</span>int<span style="color:#f92672">&gt;</span>(<span style="color:#a6e22e">floor</span>((max <span style="color:#f92672">-</span> min) <span style="color:#f92672">/</span> by <span style="color:#f92672">+</span> <span style="color:#a6e22e">pow</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">-12</span>)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+	VectorXd C <span style="color:#f92672">=</span> VectorXd<span style="color:#f92672">::</span><span style="color:#a6e22e">Constant</span>(leng, <span style="color:#ae81ff">0</span>);
+	<span style="color:#a6e22e">for </span>(int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> leng; i<span style="color:#f92672">++</span>)
+		C[i] <span style="color:#f92672">=</span> min <span style="color:#f92672">+</span> by <span style="color:#f92672">*</span> i;
+	return C;
+}
+<span style="color:#f92672">//----------------------------------------------------------------**</span>
+<span style="color:#f92672">//***----------------------</span>uppertriangleNorm1 of AA<span style="color:#f92672">---------------**</span>
+double <span style="color:#a6e22e">uppertriangleNorm1AA</span>(MatrixXd A)
+{
+	int i, j, k, p, ii;
+	double norm1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, temp1, temp2;
+	p <span style="color:#f92672">=</span> <span style="color:#a6e22e">A.cols</span>();
+
+	<span style="color:#a6e22e">for </span>(k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> p; k<span style="color:#f92672">++</span>) {
+		temp2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> p; j<span style="color:#f92672">++</span>) {
+			temp1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			ii <span style="color:#f92672">=</span> k <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">?</span> k <span style="color:#f92672">:</span> j;
+			<span style="color:#a6e22e">for </span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;=</span> ii; i<span style="color:#f92672">++</span>) temp1 <span style="color:#f92672">+=</span> <span style="color:#a6e22e">A</span>(i, j) <span style="color:#f92672">*</span> <span style="color:#a6e22e">A</span>(i, k);
+			temp2 <span style="color:#f92672">+=</span> <span style="color:#a6e22e">fabs</span>(temp1);
+		}
+		<span style="color:#a6e22e">if </span>(temp2 <span style="color:#f92672">&gt;</span> norm1) norm1 <span style="color:#f92672">=</span> temp2;
+	}
+	return norm1;
+}
+
+<span style="color:#f92672">//----------------------------------------------------------------**</span>
+<span style="color:#f92672">//***--------------------</span>transfer modal of unfoldings<span style="color:#f92672">-------------**</span>
+<span style="color:#f92672">//</span> [[Rcpp<span style="color:#f92672">::</span>export]]
+MatrixXd <span style="color:#a6e22e">TransferModalUnfoldings</span>(MatrixXd S, int d1, int d2, int r1, int r2, int r3)
+{
+  <span style="color:#f92672">//</span>From <span style="color:#a6e22e">S_</span>(d1) to <span style="color:#a6e22e">S_</span>(d2)
+  int j;
+  MatrixXd S1,S_3;
+  <span style="color:#a6e22e">if </span>(d1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>) {
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>){
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.row</span>(<span style="color:#ae81ff">0</span>)<span style="color:#a6e22e">.transpose</span>();
+      <span style="color:#a6e22e">S1.resize</span>(r1, r2); 
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r3;j<span style="color:#f92672">++</span>) {
+        S_3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.row</span>(j)<span style="color:#a6e22e">.transpose</span>();
+        <span style="color:#a6e22e">S_3.resize</span>(r1, r2);
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">cbind_rcpp</span>(S1, S_3);<span style="color:#f92672">//</span> S3 is r3 <span style="color:#f92672">*</span>(r2r1) matrix
+      }
+    }	
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, r3, r1)<span style="color:#a6e22e">.transpose</span>();
+      <span style="color:#a6e22e">S1.resize</span>(<span style="color:#ae81ff">1</span>,r1<span style="color:#f92672">*</span>r3);
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r2; j<span style="color:#f92672">++</span>) {
+        S_3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, j<span style="color:#f92672">*</span>r1, r3, r1)<span style="color:#a6e22e">.transpose</span>();
+        <span style="color:#a6e22e">S_3.resize</span>(<span style="color:#ae81ff">1</span>,r1<span style="color:#f92672">*</span>r3);
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">rbind_rcpp</span>(S1, S_3);
+      }
+    }
+  }
+  
+  <span style="color:#a6e22e">if </span>(d1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, r2, r1)<span style="color:#a6e22e">.transpose</span>();
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r3; j<span style="color:#f92672">++</span>) {
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">cbind_rcpp</span>(S1,<span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>,j<span style="color:#f92672">*</span>r1,r2,r1)<span style="color:#a6e22e">.transpose</span>());
+      }
+    }
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>) {
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, r2, r1)<span style="color:#a6e22e">.transpose</span>();
+      <span style="color:#a6e22e">S1.resize</span>(<span style="color:#ae81ff">1</span>, r2<span style="color:#f92672">*</span>r1);
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r3; j<span style="color:#f92672">++</span>) {
+        S_3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, j<span style="color:#f92672">*</span>r1, r2, r1)<span style="color:#a6e22e">.transpose</span>();
+        <span style="color:#a6e22e">S_3.resize</span>(<span style="color:#ae81ff">1</span>, r2<span style="color:#f92672">*</span>r1);
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">rbind_rcpp</span>(S1, S_3);
+      }
+    }
+    
+  }
+  
+  <span style="color:#a6e22e">if </span>(d1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, r1, r2)<span style="color:#a6e22e">.transpose</span>();
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r3; j<span style="color:#f92672">++</span>) {
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">cbind_rcpp</span>(S1, <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, j<span style="color:#f92672">*</span>r2, r1, r2)<span style="color:#a6e22e">.transpose</span>());
+      }
+    }
+    <span style="color:#a6e22e">if </span>(d2 <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>) {
+      S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, r1, r2);
+      <span style="color:#a6e22e">S1.resize</span>(<span style="color:#ae81ff">1</span>, r1<span style="color:#f92672">*</span>r2);
+      <span style="color:#a6e22e">for </span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> r3; j<span style="color:#f92672">++</span>) {
+        S_3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">S.block</span>(<span style="color:#ae81ff">0</span>, j<span style="color:#f92672">*</span>r2, r1, r2);
+        <span style="color:#a6e22e">S_3.resize</span>(<span style="color:#ae81ff">1</span>, r1<span style="color:#f92672">*</span>r2);
+        S1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">rbind_rcpp</span>(S1, S_3);
+      }
+    }
+  }
+  return S1;
+}
+</code></pre></div><ul>
+<li>After insert foo.cpp into the sub-directory &ldquo;src&rdquo;, we need following steps
+<ul>
+<li>On R command type: compileAttributes(&ldquo;tensorMam&rdquo;)</li>
+<li>add &ldquo;using namespace Eigen;&rdquo; in to file &ldquo;RcppExports.cpp&rdquo;, which is in the sub-directory &ldquo;src&rdquo;</li>
+<li>On R command type: system(&ldquo;R CMD check tensorMam&rdquo;))</li>
+</ul>
+</li>
+</ul>
+<h3 id="useful-functions">Useful functions</h3>
+<ul>
+<li>
+<p>sourCpp()</p>
+<ul>
+<li>An example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">sourceCpp</span>(<span style="color:#e6db74">&#34;foo.cpp&#34;</span>)
+</code></pre></div></li>
+<li>
+<p>Rcpp:::SHLIB() to produce an executable file &ldquo;foo.exe&rdquo;</p>
+<ul>
+<li>On R command</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Rcpp<span style="color:#f92672">:::</span><span style="color:#a6e22e">SHLIB</span>(<span style="color:#e6db74">&#34;foo.cpp&#34;</span>)
+</code></pre></div><ul>
+<li>On Shell</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Rscript <span style="color:#f92672">-</span>e <span style="color:#e6db74">&#34;Rcpp:::SHLIB(&#39;foo.cpp&#39;)&#34;</span>
+</code></pre></div></li>
+</ul>
+<h1 id="matlab-calling-cc">Matlab Calling C/C++</h1>
+<ul>
+<li>mexFunction()</li>
+<li>An example &ldquo;VectProduce.c&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#include &#34;mex.h&#34; </span>
+void <span style="color:#a6e22e">VectProduce</span>(double <span style="color:#f92672">*</span>A, double <span style="color:#f92672">*</span>v, int n, double <span style="color:#f92672">*</span>outMatrix)
+{
+	int i,j;
+	<span style="color:#a6e22e">for </span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+	{
+		<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>n;j<span style="color:#f92672">++</span>)
+		outMatrix[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>j]<span style="color:#f92672">=</span>A[i]<span style="color:#f92672">*</span>v[j];
+	}
+}
+
+void <span style="color:#a6e22e">mexFunction</span>(
+ int nlhs,
+ mxArray <span style="color:#f92672">*</span>plhs[],
+ int nrhs,
+ const mxArray <span style="color:#f92672">*</span>prhs[]) 
+{
+    double <span style="color:#f92672">*</span>inData, <span style="color:#f92672">*</span>outData, <span style="color:#f92672">*</span>Vector;
+    int M, dim;
+    inData <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetPr</span>(prhs[0]);
+    M <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetM</span>(prhs[0]);
+    Vector <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetPr</span>(prhs[1]);
+    dim <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetM</span>(prhs[1]);
+    <span style="color:#a6e22e">if </span>(M<span style="color:#f92672">!=</span>dim)
+    {
+        <span style="color:#a6e22e">mexErrMsgTxt</span>(<span style="color:#e6db74">&#34;The dimesions of two vectors does not match!&#34;</span>);
+    }
+    plhs[0] <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxCreateDoubleMatrix</span>(M, M, mxREAL);
+    outData <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetPr</span>(plhs[0]);
+    <span style="color:#a6e22e">VectProduce</span>(inData, Vector, M, outData);
+}
+</code></pre></div><ul>
+<li>Mex command on Matlab</li>
+<li>Select C/C++ compiler</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">mex <span style="color:#f92672">-</span>setup
+mex foo.c
+</code></pre></div><ul>
+<li>Another example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  <span style="color:#75715e">#include &lt;stdlib.h&gt;</span>
+  <span style="color:#75715e">#include &lt;math.h&gt;</span>
+  <span style="color:#75715e">#include &lt;stdio.h&gt;</span>
+  <span style="color:#75715e">#include &#34;mex.h&#34; </span>
+
+  int <span style="color:#a6e22e">UpTriangularInv</span>(double <span style="color:#f92672">*</span>B, int n, double <span style="color:#f92672">*</span>A)
+  { 
+	  int i,j,k;
+	  <span style="color:#a6e22e">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+		  <span style="color:#a6e22e">if</span>(A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">return</span>(<span style="color:#ae81ff">0</span>);
+	<span style="color:#a6e22e">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#ae81ff">-1</span>;i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">--</span>)<span style="color:#f92672">//</span>rows
+	{
+		<span style="color:#a6e22e">if</span>(A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">!=</span><span style="color:#ae81ff">1</span>)
+			<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span>i;j<span style="color:#f92672">&lt;</span>n;j<span style="color:#f92672">++</span>)
+				B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i] <span style="color:#f92672">=</span> B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">/</span>A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i];
+		<span style="color:#a6e22e">if</span>(i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+		{
+			<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span>i;j<span style="color:#f92672">&lt;</span>n;j<span style="color:#f92672">++</span>)<span style="color:#f92672">//</span> columns
+				<span style="color:#a6e22e">for</span>(k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;k<span style="color:#f92672">&lt;</span>i;k<span style="color:#f92672">++</span>)<span style="color:#f92672">//</span> rows
+					B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k] <span style="color:#f92672">-</span> A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k]<span style="color:#f92672">*</span>B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i];
+		}
+	}
+	<span style="color:#a6e22e">return</span>(<span style="color:#ae81ff">1</span>);
+  }
+
+  int <span style="color:#a6e22e">LowTriangularInv</span>(double <span style="color:#f92672">*</span>B, int n, double <span style="color:#f92672">*</span>A)
+  { 
+	  int i,j,k;
+	  <span style="color:#a6e22e">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+		  <span style="color:#a6e22e">if</span>(A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">return</span>(<span style="color:#ae81ff">0</span>);
+	<span style="color:#a6e22e">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)<span style="color:#f92672">//</span>rows
+	{
+		<span style="color:#a6e22e">if</span>(A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">!=</span><span style="color:#ae81ff">1</span>)
+			<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;=</span>i;j<span style="color:#f92672">++</span>)
+				B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i] <span style="color:#f92672">=</span> B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i]<span style="color:#f92672">/</span>A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i];
+		<span style="color:#a6e22e">if</span>(i<span style="color:#f92672">&lt;</span>n<span style="color:#ae81ff">-1</span>)
+		{
+			<span style="color:#a6e22e">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;=</span>i;j<span style="color:#f92672">++</span>)<span style="color:#f92672">//</span> columns
+				<span style="color:#a6e22e">for</span>(k<span style="color:#f92672">=</span>i<span style="color:#ae81ff">+1</span>;k<span style="color:#f92672">&lt;</span>n;k<span style="color:#f92672">++</span>)<span style="color:#f92672">//</span> rows
+					B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k] <span style="color:#f92672">-</span> A[i<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>k]<span style="color:#f92672">*</span>B[j<span style="color:#f92672">*</span>n<span style="color:#f92672">+</span>i];
+		}
+	}
+	<span style="color:#a6e22e">return</span>(<span style="color:#ae81ff">1</span>);
+  }
+
+  void <span style="color:#a6e22e">mexFunction</span>(
+ int nlhs,
+ mxArray <span style="color:#f92672">*</span>plhs[],
+ int nrhs,
+ const mxArray <span style="color:#f92672">*</span>prhs[]) 
+{
+    double <span style="color:#f92672">*</span>inData, <span style="color:#f92672">*</span>outData, flag, <span style="color:#f92672">*</span>B, IsUptriang;
+    int M, N, i;
+    inData <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetPr</span>(prhs[0]);
+    M <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetM</span>(prhs[0]);
+	N <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetM</span>(prhs[0]);
+	<span style="color:#a6e22e">if</span>(M<span style="color:#f92672">!=</span>N) <span style="color:#a6e22e">mexErrMsgTxt</span>(<span style="color:#e6db74">&#34;Input must be a square matrix.&#34;</span>);
+	<span style="color:#a6e22e">if</span>(nrhs<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>)
+	{
+		IsUptriang <span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+		<span style="color:#a6e22e">mexPrintf</span>(<span style="color:#e6db74">&#34;Is input a uptriangular matrix!&#34;</span>);
+	}
+	else
+		IsUptriang <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetScalar</span>(prhs[1]);
+
+    plhs[0] <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxCreateDoubleMatrix</span>(M, M, mxREAL);
+    outData <span style="color:#f92672">=</span> <span style="color:#a6e22e">mxGetPr</span>(plhs[0]);
+	<span style="color:#a6e22e">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>M;i<span style="color:#f92672">++</span>) outData[i<span style="color:#f92672">*</span>M<span style="color:#f92672">+</span>i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#a6e22e">if</span>(IsUptriang<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+		flag <span style="color:#f92672">=</span> <span style="color:#a6e22e">UpTriangularInv</span>(outData, M, inData);
+	else
+		flag <span style="color:#f92672">=</span> <span style="color:#a6e22e">LowTriangularInv</span>(outData, M, inData);
+
+	<span style="color:#a6e22e">if</span>(flag<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">mexErrMsgTxt</span>(<span style="color:#e6db74">&#34;Diag of input matrix must be nonzero.&#34;</span>);
+}
+</code></pre></div><ul>
+<li>
+<p>Matlab produce an executable file &ldquo;foo.exe&rdquo;</p>
+<ul>
+<li>&ldquo;mcc&rdquo; function</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">mcc <span style="color:#f92672">-</span>m VectProduce.m
+</code></pre></div><ul>
+<li>Or &ldquo;foo.dll&rdquo; file</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">mcc <span style="color:#f92672">-</span>l VectProduce.m
+</code></pre></div></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

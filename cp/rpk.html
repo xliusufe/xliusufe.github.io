@@ -310,7 +310,7 @@ div.tocify {
 <div id="rpks-devolopment" class="section level1">
 <h1><span class="header-section-number">1</span> Rpk’s devolopment</h1>
 <ul>
-<li>There are many methods to develop a R-pacakge</li>
+<li>There are many methods to develop an R pacakge</li>
 </ul>
 <div id="extension-function" class="section level2">
 <h2><span class="header-section-number">1.1</span> extension function</h2>
@@ -850,8 +850,11 @@ mex foo.c</code></pre></div></li>
 <div id="python-calling-cc" class="section level1">
 <h1><span class="header-section-number">3</span> Python calling C/C++</h1>
 <ul>
-<li>There are many methods to call <strong>C</strong> function from Python. Here, we introduce how to achieve this via the <strong>C</strong> API. First of all, we create some files and subdirectories. The directory tree looks like the follows.</li>
+<li>There are many methods to call <strong>C</strong> function from Python. Here, we introduce how to achieve this via the <strong>C</strong> API.</li>
 </ul>
+<div id="the-directory-tree" class="section level2">
+<h2><span class="header-section-number">3.1</span> The directory tree</h2>
+<p>-First of all, we create some files and subdirectories. The directory tree looks like the follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">.
 ├── README.md
 ├── __init__.py
@@ -861,6 +864,9 @@ mex foo.c</code></pre></div></li>
     ├── cfunction.c
     ├── cfunction.h
     └── _cfunction.c</code></pre></div>
+</div>
+<div id="prepare-the-c-codes-and-header-files" class="section level2">
+<h2><span class="header-section-number">3.2</span> Prepare the <code>C</code> codes and header files</h2>
 <ul>
 <li>The function below returns a vector that is an array in <strong>C</strong>, and stores the given numbers. Here, we save this function in a <strong>C</strong> file named <code>cfunction.c</code>.</li>
 </ul>
@@ -878,8 +884,11 @@ void <span class="kw">mycfunc</span>(double <span class="op">*</span>x, int <spa
 <li>Then, a header file is required, say <code>cfunction.h</code>.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">void <span class="kw">mycfunc</span>(double <span class="op">*</span>x, int <span class="op">*</span>y, double constant1, int constant2, double <span class="op">*</span>output);</code></pre></div>
+</div>
+<div id="other-requirements-for-wrapping-python-pkg" class="section level2">
+<h2><span class="header-section-number">3.3</span> Other requirements for Wrapping <code>Python</code> pkg</h2>
 <ul>
-<li>To wrap it to Python kpg, a <strong>C</strong> file named <code>_cfunction.c</code> is required:</li>
+<li>To wrap it into Python pkg, a <strong>C</strong> file named <code>_cfunction.c</code> is required:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#include &lt;Python.h&gt;</span>
 <span class="co">#include &quot;cfunction.h&quot;</span>
@@ -998,6 +1007,9 @@ extensions =<span class="st"> </span><span class="kw">Extension</span>(<span cla
     <span class="dt">author_email=</span><span class="st">'myemail@example.com'</span>,
     <span class="dt">include_dirs =</span> [<span class="kw">numpy.get_include</span>()]
 )</code></pre></div>
+</div>
+<div id="compile-pkg" class="section level2">
+<h2><span class="header-section-number">3.4</span> Compile pkg</h2>
 <ul>
 <li>Type following codes on command line to compile pkg</li>
 </ul>
@@ -1005,6 +1017,9 @@ extensions =<span class="st"> </span><span class="kw">Extension</span>(<span cla
 python setup.py build   
 python setup.py sdist   <span class="op">/</span><span class="er">/</span><span class="st"> </span>Create a source distribution.
 python setup.py install</code></pre></div>
+</div>
+<div id="test-the-kpg" class="section level2">
+<h2><span class="header-section-number">3.5</span> Test the kpg</h2>
 <ul>
 <li>At the end, it will be done by running the following python test file:</li>
 </ul>
@@ -1028,6 +1043,7 @@ y =<span class="st"> </span><span class="kw">np.random.choice</span>(<span class
 <ul>
 <li>More details can be found <a href="https://github.com/xliusufe/mydemo">mydemo</a>.</li>
 </ul>
+</div>
 </div>
 <div id="julia-calling-cc" class="section level1">
 <h1><span class="header-section-number">4</span> Julia calling C/C++</h1>

@@ -13213,7 +13213,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># retrieve quotesdf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># craw quotesdf</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -13327,7 +13327,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="retrieve-COVID-19-data">retrieve COVID-19 data<a class="anchor-link" href="#retrieve-COVID-19-data">&#182;</a></h2>
+<h2 id="Examples-to-Craw-COVID-19-data">Examples to Craw COVID-19 data<a class="anchor-link" href="#Examples-to-Craw-COVID-19-data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13336,17 +13336,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="k">def</span> <span class="nf">catch_daily</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;抓取每日确诊,治愈,疑似,死亡数据&quot;&quot;&quot;</span>
-    
+<span class="k">def</span> <span class="nf">getDaily</span><span class="p">():</span>    
     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://view.inews.qq.com/g2/getOnsInfo?name=wuwei_ww_cn_day_counts&amp;callback=&amp;_=</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">int</span>(time.time()*1000)
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
     <span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
@@ -13354,9 +13351,7 @@ div#notebook {
     <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;2020</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)))</span>
     <span class="k">return</span> <span class="n">data</span>
 
-<span class="k">def</span> <span class="nf">catch_distribution</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;抓取中国行政区域确诊,治愈,死亡分布数据&quot;&quot;&quot;</span>
-    
+<span class="k">def</span> <span class="nf">getCity</span><span class="p">():</span>    
     <span class="n">distribution_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5&amp;callback=&amp;_=</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">int</span>(time.time()*1000)
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">])[</span><span class="s1">&#39;areaTree&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">]</span>
@@ -13375,13 +13370,207 @@ div#notebook {
     <span class="k">return</span> <span class="n">distribution_data</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">daily_data</span> <span class="o">=</span> <span class="n">catch_daily</span><span class="p">()</span>
-    <span class="n">distribution_data</span> <span class="o">=</span> <span class="n">catch_distribution</span><span class="p">()</span>
-    <span class="n">daily_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\py2020\covid19_daily.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">distribution_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\py2020\covid19_city.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">daily_data</span> <span class="o">=</span> <span class="n">getDaily</span><span class="p">()</span>
+    <span class="n">distribution_data</span> <span class="o">=</span> <span class="n">getCity</span><span class="p">()</span>
+    <span class="n">daily_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\py2020\crawler\covid19_daily.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">distribution_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\py2020\crawler\covid19_city.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">getCovid19Foreign</span><span class="p">(</span><span class="n">fd</span><span class="p">):</span>    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://view.inews.qq.com/g2/getOnsInfo?name=disease_foreign&amp;callback=&amp;_=</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">int</span>(time.time()*1000)
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">])[</span><span class="s1">&#39;foreignList&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">nt</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">fd</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;confirmAdd&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;confirm&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;dead&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;heal&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;nowConfirm&#39;</span><span class="p">],</span>
+                  <span class="n">nt</span><span class="p">[</span><span class="s1">&#39;confirmCompare&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;nowConfirmCompare&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;healCompare&#39;</span><span class="p">],</span><span class="n">nt</span><span class="p">[</span><span class="s1">&#39;deadCompare&#39;</span><span class="p">]])</span>   
+        
+<span class="k">def</span> <span class="nf">saveCovid19List</span><span class="p">(</span><span class="n">covid19List</span><span class="p">,</span><span class="n">output_file</span><span class="p">):</span>
+    <span class="n">covid19df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">covid19List</span><span class="p">)</span>
+    <span class="n">covid19df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">covid19fo</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">getCovid19Foreign</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">)</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="s1">&#39;C:/py2020/crawler/Covid19Info_foreign.csv&#39;</span>
+    <span class="n">saveCovid19List</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">,</span><span class="n">output_file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[&#39;西班牙&#39;, &#39;04.10&#39;, 5002, 153222, 15447, 52165, 85610, 68027, 22464, 37456, 8107], [&#39;美国&#39;, &#39;03.30&#39;, 0, 143071, 2513, 4856, 135702, 0, 0, 0, 0]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">bs4</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">getHTTPText</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">apparent_encoding</span>
+        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Error&quot;</span>
+    
+<span class="k">def</span> <span class="nf">fillCovid19List</span><span class="p">(</span><span class="n">ulist</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>    
+    <span class="n">h3</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;h3&quot;</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">h3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">tbody</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tbody&quot;</span><span class="p">)</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">tbody</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    
+    <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>    
+    <span class="n">ulist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">&#39;All states&#39;</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">])</span> 
+    <span class="k">del</span> <span class="n">tbody</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">tr</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tbody</span><span class="p">,</span><span class="n">h3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span><span class="n">bs4</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">Tag</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">bs4</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">Tag</span><span class="p">):</span>
+            <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+            <span class="n">atag</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+            <span class="n">ulist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">atag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">,</span><span class="n">tds</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="p">])</span> 
+            
+            
+<span class="k">def</span> <span class="nf">printCovid19List</span><span class="p">(</span><span class="n">ulist</span><span class="p">):</span>
+    <span class="n">tpl</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:&lt;15}</span><span class="se">\t</span><span class="si">{:&lt;15}</span><span class="se">\t</span><span class="si">{:&lt;10}</span><span class="se">\t</span><span class="si">{:&lt;10}</span><span class="se">\t</span><span class="si">{:&lt;10}</span><span class="se">\t</span><span class="si">{:&lt;10}</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span><span class="s2">&quot;Pending&quot;</span><span class="p">,</span><span class="s2">&quot;Deaths&quot;</span><span class="p">,</span><span class="s2">&quot;Total test results&quot;</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ulist</span><span class="p">)):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">ulist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tpl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+    
+<span class="k">def</span> <span class="nf">saveCovid19List</span><span class="p">(</span><span class="n">covid19List</span><span class="p">,</span><span class="n">output_file</span><span class="p">):</span>
+    <span class="n">covid19df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">covid19List</span><span class="p">)</span>
+    <span class="n">covid19df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">covid19fo</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://covidtracking.com/data/?from=groupmessage&amp;isappinstalled=0&#39;</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="s1">&#39;C:/py2020/crawler/Covid19Info_US.csv&#39;</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">getHTTPText</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">fillCovid19List</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">,</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">printCovid19List</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">)</span> 
+    <span class="n">saveCovid19List</span><span class="p">(</span><span class="n">covid19fo</span><span class="p">,</span><span class="n">output_file</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>State          	Positive       	Negative  	Pending   	Deaths    	Total test results
+All states     	460,287        	1,912,056 	17,776    	16,535    	2,372,343 
+Alabama        	2,838          	18,058    	N/A       	78        	20,896    
+Alaska         	235            	6,988     	N/A       	7         	7,223     
+American Samoa 	0              	20        	11        	0         	20        
+Arizona        	3,018          	34,160    	N/A       	89        	37,178    
+Arkansas       	1,119          	13,832    	N/A       	21        	14,951    
+California     	18,309         	145,191   	14,100    	492       	163,500   
+Colorado       	6,202          	24,978    	N/A       	226       	31,180    
+Connecticut    	9,784          	23,718    	N/A       	380       	33,502    
+Delaware       	1,209          	8,683     	N/A       	23        	9,892     
+District Of Columbia	1,523          	7,201     	N/A       	32        	8,724     
+Florida        	16,826         	139,862   	1,523     	371       	156,688   
+Georgia        	10,885         	30,519    	N/A       	412       	41,404    
+Guam           	130            	624       	N/A       	4         	754       
+Hawaii         	442            	15,707    	N/A       	6         	16,149    
+Idaho          	1,353          	11,741    	N/A       	24        	13,094    
+Illinois       	16,422         	64,435    	N/A       	528       	80,857    
+Indiana        	6,351          	25,782    	N/A       	245       	32,133    
+Iowa           	1,270          	13,703    	N/A       	29        	14,973    
+Kansas         	1,106          	9,669     	N/A       	42        	10,775    
+Kentucky       	1,452          	21,718    	N/A       	79        	23,170    
+Louisiana      	18,283         	68,636    	N/A       	702       	86,919    
+Maine          	560            	6,088     	N/A       	16        	6,648     
+Maryland       	6,185          	35,344    	N/A       	138       	41,529    
+Massachusetts  	18,941         	76,017    	N/A       	503       	94,958    
+Michigan       	21,504         	31,362    	N/A       	1,076     	52,866    
+Minnesota      	1,242          	31,052    	N/A       	50        	32,294    
+Mississippi    	2,260          	18,632    	N/A       	76        	20,892    
+Missouri       	3,539          	36,941    	N/A       	77        	40,480    
+Montana        	354            	7,506     	N/A       	6         	7,860     
+Nebraska       	577            	8,256     	N/A       	15        	8,833     
+Nevada         	2,456          	19,315    	N/A       	86        	21,771    
+New Hampshire  	819            	9,139     	155       	21        	9,958     
+New Jersey     	51,027         	56,165    	N/A       	1,700     	107,192   
+New Mexico     	989            	22,942    	N/A       	17        	23,931    
+New York       	159,937        	231,612   	N/A       	7,067     	391,549   
+North Carolina 	3,651          	44,158    	N/A       	65        	47,809    
+North Dakota   	269            	8,721     	N/A       	5         	8,990     
+Northern Mariana Islands	11             	27        	9         	2         	38        
+Ohio           	5,512          	50,473    	N/A       	213       	55,985    
+Oklahoma       	1,684          	18,595    	N/A       	80        	20,279    
+Oregon         	1,321          	24,306    	2         	44        	25,627    
+Pennsylvania   	18,228         	87,374    	N/A       	338       	105,602   
+Puerto Rico    	683            	4,703     	1,304     	33        	5,386     
+Rhode Island   	1,727          	10,682    	N/A       	43        	12,409    
+South Carolina 	2,792          	23,504    	N/A       	67        	26,296    
+South Dakota   	447            	6,700     	N/A       	6         	7,147     
+Tennessee      	4,634          	55,215    	N/A       	94        	59,849    
+Texas          	10,230         	95,904    	N/A       	199       	106,134   
+US Virgin Islands	50             	273       	45        	1         	323       
+Utah           	1,976          	36,397    	N/A       	13        	38,373    
+Vermont        	628            	7,553     	N/A       	23        	8,181     
+Virginia       	4,042          	28,984    	627       	109       	33,026    
+Washington     	9,608          	83,391    	N/A       	446       	92,999    
+West Virginia  	523            	13,340    	N/A       	5         	13,863    
+Wisconsin      	2,885          	31,424    	N/A       	111       	34,309    
+Wyoming        	239            	4,736     	N/A       	0         	4,975     
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

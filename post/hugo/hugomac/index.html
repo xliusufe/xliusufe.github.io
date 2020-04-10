@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Install hugo on MAC OS &middot; Xu Liu</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/rp/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/cp/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Install hugo on MAC OS</h1>
+  <time datetime=2020-03-21T00:00:00Z class="post-date">Sat, Mar 21, 2020</time>
+  <h1 id="how-to-install-hugo-on-mac-os">How to install hugo on MAC OS?</h1>
+<ul>
+<li>there are three common methods, one of which may be helpful for you.</li>
+</ul>
+<ol>
+<li>
+<p>download hugo form <a href="https://github.com/gohugoio/hugo/releases/">github</a></p>
+<ul>
+<li>unzip downloaded file</li>
+<li>go to the currently unzipped fold and move <em>hugo</em> to <code>/usr/local/bin/</code>, on the terminal</li>
+</ul>
+<pre><code>sudo mv hugo /usr/local/bin/
+</code></pre><ul>
+<li>try <code>hugo version</code>. We can see the version if it succeeds.</li>
+</ul>
+<pre><code>hugo version
+</code></pre></li>
+<li>
+<p>install <em>hugo</em> via <em>brew</em></p>
+<ul>
+<li>install <a href="https://brew.sh/index_zh-cn/"><em>homebrew</em></a> if you do not have it yet</li>
+</ul>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><ul>
+<li>install <em>hugo</em>, on the terminal</li>
+</ul>
+<pre><code>brew install hugo
+</code></pre><ul>
+<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code>, on the terminal</li>
+</ul>
+<pre><code>hugo help
+</code></pre></li>
+<li>
+<p>install <em>hugo</em> via <em>blogdown</em> if you are an R user</p>
+<ul>
+<li>install <a href="https://bookdown.org/yihui/blogdown/"><em>blogdown</em></a></li>
+<li>install <em>hugo</em></li>
+</ul>
+<pre><code>blogdown:::install_hugo()
+</code></pre><ul>
+<li>check if it succeeds by typing <code>hugo version</code> or <code>hugo help</code> on the terminal embedded in R studio</li>
+</ul>
+<pre><code>hugo help
+</code></pre></li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
