@@ -1,7 +1,7 @@
 Introduction to Python
 
-[![R tutorial](https://img.shields.io/badge/Python-Tutorial-ye.svg)](https://xliusufe.github.io/py/pytutoral.html)
-[![R course](https://img.shields.io/badge/Python-Course-yellow.svg)](https://xliusufe.github.io/post/py/contents2py)
+[![R tutorial](https://img.shields.io/badge/Python-Tutorial-red.svg)](https://xliusufe.github.io/py/pytutoral.html)
+[![R course](https://img.shields.io/badge/Python-Course-geen.svg)](https://xliusufe.github.io/post/py/contents2py)
 [![R package](https://img.shields.io/badge/Python-Packages-yellow.svg)](https://xliusufe.github.io/cp/rpk.html)
 
 # Python tutorial
