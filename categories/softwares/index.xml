@@ -6,10 +6,19 @@
     <description>Recent content in Softwares on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Apr 2020 21:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 21:29:44 +0800</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/categories/softwares/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sort algorithms</title>
+      <link>https://xliusufe.github.io/post/cp/sort/</link>
+      <pubDate>Tue, 07 Apr 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/post/cp/sort/</guid>
+      <description>1. Introduction  There are many classic sort algirithms, such as follows.   Their algorithm complexity are different, see below. Mathematically, the complexity of comparison sorting algorithm has lower bound O(n log(n)). See details at LINK  2. Bubble sort   It, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</description>
+    </item>
     
     <item>
       <title>Configure  VS code to use Python, R and C/C&#43;&#43;</title>
@@ -83,7 +92,7 @@ What is the blogdown?   It is an R package that can create websites using R Mark
       
       <guid>https://xliusufe.github.io/post/cp/contents2c/</guid>
       <description>The course of Computer Programming (C)
-The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for More examples   Homepage  go back to  go back to   </description>
+The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for More examples Loops and arrays  Additional useful materials  Pell&amp;rsquo;s equation   Homepage  go back to  go back to   </description>
     </item>
     
     <item>

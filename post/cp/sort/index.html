@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sort algorithms &middot; Xu Liu</title>
+  <meta name="description" content="Classic sort algorithms" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://xliusufe.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://xliusufe.github.io/"><h1>Xu Liu</h1></a>
+      <p class="lead">
+       My homepage 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://xliusufe.github.io/">Home</a> </li>
+        <li><a href="https://xliusufe.github.io/post/rp/introduction2r/"> Skills/R </a></li><li><a href="https://xliusufe.github.io/post/cp/introduction2c/"> Skills/C </a></li><li><a href="https://xliusufe.github.io/categories/index.html"> Categories </a></li><li><a href="https://xliusufe.github.io/tags/index.html"> Tags </a></li><li><a href="https://github.com/xliusufe/"> Github </a></li><li><a href="https://xliusufe.gitee.io/"> 中文 </a></li><li><a href="http://ssm.shufe.edu.cn/ce/8d/c714a118413/page.htm"> Work </a></li><li><a href="https://xliusufe.github.io/about/"> CV </a></li><li><a href="https://xliusufe.github.io/post/oth/wechatrq/"> Wechatrq </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Sort algorithms</h1>
+  <time datetime=2020-04-07T21:29:44&#43;0800 class="post-date">Tue, Apr 7, 2020</time>
+  <h1 id="1-introduction">1. Introduction</h1>
+<ul>
+<li>There are many classic sort algirithms, such as follows.</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Their algorithm complexity are different, see below. Mathematically, the complexity of comparison sorting algorithm has lower bound <code>O(n log(n))</code>. See details at <a href="https://xliusufe.gitee.io/cp/sortlb.html">LINK</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<h1 id="2-bubble-sort">2. Bubble sort</h1>
+<ul>
+<li>
+<p>It, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</p>
+</li>
+<li>
+<p>Bubble sort has a worst-case and average complexity of <code>O(n^2)</code> where n is the number of items being sorted. Most practical sorting algorithms have substantially better worst-case or average complexity, often <code> O(n log n)</code>.</p>
+</li>
+<li>
+<p>This method requires <code>n-1</code> rounds and <code>j-1</code> comparssons at the <code>j</code>th round. Thus, there are <code>n(n-1)/2</code> comparisons totally.</p>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Bubble_sort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the bubble sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i,<span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">int</span> temp;
+    temp <span style="color:#f92672">=</span> arr[i];
+    arr[i] <span style="color:#f92672">=</span> arr[j];
+    arr[j] <span style="color:#f92672">=</span> temp;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BubSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> n){ 
+    <span style="color:#66d9ef">int</span> m<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,j,i;
+    <span style="color:#66d9ef">while</span>(k<span style="color:#f92672">&lt;</span>m){ 
+        j<span style="color:#f92672">=</span>m; m<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>k; i<span style="color:#f92672">&lt;</span>j; i<span style="color:#f92672">++</span>)
+            <span style="color:#66d9ef">if</span> (arr[i]<span style="color:#f92672">&gt;</span>arr[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){ 
+                swap(arr,i,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+                m<span style="color:#f92672">=</span>i;
+            }
+        j<span style="color:#f92672">=</span>k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>m; i<span style="color:#f92672">&gt;=</span>j; i<span style="color:#f92672">--</span>)
+            <span style="color:#66d9ef">if</span>(arr[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">&gt;</span>arr[i]){ 
+                swap(arr,i,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+                k<span style="color:#f92672">=</span>i;
+            }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    BubSortInt(arr,N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="3-quick-sort">3. Quick sort</h1>
+<ul>
+<li>
+<p>Quicksort is a divide-and-conquer algorithm. It is called &ldquo;partition-exchange sort&rdquo; sometimes.</p>
+</li>
+<li>
+<p>Developed by British computer scientist <strong>Tony Hoare</strong> in 1959 and published in 1961</p>
+</li>
+<li>
+<p>When implemented well, it can be about two or three times faster than its main competitors, merge sort and heapsort.</p>
+</li>
+<li>
+<p>Mathematical analysis of quicksort shows that, on average, the algorithm takes <code>O(n log n)</code> comparisons to sort n items. In the worst case, it makes <code>O(n^2)</code> comparisons, though this behavior is rare.</p>
+</li>
+<li>
+<p>Algorithm:</p>
+<ul>
+<li>select a &lsquo;pivot&rsquo; element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.</li>
+<li>The sub-arrays are then sorted recursively.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Quicksort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the quick sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Quick sort for an int array
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">QSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> i, j,pivot;
+    <span style="color:#66d9ef">if</span> (left <span style="color:#f92672">&lt;</span> right){
+        i <span style="color:#f92672">=</span> left; j <span style="color:#f92672">=</span> right; pivot <span style="color:#f92672">=</span> arr[i];
+        <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span> j){
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> arr[j] <span style="color:#f92672">&gt;</span> pivot) j<span style="color:#f92672">--</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) arr[i<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j];
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> arr[i] <span style="color:#f92672">&lt;</span> pivot) i<span style="color:#f92672">++</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) arr[j<span style="color:#f92672">--</span>] <span style="color:#f92672">=</span> arr[i];
+        }
+        arr[i] <span style="color:#f92672">=</span> pivot;
+        QSortInt(arr, left, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        QSortInt(arr, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, right);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    QSortInt(arr, <span style="color:#ae81ff">0</span>, N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><ul>
+<li>the corresponding <code>double</code> version can be slightly modified from the above</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Quick sort for an double array
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define EPS 1e-6
+</span><span style="color:#75715e">#define N 100
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%f   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">QSortDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#66d9ef">double</span> pivot;
+    <span style="color:#66d9ef">if</span> (left <span style="color:#f92672">&lt;</span> right){
+        i <span style="color:#f92672">=</span> left; j <span style="color:#f92672">=</span> right; pivot <span style="color:#f92672">=</span> arr[i];
+        <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span> j){
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> arr[j] <span style="color:#f92672">&gt;</span> pivot) j<span style="color:#f92672">--</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) arr[i<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j];
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> arr[i] <span style="color:#f92672">&lt;</span> pivot) i<span style="color:#f92672">++</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) arr[j<span style="color:#f92672">--</span>] <span style="color:#f92672">=</span> arr[i];
+        }
+        arr[i] <span style="color:#f92672">=</span> pivot;
+        QSortDouble(arr, left, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        QSortDouble(arr, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, right);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> i, index;
+    <span style="color:#66d9ef">double</span> arr[N], val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.16</span>;
+    srand(<span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>N;i<span style="color:#f92672">++</span>)
+        arr[i] <span style="color:#f92672">=</span> (rand()<span style="color:#f92672">%</span><span style="color:#ae81ff">100</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">100.0</span>;
+
+    printArrayDouble(arr, N, <span style="color:#ae81ff">10</span>);
+    QSortDouble(arr, <span style="color:#ae81ff">0</span>, N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    printArrayDouble(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="4-selection-sort">4. Selection sort</h1>
+<ul>
+<li>
+<p>The algorithm divides the input array into two parts:</p>
+<ul>
+<li>a sorted sublist of items which is built up from left to right at the front (left) of the array</li>
+<li>a subarray of the remaining unsorted items that occupy the rest of the array</li>
+</ul>
+</li>
+<li>
+<p>Initially, the sorted sublist is empty and the unsorted sublist is the entire input array</p>
+</li>
+<li>
+<p>The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted subarray, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.</p>
+</li>
+<li>
+<p>The time efficiency of selection sort is <code>O(n^2)</code>, so there are a number of sorting techniques which have better time complexity than selection sort. One thing which distinguishes selection sort from other sorting algorithms is that it makes the minimum possible number of swaps, n − 1 in the worst case.</p>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Selection_sort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted --> type=&quot;video/mp4&rdquo;
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Insertion sort
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swapInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i,<span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">int</span> temp;
+    temp <span style="color:#f92672">=</span> arr[i];
+    arr[i] <span style="color:#f92672">=</span> arr[j];
+    arr[j] <span style="color:#f92672">=</span> temp;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">SelectionSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){ 
+    <span style="color:#66d9ef">int</span> i, j, min_idx; 
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>){ 
+        min_idx <span style="color:#f92672">=</span> i; 
+        <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">++</span>) 
+            <span style="color:#66d9ef">if</span> (arr[j] <span style="color:#f92672">&lt;</span> arr[min_idx]) 
+            min_idx <span style="color:#f92672">=</span> j; 
+        swapInt(arr, min_idx, i); 
+    } 
+}  
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    SelectionSort(arr, N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="5-heap-sort">5. Heap sort</h1>
+<ul>
+<li>
+<p>Heapsort was invented by <strong>J. W. J. Williams</strong> in 1964.</p>
+</li>
+<li>
+<p>A binary heap is a heap data structure that takes the form of a binary tree. A binary heap is defined as a binary tree with two additional constraints:</p>
+<ul>
+<li>Shape property: a binary heap is a complete binary tree; that is, all levels of the tree, except possibly the last one (deepest) are fully filled, and, if the last level of the tree is not complete, the nodes of that level are filled from left to right.</li>
+<li>Heap property: the key stored in each node is either greater than or equal to (≥) or less than or equal to (≤) the keys in the node&rsquo;s children, according to some total order.</li>
+</ul>
+</li>
+<li>
+<p>There two kep steps</p>
+<ul>
+<li>build a Binary Heap from the given array</li>
+<li>iteration
+<ul>
+<li>swap the first (the largest key in current array) and the last key</li>
+<li>rebuild a Binary Heap from the rest array</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Although somewhat slower in practice on most machines than a well-implemented quicksort, it has the advantage of a more favorable worst-case <code>O(n log n)</code> runtime. Heapsort is an in-place algorithm, but it is not a stable sort.</p>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Heapsort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the quick sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+</li>
+</ul>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Heap sort for an int array
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i,<span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">int</span> temp;
+    temp <span style="color:#f92672">=</span> arr[i];
+    arr[i] <span style="color:#f92672">=</span> arr[j];
+    arr[j] <span style="color:#f92672">=</span> temp;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">heapifyInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, t<span style="color:#f92672">=</span>arr[i];
+    <span style="color:#66d9ef">while</span>(j<span style="color:#f92672">&lt;=</span>n){
+        <span style="color:#66d9ef">if</span>(j<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">&amp;&amp;</span> arr[j]<span style="color:#f92672">&lt;</span>arr[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) j<span style="color:#f92672">++</span>;
+        <span style="color:#66d9ef">if</span>(t<span style="color:#f92672">&lt;</span>arr[j]){
+            arr[i]<span style="color:#f92672">=</span>arr[j];
+            i<span style="color:#f92672">=</span>j;
+            j<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">break</span>;
+    }
+    arr[i]<span style="color:#f92672">=</span>t;
+	printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">HeapSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>)<span style="color:#75715e">// build heap
+</span><span style="color:#75715e"></span>        heapifyInt(arr,i,n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">--</span>){
+        swap(arr,<span style="color:#ae81ff">0</span>,i);
+        heapifyInt(arr,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    HeapSortInt(arr,N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><ul>
+<li>The corresponding <code>double</code> version can be slightly modified from the above</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Heap sort for a double array
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 100
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%f   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i,<span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">double</span> temp;
+    temp <span style="color:#f92672">=</span> arr[i];
+    arr[i] <span style="color:#f92672">=</span> arr[j];
+    arr[j] <span style="color:#f92672">=</span> temp;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">heapify</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">double</span> t<span style="color:#f92672">=</span>arr[i];
+    <span style="color:#66d9ef">while</span>(j<span style="color:#f92672">&lt;=</span>n){
+        <span style="color:#66d9ef">if</span>(j<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">&amp;&amp;</span> arr[j]<span style="color:#f92672">&lt;</span>arr[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) j<span style="color:#f92672">++</span>;
+        <span style="color:#66d9ef">if</span>(t<span style="color:#f92672">&lt;</span>arr[j]){
+            arr[i]<span style="color:#f92672">=</span>arr[j];
+            i<span style="color:#f92672">=</span>j;
+            j<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">break</span>;
+    }
+    arr[i]<span style="color:#f92672">=</span>t;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">HeapSortDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>)<span style="color:#75715e">// build heap
+</span><span style="color:#75715e"></span>        heapify(arr,i,n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">--</span>){
+        swap(arr,<span style="color:#ae81ff">0</span>,i);
+        heapify(arr,<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">double</span> arr[N],<span style="color:#f92672">*</span>s;
+    s<span style="color:#f92672">=</span>arr;
+    srand(<span style="color:#ae81ff">1</span>);
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>N;i<span style="color:#f92672">++</span>)
+        arr[i] <span style="color:#f92672">=</span> (rand()<span style="color:#f92672">%</span><span style="color:#ae81ff">100</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">100.0</span>;
+
+    printArrayDouble(arr, N, <span style="color:#ae81ff">10</span>);
+    HeapSortDouble(s,N);
+    printArrayDouble(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="6-merge-sort">6. Merge sort</h1>
+<ul>
+<li>
+<p>Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output.</p>
+</li>
+<li>
+<p>Merge sort is a divide and conquer algorithm that was invented by <strong>John von Neumann</strong> in 1945. A detailed description and analysis of bottom-up mergesort appeared in a report by <strong>Goldstine</strong> and <strong>von Neumann</strong> as early as 1948.</p>
+</li>
+<li>
+<p>Conceptually, a merge sort works as follows:</p>
+<ul>
+<li>Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).</li>
+<li>Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Merge_sort">wiki</a>.</p>
+</li>
+<li>
+<p>There is an animation to illustrate the merge sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// MergeSortInt
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MergeInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr,<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>temp, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> half, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> left, j<span style="color:#f92672">=</span>half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, k <span style="color:#f92672">=</span> left;
+    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">!=</span>half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">!=</span>right<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>){
+        <span style="color:#66d9ef">if</span>(arr[i] <span style="color:#f92672">&gt;</span> arr[j])
+            temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j<span style="color:#f92672">++</span>];
+        <span style="color:#66d9ef">else</span>
+            temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[i<span style="color:#f92672">++</span>];
+    }
+    <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">!=</span> half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)  temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[i<span style="color:#f92672">++</span>];
+    <span style="color:#66d9ef">while</span>(j <span style="color:#f92672">!=</span> right<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)  temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j<span style="color:#f92672">++</span>];
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>left; i<span style="color:#f92672">&lt;=</span>right; i<span style="color:#f92672">++</span>)  arr[i] <span style="color:#f92672">=</span> temp[i];
+	<span style="color:#75715e">//printArrayInt(arr,N,N);
+</span><span style="color:#75715e"></span>}
+ 
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MergeSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>temp, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> half;
+    <span style="color:#66d9ef">if</span>(left <span style="color:#f92672">&lt;</span> right){
+        half <span style="color:#f92672">=</span> left <span style="color:#f92672">+</span> (right<span style="color:#f92672">-</span>left) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+        MergeSortInt(arr, temp, left, half);
+        MergeSortInt(arr, temp, half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, right);
+        MergeInt(arr, temp, left, half, right);
+    }
+}
+ 
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#66d9ef">int</span> i, temp[N],arr[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+	printArrayInt(arr,N,N);
+    MergeSortInt(arr, temp, <span style="color:#ae81ff">0</span>, N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+	printArrayInt(arr,N,N);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><ul>
+<li>the <code>double</code> version from the above.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// MergeSortDouble
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%f   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MergeDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>temp, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> half, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> left, j<span style="color:#f92672">=</span>half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, k <span style="color:#f92672">=</span> left;
+    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">!=</span>half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">!=</span>right<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>){
+        <span style="color:#66d9ef">if</span>(arr[i] <span style="color:#f92672">&gt;</span> arr[j])
+            temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j<span style="color:#f92672">++</span>];
+        <span style="color:#66d9ef">else</span>
+            temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[i<span style="color:#f92672">++</span>];
+    }
+    <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">!=</span> half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)  temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[i<span style="color:#f92672">++</span>];
+    <span style="color:#66d9ef">while</span>(j <span style="color:#f92672">!=</span> right<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)  temp[k<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[j<span style="color:#f92672">++</span>];
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>left; i<span style="color:#f92672">&lt;=</span>right; i<span style="color:#f92672">++</span>)  arr[i] <span style="color:#f92672">=</span> temp[i];
+	printArrayDouble(arr,N,N);
+}
+ 
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MergeSortDouble</span>(<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>temp, <span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right){
+    <span style="color:#66d9ef">int</span> half;
+    <span style="color:#66d9ef">if</span>(left <span style="color:#f92672">&lt;</span> right){
+        half <span style="color:#f92672">=</span> left <span style="color:#f92672">+</span> (right<span style="color:#f92672">-</span>left) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+        MergeSortDouble(arr, temp, left, half);
+        MergeSortDouble(arr, temp, half<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, right);
+        MergeDouble(arr, temp, left, half, right);
+    }
+}
+ 
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#66d9ef">double</span> temp[N], arr[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    <span style="color:#66d9ef">int</span> i;
+    printArrayDouble(arr,N,N);
+    MergeSortDouble(arr, temp, <span style="color:#ae81ff">0</span>, N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    printArrayDouble(arr,N,N);  
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="7-insertion-sort">7. Insertion sort</h1>
+<ul>
+<li>
+<p>Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as <em>quicksort</em>, <em>heapsort</em>, or <em>merge sort</em>. However, insertion sort provides several advantages:</p>
+<ul>
+<li>Simple implementation: <strong>Jon Bentley</strong> shows a three-line <code>C</code> version, and a five-line optimized version</li>
+<li>Efficient for (quite) small data sets, much like other quadratic sorting algorithms</li>
+<li>More efficient in practice than most other simple quadratic (i.e., <code>O(n^2)</code> ) algorithms such as selection sort or bubble sort</li>
+<li>Adaptive, i.e., efficient for data sets that are already substantially sorted: the time complexity is <code>O(kn)</code> when each element in the input is no more than k places away from its sorted position</li>
+<li>Stable; i.e., does not change the relative order of elements with equal keys</li>
+<li>In-place; i.e., only requires a constant amount <code>O(1)</code> of additional memory space</li>
+<li>Online; i.e., can sort a list as it receives it</li>
+</ul>
+</li>
+<li>
+<p>Algorithm</p>
+<ul>
+<li>Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.</li>
+<li>At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.</li>
+<li>It repeats until no input elements remain.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Insertion_sort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Insertion sort
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">InsertionSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n) 
+{ 
+    <span style="color:#66d9ef">int</span> i, temp, j; 
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) { 
+        temp <span style="color:#f92672">=</span> arr[i]; 
+        j <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; 
+        <span style="color:#66d9ef">while</span> (j <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> arr[j] <span style="color:#f92672">&gt;</span> temp) { 
+            arr[j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> arr[j]; 
+            j <span style="color:#f92672">=</span> j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; 
+        } 
+        arr[j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> temp; 
+    } 
+} 
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    InsertionSort(arr, N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="8-shell-sort">8. Shell Sort</h1>
+<ul>
+<li>
+<p>Shellsort, also known as Shell sort or Shell&rsquo;s method, is an in-place comparison sort. It can be seen as either a generalization of sorting by exchange (bubble sort) or sorting by insertion (insertion sort).</p>
+</li>
+<li>
+<p><strong>Donald Shell</strong> published the first version of this sort in 1959.</p>
+</li>
+<li>
+<p>Algorithm</p>
+<ul>
+<li>A list is called <em><code>h</code>-sorted</em> so that starting anywhere, considering every <code>h</code>th element gives a sorted list。</li>
+<li>Beginning with large values of <code>h</code>, this rearrangement allows elements to move long distances in the original list, reducing large amounts of disorder quickly, and leaving less work for smaller <code>h</code>-sort steps to do.</li>
+<li>If the list is then k-sorted for some smaller integer <code>k</code>, then the list remains h-sorted.</li>
+<li>Following this idea for a decreasing sequence of <code>h</code> values ending in 1 is guaranteed to leave a sorted list in the end.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Shellsort">wiki</a>.</p>
+</li>
+<li>
+<p>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ShellSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p,<span style="color:#66d9ef">int</span> n){ 
+    <span style="color:#66d9ef">int</span> lag<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,j,i,t;
+    <span style="color:#66d9ef">while</span> (lag<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>){ 
+        <span style="color:#66d9ef">for</span>(j<span style="color:#f92672">=</span>lag; j<span style="color:#f92672">&lt;</span>n; j<span style="color:#f92672">++</span>){ 
+            t<span style="color:#f92672">=</span>p[j]; 
+            i<span style="color:#f92672">=</span>j<span style="color:#f92672">-</span>lag;
+            <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> p[i]<span style="color:#f92672">&gt;</span>t){ 
+                p[i<span style="color:#f92672">+</span>lag]<span style="color:#f92672">=</span>p[i]; 
+                i <span style="color:#f92672">-=</span> lag;
+            }
+            p[i<span style="color:#f92672">+</span>lag]<span style="color:#f92672">=</span>t;
+            <span style="color:#75715e">//printf(&#34;lag = %d\t&#34;,lag);
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//printArrayInt(p, N, 10);
+</span><span style="color:#75715e"></span>        }
+        lag <span style="color:#f92672">/=</span> <span style="color:#ae81ff">2</span>;
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    ShellSortInt(arr,N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="9-counting-sort">9. Counting sort</h1>
+<ul>
+<li>
+<p>It is an integer sorting algorithm.</p>
+</li>
+<li>
+<p>It operates by counting the number of objects that have each distinct key value, and using arithmetic on those counts to determine the positions of each key value in the output sequence.</p>
+</li>
+<li>
+<p>Its running time is linear in the number of items and the difference between the maximum and minimum key values, so it is only suitable for direct use in situations where the variation in keys is not significantly greater than the number of items.</p>
+</li>
+<li>
+<p>However, it is often used as a subroutine in another sorting algorithm, radix sort, that can handle larger keys more efficiently.</p>
+</li>
+<li>
+<p>Because counting sort uses key values as indexes into an array, it is not a comparison sort, and the <code>Ω(n log n) </code> lower bound for comparison sorting does not apply to it.</p>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Counting_sort">wiki</a></p>
+</li>
+<li>
+<p>There is an animation to illustrate the counting sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,6,4,9,8,6,4,5};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Counting sort for an int array
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 9
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CountingSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> i, range, max<span style="color:#f92672">=</span>arr[<span style="color:#ae81ff">0</span>], min<span style="color:#f92672">=</span>arr[<span style="color:#ae81ff">0</span>]; 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(arr[i]<span style="color:#f92672">&gt;</span>max) max <span style="color:#f92672">=</span>arr[i];
+        <span style="color:#66d9ef">if</span>(arr[i]<span style="color:#f92672">&lt;</span>min) min <span style="color:#f92672">=</span>arr[i];
+    }
+    range <span style="color:#f92672">=</span> max <span style="color:#f92672">-</span> min <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;       
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>count <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> range);
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>output <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> n); 
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> range; i<span style="color:#f92672">++</span>) count[i] <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) output[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) count[arr[i]<span style="color:#f92672">-</span>min]<span style="color:#f92672">++</span>;  
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> range; i<span style="color:#f92672">++</span>) count[i] <span style="color:#f92672">+=</span> count[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];     
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) {  
+        output[ count[arr[i]<span style="color:#f92672">-</span>min] <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ] <span style="color:#f92672">=</span> arr[i]; 
+        count[arr[i]<span style="color:#f92672">-</span>min]<span style="color:#f92672">--</span>;  
+    }       
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) arr[i] <span style="color:#f92672">=</span> output[i]; 
+    free(count);
+    free(output);
+} 
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    CountingSort(arr,N);
+    printArrayInt(arr, N, <span style="color:#ae81ff">10</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="10-bucket-sort-or-bin-sort">10. Bucket Sort (or Bin sort)</h1>
+<ul>
+<li>
+<p>The idea:</p>
+<ul>
+<li>distribute the elements of an array into a number of buckets.</li>
+<li>Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.</li>
+</ul>
+</li>
+<li>
+<p>Bucket sort can be implemented with comparisons and therefore can also be considered a comparison sort algorithm.</p>
+</li>
+<li>
+<p>The computational complexity depends on the algorithm used to sort each bucket, the number of buckets to use, and whether the input is uniformly distributed.</p>
+</li>
+<li>
+<p>Algorithm:</p>
+<ul>
+<li>Set up an array of initially empty &ldquo;buckets&rdquo;.</li>
+<li>Scatter: Go over the original array, putting each object in its bucket.</li>
+<li>Sort each non-empty bucket.</li>
+<li>Gather: Visit the buckets in order and put all elements back into the original array.</li>
+</ul>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Bucket_sort">wiki</a>.</p>
+</li>
+<li>
+<p>There is an animation to illustrate the bucket sort how to be implemented step-by-step, where the original array is <code>arr[] = {12,6,27,21,39,48,33,34,25,28,31,34,18};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Bucket sort
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 13
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">MaxArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> i,temp<span style="color:#f92672">=</span>arr[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+        <span style="color:#66d9ef">if</span>(temp<span style="color:#f92672">&lt;</span>arr[i]) temp <span style="color:#f92672">=</span> arr[i];
+    <span style="color:#66d9ef">return</span> temp;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">QSortInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>s, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r){
+    <span style="color:#66d9ef">int</span> i, j,x;
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&lt;</span> r){
+        i <span style="color:#f92672">=</span> l; j <span style="color:#f92672">=</span> r; x <span style="color:#f92672">=</span> s[i];
+        <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span> j){
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> s[j] <span style="color:#f92672">&gt;</span> x) j<span style="color:#f92672">--</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) s[i<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> s[j];
+            <span style="color:#66d9ef">while</span>(i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> s[i] <span style="color:#f92672">&lt;</span> x) i<span style="color:#f92672">++</span>;
+			<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&lt;</span> j) s[j<span style="color:#f92672">--</span>] <span style="color:#f92672">=</span> s[i];
+        }
+        s[i] <span style="color:#f92672">=</span> x;
+        QSortInt(s, l, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        QSortInt(s, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r);
+    }
+}
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> bucket 
+{
+    <span style="color:#66d9ef">int</span> count;
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> value;
+};
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BucketSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> NB){
+    <span style="color:#66d9ef">struct</span> bucket <span style="color:#f92672">*</span>buckets <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> bucket <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> bucket) <span style="color:#f92672">*</span> NB);
+    <span style="color:#66d9ef">int</span> i, j, k, m;
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> NB; i<span style="color:#f92672">++</span>){
+        buckets[i].count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        buckets[i].value <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> n);
+    }    
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>){
+        m <span style="color:#f92672">=</span> arr[i]<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+        buckets[m].value[buckets[m].count<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> arr[i];
+    }
+    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> NB; i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(buckets[i].count<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>) QSortInt(buckets[i].value, <span style="color:#ae81ff">0</span>, buckets[i].count<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">for</span>(j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> buckets[i].count; j<span style="color:#f92672">++</span>)
+            arr[k <span style="color:#f92672">+</span> j] <span style="color:#f92672">=</span> buckets[i].value[j];
+        k <span style="color:#f92672">+=</span> buckets[i].count;
+        free(buckets[i].value);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">27</span>,<span style="color:#ae81ff">21</span>,<span style="color:#ae81ff">39</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">33</span>,<span style="color:#ae81ff">34</span>,<span style="color:#ae81ff">25</span>,<span style="color:#ae81ff">28</span>,<span style="color:#ae81ff">31</span>,<span style="color:#ae81ff">35</span>,<span style="color:#ae81ff">18</span>};
+    <span style="color:#66d9ef">int</span> max, NB<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+    max <span style="color:#f92672">=</span> MaxArrayInt(arr,N);
+    <span style="color:#66d9ef">while</span> (max<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>) NB <span style="color:#f92672">=</span> max<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;    
+    printf(<span style="color:#e6db74">&#34;NB = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,NB);
+
+    printArrayInt(arr, N, N);
+    BucketSort(arr, N, NB);
+    printArrayInt(arr, N, N);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="11-radix-sort">11. Radix sort</h1>
+<ul>
+<li>
+<p>Radix sort is a non-comparative sorting algorithm. It avoids comparison by creating and distributing elements into buckets according to their radix.</p>
+</li>
+<li>
+<p>Radix sort dates back as far as 1887 to the work of <strong>Herman Hollerith</strong> on tabulating machines. Radix sorting algorithms came into common use as a way to sort punched cards as early as 1923.</p>
+</li>
+<li>
+<p>The first memory-efficient computer algorithm was developed in 1954 at <em>MIT</em> by <strong>Harold H. Seward</strong>. Computerized radix sorts had previously been dismissed as impractical because of the perceived need for variable allocation of buckets of unknown size.</p>
+</li>
+<li>
+<p>In the modern era, radix sorts are most commonly applied to collections of binary strings and integers.</p>
+</li>
+<li>
+<p>More details can be found at <a href="https://en.wikipedia.org/wiki/Radix_sort">wiki</a>.</p>
+</li>
+<li>
+<p>There is an animation to illustrate the radix sort how to be implemented step-by-step, where the original array is <code>arr[] = {281, 33, 52, 86, 712, 24, 9, 67, 107, 3, 88, 302};</code></p>
+</li>
+<li>
+<p>The animation</p>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>The <code>C</code> codes</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define N 12
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printArrayInt</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> ncol){
+    <span style="color:#66d9ef">int</span> i;
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+        printf(<span style="color:#e6db74">&#34;%d   &#34;</span>,arr[i]);
+        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>ncol)) printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CountingRadixSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>output, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>count, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> radix){ 
+    <span style="color:#66d9ef">int</span> i; 
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) count[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) count[ (arr[i]<span style="color:#f92672">/</span>radix)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> ]<span style="color:#f92672">++</span>; 
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) count[i] <span style="color:#f92672">+=</span> count[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]; 
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>) { 
+        output[count[ (arr[i]<span style="color:#f92672">/</span>radix)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> ] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> arr[i]; 
+        count[ (arr[i]<span style="color:#f92672">/</span>radix)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> ]<span style="color:#f92672">--</span>; 
+    } 
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) arr[i] <span style="color:#f92672">=</span> output[i]; 
+} 
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">RadixSort</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>arr, <span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> i, max<span style="color:#f92672">=</span>arr[<span style="color:#ae81ff">0</span>], radix, count[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>output <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> n); 
+    <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>) 
+        <span style="color:#66d9ef">if</span>(arr[i]<span style="color:#f92672">&gt;</span>max)  max <span style="color:#f92672">=</span> arr[i];
+    <span style="color:#66d9ef">for</span> (radix <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; max<span style="color:#f92672">/</span>radix <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; radix <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>)
+        CountingRadixSort(arr, output, count, n, radix);
+    free(output);
+}
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    <span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">281</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">52</span>, <span style="color:#ae81ff">86</span>, <span style="color:#ae81ff">712</span>, <span style="color:#ae81ff">24</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">67</span>, <span style="color:#ae81ff">107</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">88</span>, <span style="color:#ae81ff">302</span>};
+    printArrayInt(arr, N, N);
+    RadixSort(arr, N);
+    printArrayInt(arr, N, N);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="12-reference">12. Reference</h1>
+<ul>
+<li>More information can be found at following websites</li>
+<li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
+<li><a href="https://www.sanfoundry.com/">https://www.sanfoundry.com/</a></li>
+<li><a href="https://www.cnblogs.com/onepixel/articles/7674659.html">https://www.cnblogs.com/onepixel/articles/7674659.html</a></li>
+</ul>
+<hr>
+<h1 id="homepage">Homepage</h1>
+<ul>
+<li>go back to <a href="https://xliusufe.gitee.io/post/cp/introduction2c"><img src="https://img.shields.io/badge/Introduction-toC-red.svg" alt="Introduction to C"></a></li>
+<li>go back to <a href="https://xliusufe.gitee.io"><img src="https://img.shields.io/badge/Home-site-ye.svg" alt="home site"></a></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
