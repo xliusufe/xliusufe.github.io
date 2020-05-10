@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Xu Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Apr 2020 21:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 21:29:44 +0800</lastBuildDate>
     
 	<atom:link href="https://xliusufe.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Softwares</title>
       <link>https://xliusufe.github.io/categories/softwares/</link>
-      <pubDate>Mon, 06 Apr 2020 21:29:44 +0800</pubDate>
+      <pubDate>Thu, 07 May 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/categories/softwares/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://xliusufe.github.io/categories/teaching/</link>
+      <pubDate>Thu, 07 May 2020 21:29:44 +0800</pubDate>
+      
+      <guid>https://xliusufe.github.io/categories/teaching/</guid>
       <description></description>
     </item>
     
@@ -26,15 +35,6 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/categories/cv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Teaching</title>
-      <link>https://xliusufe.github.io/categories/teaching/</link>
-      <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
-      
-      <guid>https://xliusufe.github.io/categories/teaching/</guid>
       <description></description>
     </item>
     
