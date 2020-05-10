@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Xu Liu" />
+
+
+<title>Sort algorithms</title>
+
+<script src="sort_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="sort_files/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="sort_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="sort_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="sort_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="sort_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="sort_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="sort_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="sort_files/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Sort algorithms</h1>
+<h4 class="author">Xu Liu</h4>
+
+</div>
+
+
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<ul>
+<li>There are many classic sort algirithms, such as follows.</li>
+</ul>
+<p><img src="https://xliusufe.gitee.io/img/sorttree.png"></p>
+<ul>
+<li>Their algorithm complexity are different, see below. Mathematically, the complexity of comparison sorting algorithm has lower bound <code>O(n log(n))</code>. See details at <a href="https://xliusufe.gitee.io/cp/sortlb.html">LINK</a></li>
+</ul>
+<p><img src="https://xliusufe.gitee.io/img/sortcomplexity.png"></p>
+</div>
+<div id="bubble-sort" class="section level1">
+<h1><span class="header-section-number">2</span> Bubble sort</h1>
+<ul>
+<li>It, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</li>
+<li>Bubble sort has a worst-case and average complexity of <span class="math inline">\(O(n^2)\)</span> where n is the number of items being sorted. Most practical sorting algorithms have substantially better worst-case or average complexity, often <code>O(n log n)</code>.</li>
+<li>This method requires <code>n-1</code> rounds and <code>j-1</code> comparssons at the <code>j</code>th round. Thus, there are <code>n(n-1)/2</code> comparisons totally.</li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Bubble_sort">wiki</a></p></li>
+<li>There is an animation to illustrate the bubble sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/bubblesort.png" width="380" height="340">
+<source id="mp4" src="https://xliusufe.github.io/video/bubblesort.mp4" type="video/mp4">
+</video>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> swap(<span class="dt">int</span> *arr,<span class="dt">int</span> i,<span class="dt">int</span> j){
+    <span class="dt">int</span> temp;
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+<span class="dt">void</span> BubSortInt(<span class="dt">int</span> *arr,<span class="dt">int</span> n){ 
+    <span class="dt">int</span> m=n-<span class="dv">1</span>,k=<span class="dv">0</span>,j,i;
+    <span class="cf">while</span>(k&lt;m){ 
+        j=m; m=<span class="dv">0</span>;
+        <span class="cf">for</span>(i=k; i&lt;j; i++)
+            <span class="cf">if</span> (arr[i]&gt;arr[i+<span class="dv">1</span>]){ 
+                swap(arr,i,i+<span class="dv">1</span>);
+                m=i;
+            }
+        j=k+<span class="dv">1</span>; k=<span class="dv">0</span>;
+        <span class="cf">for</span>(i=m; i&gt;=j; i--)
+            <span class="cf">if</span>(arr[i-<span class="dv">1</span>]&gt;arr[i]){ 
+                swap(arr,i,i-<span class="dv">1</span>);
+                k=i;
+            }
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    BubSortInt(arr,N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="quick-sort" class="section level1">
+<h1><span class="header-section-number">3</span> Quick sort</h1>
+<ul>
+<li>Quicksort is a divide-and-conquer algorithm. It is called “partition-exchange sort” sometimes.</li>
+<li>Developed by British computer scientist <strong>Tony Hoare</strong> in 1959 and published in 1961</li>
+<li>When implemented well, it can be about two or three times faster than its main competitors, merge sort and heapsort.</li>
+<li>Mathematical analysis of quicksort shows that, on average, the algorithm takes <code>O(n log n)</code> comparisons to sort n items. In the worst case, it makes <span class="math inline">\(O(n^2)\)</span> comparisons, though this behavior is rare.</li>
+<li>Algorithm:
+<ul>
+<li>select a ‘pivot’ element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.</li>
+<li>The sub-arrays are then sorted recursively.</li>
+</ul></li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Quicksort">wiki</a></p></li>
+<li>There is an animation to illustrate the quick sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/quicksort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/quicksort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Quick sort for an int array</span>
+<span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;math.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> QSortInt(<span class="dt">int</span> *arr, <span class="dt">int</span> left, <span class="dt">int</span> right){
+    <span class="dt">int</span> i, j,pivot;
+    <span class="cf">if</span> (left &lt; right){
+        i = left; j = right; pivot = arr[i];
+        <span class="cf">while</span> (i &lt; j){
+            <span class="cf">while</span>(i &lt; j &amp;&amp; arr[j] &gt; pivot) j--;
+            <span class="cf">if</span>(i &lt; j) arr[i++] = arr[j];
+            <span class="cf">while</span>(i &lt; j &amp;&amp; arr[i] &lt; pivot) i++;
+            <span class="cf">if</span>(i &lt; j) arr[j--] = arr[i];
+        }
+        arr[i] = pivot;
+        QSortInt(arr, left, i-<span class="dv">1</span>);
+        QSortInt(arr, i+<span class="dv">1</span>, right);
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[N]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    QSortInt(arr, <span class="dv">0</span>, N-<span class="dv">1</span>);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<ul>
+<li>the corresponding <code>double</code> version can be slightly modified from the above</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Quick sort for an double array</span>
+<span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;math.h&gt;</span>
+<span class="pp">#define EPS 1e-6</span>
+<span class="pp">#define N 100</span>
+<span class="dt">void</span> printArrayDouble(<span class="dt">double</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%f   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> QSortDouble(<span class="dt">double</span> *arr, <span class="dt">int</span> left, <span class="dt">int</span> right){
+    <span class="dt">int</span> i, j;
+    <span class="dt">double</span> pivot;
+    <span class="cf">if</span> (left &lt; right){
+        i = left; j = right; pivot = arr[i];
+        <span class="cf">while</span> (i &lt; j){
+            <span class="cf">while</span>(i &lt; j &amp;&amp; arr[j] &gt; pivot) j--;
+            <span class="cf">if</span>(i &lt; j) arr[i++] = arr[j];
+            <span class="cf">while</span>(i &lt; j &amp;&amp; arr[i] &lt; pivot) i++;
+            <span class="cf">if</span>(i &lt; j) arr[j--] = arr[i];
+        }
+        arr[i] = pivot;
+        QSortDouble(arr, left, i-<span class="dv">1</span>);
+        QSortDouble(arr, i+<span class="dv">1</span>, right);
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> i, index;
+    <span class="dt">double</span> arr[N], val = <span class="fl">0.16</span>;
+    srand(<span class="dv">1</span>);
+    <span class="cf">for</span>(i=<span class="dv">0</span>;i&lt;N;i++)
+        arr[i] = (rand()%<span class="dv">100</span>)/<span class="fl">100.0</span>;
+
+    printArrayDouble(arr, N, <span class="dv">10</span>);
+    QSortDouble(arr, <span class="dv">0</span>, N-<span class="dv">1</span>);
+    printArrayDouble(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="selection-sort" class="section level1">
+<h1><span class="header-section-number">4</span> Selection sort</h1>
+<ul>
+<li>The algorithm divides the input array into two parts:
+<ul>
+<li>a sorted sublist of items which is built up from left to right at the front (left) of the array</li>
+<li>a subarray of the remaining unsorted items that occupy the rest of the array</li>
+</ul></li>
+<li>Initially, the sorted sublist is empty and the unsorted sublist is the entire input array</li>
+<li><p>The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted subarray, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.</p></li>
+<li>The time efficiency of selection sort is <span class="math inline">\(O(n^2)\)</span>, so there are a number of sorting techniques which have better time complexity than selection sort. One thing which distinguishes selection sort from other sorting algorithms is that it makes the minimum possible number of swaps, n − 1 in the worst case.</li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Selection_sort">wiki</a></p></li>
+<li>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/selectionsort.png" width = "380" height = "340">
+<source id="mp4" src="https://xliusufe.github.io/video/selectionsort.mp4" type="video/mp4">
+</video>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Insertion sort</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> swapInt(<span class="dt">int</span> *arr,<span class="dt">int</span> i,<span class="dt">int</span> j){
+    <span class="dt">int</span> temp;
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+<span class="dt">void</span> SelectionSort(<span class="dt">int</span> *arr, <span class="dt">int</span> n){ 
+    <span class="dt">int</span> i, j, min_idx; 
+    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n-<span class="dv">1</span>; i++){ 
+        min_idx = i; 
+        <span class="cf">for</span> (j = i+<span class="dv">1</span>; j &lt; n; j++) 
+            <span class="cf">if</span> (arr[j] &lt; arr[min_idx]) 
+            min_idx = j; 
+        swapInt(arr, min_idx, i); 
+    } 
+}  
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    SelectionSort(arr, N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="heap-sort" class="section level1">
+<h1><span class="header-section-number">5</span> Heap sort</h1>
+<ul>
+<li>Heapsort was invented by <strong>J. W. J. Williams</strong> in 1964.</li>
+<li>A binary heap is a heap data structure that takes the form of a binary tree. A binary heap is defined as a binary tree with two additional constraints:
+<ul>
+<li>Shape property: a binary heap is a complete binary tree; that is, all levels of the tree, except possibly the last one (deepest) are fully filled, and, if the last level of the tree is not complete, the nodes of that level are filled from left to right.</li>
+<li>Heap property: the key stored in each node is either greater than or equal to (≥) or less than or equal to (≤) the keys in the node’s children, according to some total order.</li>
+</ul></li>
+<li>There two kep steps
+<ul>
+<li>build a Binary Heap from the given array</li>
+<li>iteration
+<ul>
+<li>swap the first (the largest key in current array) and the last key</li>
+<li>rebuild a Binary Heap from the rest array</li>
+</ul></li>
+</ul></li>
+<li>Although somewhat slower in practice on most machines than a well-implemented quicksort, it has the advantage of a more favorable worst-case <code>O(n log n)</code> runtime. Heapsort is an in-place algorithm, but it is not a stable sort.<br />
+</li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Heapsort">wiki</a></p></li>
+<li>There is an animation to illustrate the quick sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/heapsort.png" width="380" height="340">
+<source id="mp4" src="https://xliusufe.github.io/video/heapsort.mp4" type="video/mp4">
+</video>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Heap sort for an int array</span>
+<span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;math.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> swap(<span class="dt">int</span> *arr,<span class="dt">int</span> i,<span class="dt">int</span> j){
+    <span class="dt">int</span> temp;
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+<span class="dt">void</span> heapifyInt(<span class="dt">int</span> *arr,<span class="dt">int</span> i, <span class="dt">int</span> n){
+    <span class="dt">int</span> j=<span class="dv">2</span>*i+<span class="dv">1</span>, t=arr[i];
+    <span class="cf">while</span>(j&lt;=n){
+        <span class="cf">if</span>(j&lt;n &amp;&amp; arr[j]&lt;arr[j+<span class="dv">1</span>]) j++;
+        <span class="cf">if</span>(t&lt;arr[j]){
+            arr[i]=arr[j];
+            i=j;
+            j=<span class="dv">2</span>*i+<span class="dv">1</span>;
+        }
+        <span class="cf">else</span> <span class="cf">break</span>;
+    }
+    arr[i]=t;
+    printArrayInt(arr, N, <span class="dv">10</span>);
+}
+
+<span class="dt">void</span> HeapSortInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span>(i=n/<span class="dv">2</span>-<span class="dv">1</span>; i&gt;=<span class="dv">0</span>; i--)<span class="co">// build heap</span>
+        heapifyInt(arr,i,n-<span class="dv">1</span>);
+    <span class="cf">for</span>(i=n-<span class="dv">1</span>; i&gt;=<span class="dv">1</span>; i--){
+        swap(arr,<span class="dv">0</span>,i);
+        heapifyInt(arr,<span class="dv">0</span>,i-<span class="dv">1</span>);
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[N]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    HeapSortInt(arr,N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<ul>
+<li>The corresponding <code>double</code> version can be slightly modified from the above</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Heap sort for a double array</span>
+<span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;math.h&gt;</span>
+<span class="pp">#define N 100</span>
+<span class="dt">void</span> printArrayDouble(<span class="dt">double</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%f   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> swap(<span class="dt">double</span> *arr,<span class="dt">int</span> i,<span class="dt">int</span> j){
+    <span class="dt">double</span> temp;
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+<span class="dt">void</span> heapify(<span class="dt">double</span> *arr,<span class="dt">int</span> i, <span class="dt">int</span> n){
+    <span class="dt">int</span> j=<span class="dv">2</span>*i+<span class="dv">1</span>;
+    <span class="dt">double</span> t=arr[i];
+    <span class="cf">while</span>(j&lt;=n){
+        <span class="cf">if</span>(j&lt;n &amp;&amp; arr[j]&lt;arr[j+<span class="dv">1</span>]) j++;
+        <span class="cf">if</span>(t&lt;arr[j]){
+            arr[i]=arr[j];
+            i=j;
+            j=<span class="dv">2</span>*i+<span class="dv">1</span>;
+        }
+        <span class="cf">else</span> <span class="cf">break</span>;
+    }
+    arr[i]=t;
+}
+
+<span class="dt">void</span> HeapSortDouble(<span class="dt">double</span> *arr, <span class="dt">int</span> n){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span>(i=n/<span class="dv">2</span>-<span class="dv">1</span>; i&gt;=<span class="dv">0</span>; i--)<span class="co">// build heap</span>
+        heapify(arr,i,n-<span class="dv">1</span>);
+    <span class="cf">for</span>(i=n-<span class="dv">1</span>; i&gt;=<span class="dv">1</span>; i--){
+        swap(arr,<span class="dv">0</span>,i);
+        heapify(arr,<span class="dv">0</span>,i-<span class="dv">1</span>);
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> i;
+    <span class="dt">double</span> arr[N],*s;
+    s=arr;
+    srand(<span class="dv">1</span>);
+    <span class="cf">for</span>(i=<span class="dv">0</span>;i&lt;N;i++)
+        arr[i] = (rand()%<span class="dv">100</span>)/<span class="fl">100.0</span>;
+
+    printArrayDouble(arr, N, <span class="dv">10</span>);
+    HeapSortDouble(s,N);
+    printArrayDouble(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="merge-sort" class="section level1">
+<h1><span class="header-section-number">6</span> Merge sort</h1>
+<ul>
+<li>Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output.</li>
+<li>Merge sort is a divide and conquer algorithm that was invented by <strong>John von Neumann</strong> in 1945. A detailed description and analysis of bottom-up mergesort appeared in a report by <strong>Goldstine</strong> and <strong>von Neumann</strong> as early as 1948.</li>
+<li>Conceptually, a merge sort works as follows:
+<ul>
+<li>Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).</li>
+<li>Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.</li>
+</ul></li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Merge_sort">wiki</a>.</p></li>
+<li>There is an animation to illustrate the merge sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/mergesort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/mergesort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// MergeSortInt</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> MergeInt(<span class="dt">int</span> *arr,<span class="dt">int</span> *temp, <span class="dt">int</span> left, <span class="dt">int</span> half, <span class="dt">int</span> right){
+    <span class="dt">int</span> i = left, j=half+<span class="dv">1</span>, k = left;
+    <span class="cf">while</span>(i!=half+<span class="dv">1</span> &amp;&amp; j!=right+<span class="dv">1</span>){
+        <span class="cf">if</span>(arr[i] &gt; arr[j])
+            temp[k++] = arr[j++];
+        <span class="cf">else</span>
+            temp[k++] = arr[i++];
+    }
+    <span class="cf">while</span>(i != half+<span class="dv">1</span>)  temp[k++] = arr[i++];
+    <span class="cf">while</span>(j != right+<span class="dv">1</span>)  temp[k++] = arr[j++];
+    <span class="cf">for</span>(i=left; i&lt;=right; i++)  arr[i] = temp[i];
+    <span class="co">//printArrayInt(arr,N,N);</span>
+}
+ 
+<span class="dt">void</span> MergeSortInt(<span class="dt">int</span> *arr, <span class="dt">int</span> *temp, <span class="dt">int</span> left, <span class="dt">int</span> right){
+    <span class="dt">int</span> half;
+    <span class="cf">if</span>(left &lt; right){
+        half = left + (right-left) / <span class="dv">2</span>;
+        MergeSortInt(arr, temp, left, half);
+        MergeSortInt(arr, temp, half+<span class="dv">1</span>, right);
+        MergeInt(arr, temp, left, half, right);
+    }
+}
+ 
+<span class="dt">int</span> main()
+{
+    <span class="dt">int</span> i, temp[N],arr[N]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr,N,N);
+    MergeSortInt(arr, temp, <span class="dv">0</span>, N-<span class="dv">1</span>);
+    printArrayInt(arr,N,N);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<ul>
+<li>the <code>double</code> version from the above.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// MergeSortDouble</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">double</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%f   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> MergeDouble(<span class="dt">double</span> *arr, <span class="dt">double</span> *temp, <span class="dt">int</span> left, <span class="dt">int</span> half, <span class="dt">int</span> right){
+    <span class="dt">int</span> i = left, j=half+<span class="dv">1</span>, k = left;
+    <span class="cf">while</span>(i!=half+<span class="dv">1</span> &amp;&amp; j!=right+<span class="dv">1</span>){
+        <span class="cf">if</span>(arr[i] &gt; arr[j])
+            temp[k++] = arr[j++];
+        <span class="cf">else</span>
+            temp[k++] = arr[i++];
+    }
+    <span class="cf">while</span>(i != half+<span class="dv">1</span>)  temp[k++] = arr[i++];
+    <span class="cf">while</span>(j != right+<span class="dv">1</span>)  temp[k++] = arr[j++];
+    <span class="cf">for</span>(i=left; i&lt;=right; i++)  arr[i] = temp[i];
+    printArrayDouble(arr,N,N);
+}
+ 
+<span class="dt">void</span> MergeSortDouble(<span class="dt">double</span> *arr, <span class="dt">double</span> *temp, <span class="dt">int</span> left, <span class="dt">int</span> right){
+    <span class="dt">int</span> half;
+    <span class="cf">if</span>(left &lt; right){
+        half = left + (right-left) / <span class="dv">2</span>;
+        MergeSortDouble(arr, temp, left, half);
+        MergeSortDouble(arr, temp, half+<span class="dv">1</span>, right);
+        MergeDouble(arr, temp, left, half, right);
+    }
+}
+ 
+<span class="dt">int</span> main()
+{
+    <span class="dt">double</span> temp[N], arr[N]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    <span class="dt">int</span> i;
+    printArrayDouble(arr,N,N);
+    MergeSortDouble(arr, temp, <span class="dv">0</span>, N-<span class="dv">1</span>);
+    printArrayDouble(arr,N,N);  
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="insertion-sort" class="section level1">
+<h1><span class="header-section-number">7</span> Insertion sort</h1>
+<ul>
+<li>Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as <em>quicksort</em>, <em>heapsort</em>, or <em>merge sort</em>. However, insertion sort provides several advantages:
+<ul>
+<li>Simple implementation: <strong>Jon Bentley</strong> shows a three-line <code>C</code> version, and a five-line optimized version</li>
+<li>Efficient for (quite) small data sets, much like other quadratic sorting algorithms</li>
+<li>More efficient in practice than most other simple quadratic (i.e., <span class="math inline">\(O(n^2)\)</span> ) algorithms such as selection sort or bubble sort</li>
+<li>Adaptive, i.e., efficient for data sets that are already substantially sorted: the time complexity is <code>O(kn)</code> when each element in the input is no more than k places away from its sorted position</li>
+<li>Stable; i.e., does not change the relative order of elements with equal keys</li>
+<li>In-place; i.e., only requires a constant amount <code>O(1)</code> of additional memory space</li>
+<li>Online; i.e., can sort a list as it receives it</li>
+</ul></li>
+<li>Algorithm
+<ul>
+<li>Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.</li>
+<li>At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.</li>
+<li>It repeats until no input elements remain.</li>
+</ul></li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Insertion_sort">wiki</a></p></li>
+<li>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/insertionsort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/insertionsort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Insertion sort</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> InsertionSort(<span class="dt">int</span> *arr, <span class="dt">int</span> n) 
+{ 
+    <span class="dt">int</span> i, temp, j; 
+    <span class="cf">for</span> (i = <span class="dv">1</span>; i &lt; n; i++) { 
+        temp = arr[i]; 
+        j = i - <span class="dv">1</span>; 
+        <span class="cf">while</span> (j &gt;= <span class="dv">0</span> &amp;&amp; arr[j] &gt; temp) { 
+            arr[j + <span class="dv">1</span>] = arr[j]; 
+            j = j - <span class="dv">1</span>; 
+        } 
+        arr[j + <span class="dv">1</span>] = temp; 
+    } 
+} 
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    InsertionSort(arr, N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="shell-sort" class="section level1">
+<h1><span class="header-section-number">8</span> Shell Sort</h1>
+<ul>
+<li>Shellsort, also known as Shell sort or Shell’s method, is an in-place comparison sort. It can be seen as either a generalization of sorting by exchange (bubble sort) or sorting by insertion (insertion sort).</li>
+<li><strong>Donald Shell</strong> published the first version of this sort in 1959.</li>
+<li>Algorithm
+<ul>
+<li>A list is called <em><code>h</code>-sorted</em> so that starting anywhere, considering every <code>h</code>th element gives a sorted list。</li>
+<li>Beginning with large values of <code>h</code>, this rearrangement allows elements to move long distances in the original list, reducing large amounts of disorder quickly, and leaving less work for smaller h-sort steps to do.</li>
+<li>If the list is then <code>k</code>-sorted for some smaller integer <code>k</code>, then the list remains <code>h</code>-sorted.</li>
+<li>Following this idea for a decreasing sequence of <code>h</code> values ending in 1 is guaranteed to leave a sorted list in the end.</li>
+</ul></li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Shellsort">wiki</a>.</p></li>
+<li>There is an animation to illustrate the Shell sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,7,1,9,8,3,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/shellsort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/shellsort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> ShellSortInt(<span class="dt">int</span> *p,<span class="dt">int</span> n){ 
+    <span class="dt">int</span> lag=n/<span class="dv">2</span>,j,i,t;
+    <span class="cf">while</span> (lag&gt;<span class="dv">0</span>){ 
+        <span class="cf">for</span>(j=lag; j&lt;n; j++){ 
+            t=p[j]; 
+            i=j-lag;
+            <span class="cf">while</span>(i&gt;=<span class="dv">0</span> &amp;&amp; p[i]&gt;t){ 
+                p[i+lag]=p[i]; 
+                i -= lag;
+            }
+            p[i+lag]=t;
+            <span class="co">//printf(&quot;lag = %d\t&quot;,lag);</span>
+            <span class="co">//printArrayInt(p, N, 10);</span>
+        }
+        lag /= <span class="dv">2</span>;
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    ShellSortInt(arr,N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="counting-sort" class="section level1">
+<h1><span class="header-section-number">9</span> Counting sort</h1>
+<ul>
+<li>It is an integer sorting algorithm.</li>
+<li>It operates by counting the number of objects that have each distinct key value, and using arithmetic on those counts to determine the positions of each key value in the output sequence.</li>
+<li>Its running time is linear in the number of items and the difference between the maximum and minimum key values, so it is only suitable for direct use in situations where the variation in keys is not significantly greater than the number of items.</li>
+<li>However, it is often used as a subroutine in another sorting algorithm, radix sort, that can handle larger keys more efficiently.</li>
+<li><p>Because counting sort uses key values as indexes into an array, it is not a comparison sort, and the <code>Ω(n log n)</code> lower bound for comparison sorting does not apply to it.</p></li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Counting_sort">wiki</a></p></li>
+<li>There is an animation to illustrate the counting sort how to be implemented step-by-step, where the original array is <code>arr[] = {2,6,6,4,9,8,6,4,5};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/countingsort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/countingsort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Counting sort for an int array</span>
+<span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#define N 9</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> CountingSort(<span class="dt">int</span> *arr, <span class="dt">int</span> n){
+    <span class="dt">int</span> i, range, max=arr[<span class="dv">0</span>], min=arr[<span class="dv">0</span>]; 
+    <span class="cf">for</span>(i=<span class="dv">1</span>;i&lt;n;i++){
+        <span class="cf">if</span>(arr[i]&gt;max) max =arr[i];
+        <span class="cf">if</span>(arr[i]&lt;min) min =arr[i];
+    }
+    range = max - min + <span class="dv">1</span>;       
+    <span class="dt">int</span> *count = (<span class="dt">int</span>*)malloc(<span class="kw">sizeof</span>(<span class="dt">int</span>) * range);
+    <span class="dt">int</span> *output = (<span class="dt">int</span>*)malloc(<span class="kw">sizeof</span>(<span class="dt">int</span>) * n); 
+    <span class="cf">for</span>(i = <span class="dv">0</span>; i &lt; range; i++) count[i] =<span class="dv">0</span>;
+    <span class="cf">for</span>(i = <span class="dv">0</span>; i &lt; n; i++) output[i] = <span class="dv">0</span>;
+
+    <span class="cf">for</span>(i = <span class="dv">0</span>; i &lt; n; i++) count[arr[i]-min]++;  
+    <span class="cf">for</span>(i = <span class="dv">1</span>; i &lt; range; i++) count[i] += count[i-<span class="dv">1</span>];     
+    <span class="cf">for</span>(i = n-<span class="dv">1</span>; i &gt;= <span class="dv">0</span>; i--) {  
+        output[ count[arr[i]-min] -<span class="dv">1</span> ] = arr[i]; 
+        count[arr[i]-min]--;  
+    }       
+    <span class="cf">for</span>(<span class="dt">int</span> i=<span class="dv">0</span>; i &lt; n; i++) arr[i] = output[i]; 
+    free(count);
+    free(output);
+} 
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[N]={<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    CountingSort(arr,N);
+    printArrayInt(arr, N, <span class="dv">10</span>);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="bucket-sort-or-bin-sort" class="section level1">
+<h1><span class="header-section-number">10</span> Bucket Sort (or Bin sort)</h1>
+<ul>
+<li>The idea:
+<ul>
+<li>distribute the elements of an array into a number of buckets.</li>
+<li>Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.</li>
+</ul></li>
+<li>Bucket sort can be implemented with comparisons and therefore can also be considered a comparison sort algorithm.</li>
+<li><p>The computational complexity depends on the algorithm used to sort each bucket, the number of buckets to use, and whether the input is uniformly distributed.</p></li>
+<li>Algorithm:
+<ul>
+<li>Set up an array of initially empty “buckets”.</li>
+<li>Scatter: Go over the original array, putting each object in its bucket.</li>
+<li>Sort each non-empty bucket.</li>
+<li>Gather: Visit the buckets in order and put all elements back into the original array.</li>
+</ul></li>
+<li>More details can be found at <a href="https://en.wikipedia.org/wiki/Bucket_sort">wiki</a>.</li>
+<li>There is an animation to illustrate the bucket sort how to be implemented step-by-step, where the original array is <code>arr[] = {12,6,27,21,39,48,33,34,25,28,31,34,18};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/bucketsort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/bucketsort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Bucket sort</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#define N 13</span>
+
+<span class="dt">int</span> MaxArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n){
+    <span class="dt">int</span> i,temp=arr[<span class="dv">0</span>];
+    <span class="cf">for</span>(i=<span class="dv">1</span>;i&lt;n;i++)
+        <span class="cf">if</span>(temp&lt;arr[i]) temp = arr[i];
+    <span class="cf">return</span> temp;
+}
+
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> QSortInt(<span class="dt">int</span> *s, <span class="dt">int</span> l, <span class="dt">int</span> r){
+    <span class="dt">int</span> i, j,x;
+    <span class="cf">if</span> (l &lt; r){
+        i = l; j = r; x = s[i];
+        <span class="cf">while</span> (i &lt; j){
+            <span class="cf">while</span>(i &lt; j &amp;&amp; s[j] &gt; x) j--;
+            <span class="cf">if</span>(i &lt; j) s[i++] = s[j];
+            <span class="cf">while</span>(i &lt; j &amp;&amp; s[i] &lt; x) i++;
+            <span class="cf">if</span>(i &lt; j) s[j--] = s[i];
+        }
+        s[i] = x;
+        QSortInt(s, l, i-<span class="dv">1</span>);
+        QSortInt(s, i+<span class="dv">1</span>, r);
+    }
+}
+
+<span class="kw">typedef</span> <span class="kw">struct</span> bucket 
+{
+    <span class="dt">int</span> count;
+    <span class="dt">int</span>* value;
+};
+
+<span class="dt">void</span> BucketSort(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> NB){
+    <span class="kw">struct</span> bucket *buckets = (<span class="kw">struct</span> bucket *)malloc(<span class="kw">sizeof</span>(<span class="kw">struct</span> bucket) * NB);
+    <span class="dt">int</span> i, j, k, m;
+    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; NB; i++){
+        buckets[i].count = <span class="dv">0</span>;
+        buckets[i].value = (<span class="dt">int</span>*)malloc(<span class="kw">sizeof</span>(<span class="dt">int</span>) * n);
+    }    
+    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n; i++){
+        m = arr[i]/<span class="dv">10</span>;
+        buckets[m].value[buckets[m].count++] = arr[i];
+    }
+    <span class="cf">for</span> (k = <span class="dv">0</span>, i = <span class="dv">0</span>; i &lt; NB; i++){
+        <span class="cf">if</span>(buckets[i].count&gt;<span class="dv">1</span>) QSortInt(buckets[i].value, <span class="dv">0</span>, buckets[i].count-<span class="dv">1</span>);
+        <span class="cf">for</span>(j = <span class="dv">0</span>; j &lt; buckets[i].count; j++)
+            arr[k + j] = buckets[i].value[j];
+        k += buckets[i].count;
+        free(buckets[i].value);
+    }
+}
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[]={<span class="dv">12</span>,<span class="dv">6</span>,<span class="dv">27</span>,<span class="dv">21</span>,<span class="dv">39</span>,<span class="dv">48</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">25</span>,<span class="dv">28</span>,<span class="dv">31</span>,<span class="dv">35</span>,<span class="dv">18</span>};
+    <span class="dt">int</span> max, NB=<span class="dv">1</span>;
+    max = MaxArrayInt(arr,N);
+    <span class="cf">while</span> (max/=<span class="dv">10</span>) NB = max+<span class="dv">1</span>;    
+    printf(<span class="st">&quot;NB = %d</span><span class="sc">\n</span><span class="st">&quot;</span>,NB);
+
+    printArrayInt(arr, N, N);
+    BucketSort(arr, N, NB);
+    printArrayInt(arr, N, N);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="radix-sort" class="section level1">
+<h1><span class="header-section-number">11</span> Radix sort</h1>
+<ul>
+<li><p>Radix sort is a non-comparative sorting algorithm. It avoids comparison by creating and distributing elements into buckets according to their radix.</p></li>
+<li><p>Radix sort dates back as far as 1887 to the work of <strong>Herman Hollerith</strong> on tabulating machines. Radix sorting algorithms came into common use as a way to sort punched cards as early as 1923.</p></li>
+<li><p>The first memory-efficient computer algorithm was developed in 1954 at <em>MIT</em> by <strong>Harold H. Seward</strong>. Computerized radix sorts had previously been dismissed as impractical because of the perceived need for variable allocation of buckets of unknown size.</p></li>
+<li>In the modern era, radix sorts are most commonly applied to collections of binary strings and integers.</li>
+<li><p>More details can be found at <a href="https://en.wikipedia.org/wiki/Radix_sort">wiki</a>.</p></li>
+<li>There is an animation to illustrate the radix sort how to be implemented step-by-step, where the original array is <code>arr[] = {281, 33, 52, 86, 712, 24, 9, 67, 107, 3, 88, 302};</code></li>
+<li><p>The animation</p></li>
+</ul>
+<p><video id="video" controls="controls" preload="none" poster="https://xliusufe.gitee.io/img/radixsort.png" width = "380" height = "340"> <source id="mp4" src="https://xliusufe.github.io/video/radixsort.mp4" type="video/mp4"> </video></p>
+<ul>
+<li>The <code>C</code> codes</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+<span class="pp">#define N 12</span>
+<span class="dt">void</span> printArrayInt(<span class="dt">int</span> *arr, <span class="dt">int</span> n, <span class="dt">int</span> ncol){
+    <span class="dt">int</span> i;
+    <span class="cf">for</span> (i=<span class="dv">0</span>; i&lt;n; i++){
+        printf(<span class="st">&quot;%d   &quot;</span>,arr[i]);
+        <span class="cf">if</span>(!((i+<span class="dv">1</span>)%ncol)) printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+    printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);
+}
+
+<span class="dt">void</span> CountingRadixSort(<span class="dt">int</span> *arr, <span class="dt">int</span> *output, <span class="dt">int</span> *count, <span class="dt">int</span> n, <span class="dt">int</span> radix){ 
+    <span class="dt">int</span> i; 
+    <span class="cf">for</span>(i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++) count[i] = <span class="dv">0</span>;
+    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n; i++) count[ (arr[i]/radix)%<span class="dv">10</span> ]++; 
+    <span class="cf">for</span> (i = <span class="dv">1</span>; i &lt; <span class="dv">10</span>; i++) count[i] += count[i - <span class="dv">1</span>]; 
+    <span class="cf">for</span> (i = n - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; i--) { 
+        output[count[ (arr[i]/radix)%<span class="dv">10</span> ] - <span class="dv">1</span>] = arr[i]; 
+        count[ (arr[i]/radix)%<span class="dv">10</span> ]--; 
+    } 
+    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n; i++) arr[i] = output[i]; 
+} 
+
+<span class="dt">void</span> RadixSort(<span class="dt">int</span> *arr, <span class="dt">int</span> n){
+    <span class="dt">int</span> i, max=arr[<span class="dv">0</span>], radix, count[<span class="dv">10</span>] = {<span class="dv">0</span>};
+    <span class="dt">int</span> *output = (<span class="dt">int</span>*)malloc(<span class="kw">sizeof</span>(<span class="dt">int</span>) * n); 
+    <span class="cf">for</span> (i=<span class="dv">1</span>;i&lt;n;i++) 
+        <span class="cf">if</span>(arr[i]&gt;max)  max = arr[i];
+    <span class="cf">for</span> (radix = <span class="dv">1</span>; max/radix &gt; <span class="dv">0</span>; radix *= <span class="dv">10</span>)
+        CountingRadixSort(arr, output, count, n, radix);
+    free(output);
+}
+
+
+<span class="dt">int</span> main(){
+    <span class="dt">int</span> arr[] = {<span class="dv">281</span>, <span class="dv">33</span>, <span class="dv">52</span>, <span class="dv">86</span>, <span class="dv">712</span>, <span class="dv">24</span>, <span class="dv">9</span>, <span class="dv">67</span>, <span class="dv">107</span>, <span class="dv">3</span>, <span class="dv">88</span>, <span class="dv">302</span>};
+    printArrayInt(arr, N, N);
+    RadixSort(arr, N);
+    printArrayInt(arr, N, N);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</div>
+<div id="reference" class="section level1">
+<h1><span class="header-section-number">12</span> Reference</h1>
+<ul>
+<li>More information can be found at following websites</li>
+<li><a href="https://www.geeksforgeeks.org/" class="uri">https://www.geeksforgeeks.org/</a></li>
+<li><a href="https://www.sanfoundry.com/" class="uri">https://www.sanfoundry.com/</a></li>
+<li><a href="https://www.cnblogs.com/onepixel/articles/7674659.html" class="uri">https://www.cnblogs.com/onepixel/articles/7674659.html</a></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
