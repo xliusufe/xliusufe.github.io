@@ -119,8 +119,7 @@ What is the blogdown?   It is an R package that can create websites using R Mark
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cp/contents2c/</guid>
-      <description>The course of Computer Programming (C)
-The contents including Recognize C programs  toy examples  Data types  Data types common errors for beginners and sugar functions  Syntax of printf and scanf  syntax, toy examples, and common errors  Control Flow  Syntax of if and switch syntax, toy examples, and common errors  Loops  syntax of while and for More examples Loops and arrays  Additional useful materials  Pell&amp;rsquo;s equation   Homepage  go back to  go back to   </description>
+      <description>The course of Computer Programming (C) The contents including Recognize C programs toy examples Data types Data types common errors for beginners and sugar functions Syntax of printf and scanf syntax, toy examples, and common errors Control Flow Syntax of if and switch syntax, toy examples, and common errors Loops syntax of while and for More examples Loops and arrays Arrays Array basics Functions Function basics More examples of function</description>
     </item>
     
     <item>
@@ -148,7 +147,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cp/introduction2c/</guid>
-      <description>Create your first C project Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS The course of Computer Programming Computer Programming More details can be found in Rpubs R packages All my R packages called C/C++ to implement inner loop to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the</description>
+      <description>Create your first C project Visual Sdutio on Windows OS codeblocks on Windows OS Xcode on Mac OS The course of Computer Programming Computer Programming More details can be found in Rpubs R packages All my R packages called C/C++ to implement inner loops to speed up the computation. Details can be found in Softwares. A tutorial for developing R packages can be found in RPK. It also includes the</description>
     </item>
     
     <item>
@@ -184,7 +183,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/publications/</guid>
-      <description>Published Papers($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Liu, X., Zheng, S. and Feng, X. (2020+). Estimation of error variance via ridge regression. Biometrika. In press. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar. DOI: 10.1093/biomet/asz074. Gao, B.$^{\natural}$, Liu, X. $^{\natural}$, Li, H. and Cui, Y. (2020+). Integrative analysis of genetical genomics data incorporating network structures. Biometrics. ($^{\natural}$The first two authors contributed equally to this work) Published online DOI: 10.1111/biom.13072. An R-package &amp;ldquo;IVGC&amp;rdquo; is available</description>
+      <description>Published Papers ($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Cheng, C., Feng, X., Huang, J. and Liu, X.* (2020+). Regularized projection score estimation of treatment effects in high-dimensional quantile regression. Statistica Sinica. Published online DOI: 10.5705/ss.202019-0247. An R-package &amp;ldquo;pqr&amp;rdquo; is available at https://github.com/xliusufe/pqr. Liu, X., Zheng, S. and Feng, X. (2020). Estimation of error variance via ridge regression. Biometrika. 107, 481-488. An R-package &amp;ldquo;RidgeVar&amp;rdquo; is available at https://github.com/xliusufe/RidgeVar, and a Python package &amp;ldquo;ridgevar&amp;rdquo; is</description>
     </item>
     
     <item>
@@ -211,7 +210,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/teaching/</guid>
-      <description>Shanghai University of Finance and Economics STT102480: Mathematical Statistics Spring 2017 Spring 2018 STT311240: Advanced Mathematical Statistics Fall 2016 Fall 2017 Fall 2018 Fall 2019 STT213488: Data analysis and statistical modeling Fall 2017 Fall 2018 Fall 2019 STT101828: Computer Programming (C/C++) Spring 2019 Spring 2020 STT310537: Topics on High-dimensional Data Spring 2017 Spring 2018 Fall 2019 Homepage go back to go back to</description>
+      <description>Shanghai University of Finance and Economics STT102480: Mathematical Statistics Spring 2017 Spring 2018 Spring 2021 STT311240: Advanced Mathematical Statistics Fall 2016 Fall 2017 Fall 2018 Fall 2019 Fall 2020 STT213488: Data analysis and statistical modeling Fall 2017 Fall 2018 Fall 2019 Fall 2020 Fall 2021 STT101828: Computer Programming (C/C++) Spring 2019 Spring 2020 STT310537: Topics on High-dimensional Data Spring 2017 Spring 2018 Fall 2019 Fall 2020 Homepage go back to</description>
     </item>
     
     <item>

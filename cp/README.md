@@ -17,4 +17,4 @@ Introduction to C
   - Details can be found in [Softwares](https://xliusufe.github.io/post/cv/softwares/)
   
 # Homepage
-- go back to [![home site](https://img.shields.io/badge/个人主页-Homepage-ye.svg)](https://xliusufe.gitee.io) 
+- go back to [![home site](https://img.shields.io/badge/个人主页-Homepage-ye.svg)](https://xliusufe.github.io) 
