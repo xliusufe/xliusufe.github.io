@@ -1,10 +1,11 @@
 
 # my homepage including 
-[![Resume](https://img.shields.io/badge/简历-Resume-ye.svg)](https://xliusufe.gitee.io/post/cv/resume)
-[![Publications](https://img.shields.io/badge/论文-Publications-yellow.svg)](https://xliusufe.gitee.io/post/cv/publications)
-[![Softwares](https://img.shields.io/badge/软件-Softwares-red.svg)](https://xliusufe.gitee.io/post/cv/softwares)
-[![Teaching](https://img.shields.io/badge/教学-Teaching-green.svg)](https://xliusufe.gitee.io/post/cv/teaching)
-[![Grants](https://img.shields.io/badge/项目-Grants-blue.svg)](https://xliusufe.gitee.io/post/cv/grants)
+[![Resume](https://img.shields.io/badge/简历-Resume-ye.svg)](https://xliusufe.github.io/post/cv/resume)
+[![Publications](https://img.shields.io/badge/论文-Publications-yellow.svg)](https://xliusufe.github.io/post/cv/publications)
+[![Softwares](https://img.shields.io/badge/软件-Softwares-red.svg)](https://xliusufe.github.io/post/cv/softwares)
+[![Teaching](https://img.shields.io/badge/教学-Teaching-green.svg)](https://xliusufe.github.io/post/cv/teaching)
+[![Grants](https://img.shields.io/badge/项目-Grants-blue.svg)](https://xliusufe.github.io/post/cv/grants)
+[![Trainees](https://img.shields.io/badge/博士生-Trainees-brown.svg)](https://xliusufe.github.io/post/cv/trainees)
 
 ## Github
 - [Github](https://xliusufe.github.io/)
@@ -16,6 +17,7 @@
   - [Softwares](https://xliusufe.github.io/post/cv/softwares)
   - [Teaching](https://xliusufe.github.io/post/cv/teaching)
   - [Grants](https://xliusufe.github.io/post/cv/grants)
+  - [Trainees](https://xliusufe.github.io/post/cv/trainees)  
   
 ## Skills/C
 
