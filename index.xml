@@ -201,7 +201,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/softwares/</guid>
-      <description>R packages The R-package &amp;ldquo;rbs&amp;rdquo; select the response and estimate regression coefficients simultaneously for Multivariate Regression with High-dimensional Response Variables. &amp;ldquo;rbs&amp;rdquo; is available at https://github.com/xliusufe/rbs. Refer to Hu, J., Huang, J., Liu, X. Liu, X. (2022). Response Best-subset Selector for Multivariate Regression with High-dimensional Response Variables. Biometrika. Accepted. The R-package &amp;ldquo;pqr&amp;rdquo; constructs confidence intervals of the coefficients of high-dimensional quantile regression via the regularized projection score estimation for the treatment</description>
+      <description>R packages The Python codes &amp;ldquo;REGS&amp;rdquo; is proposed for sampling from unnormalized densties by the techniques including Wasserstein gradient flows, numerical ODEs, density-ratio estimation and deep neural networks. REGS achieves a fantastic numerical performance on 2D mixtrues of Gaussian distributions with a large number of modes, a small variance, and a large distance between any two modes. &amp;ldquo;REGS&amp;rdquo; is available at https://github.com/xliusufe/REGS. Refer to Feng X., Gao, Y., Huang, J.,</description>
     </item>
     
     <item>
