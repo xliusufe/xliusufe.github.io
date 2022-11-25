@@ -183,7 +183,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/publications/</guid>
-      <description>Published Papers ($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Li, X., Feng, X. and Liu, X.* (2022). Heritability estimation for a linear combination of phenotypes via ridge regression. Bioinformatics. DOI:10.1093/bioinformatics/btac587. An R-package &amp;ldquo;MultiRidgeVar&amp;rdquo; is available at https://github.com/xg-SUFE1/MultiRidgeVar. Hu, J., Huang, J., Liu, X. and Liu, X.* (2022). Response Best-subset Selector for Multivariate Regression with High-dimensional Response Variables. Biometrika. DOI:10.1093/biomet/asac037. An R-package &amp;ldquo;rbs&amp;rdquo; is available at https://github.com/xliusufe/rbs. Zhang, X., Liu, X., and Shi X.* (2021).</description>
+      <description>Published Papers ($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Zhang, X., Shi X.*, Liu, Y., Liu, X., and Ma, S. (2022). A general framework for identifying hierarchical interactions and its application to genomics data. Journal of Computational and Graphical Statistics. Accepted. An R-package &amp;ldquo;HierFabs&amp;rdquo; is available at https://github.com/xliusufe/HierFabs. Li, X., Feng, X. and Liu, X.* (2022). Heritability estimation for a linear combination of phenotypes via ridge regression. Bioinformatics. 38, 4687-4696. DOI:10.1093/bioinformatics/btac587. An R-package &amp;ldquo;MultiRidgeVar&amp;rdquo;</description>
     </item>
     
     <item>
@@ -192,7 +192,7 @@ Introduction to R  What is R How to start Getting help Workspace Input and outpu
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/resume/</guid>
-      <description>Contact Information Tel: (+86) 021-6590-1156 Email: liu.xu@sufe.edu.cn Address: No. 777, Guoding Rd., Shanghai 200433, China School of Statistics and Management (Rm. 2207), Shanghai University of Finance and Economics (SUFE), Education 2011 received Ph.D. in Statistics, Yunnan University Work Experience 07/2022 - Present, tenured Associate Professor, School of Statistics and Management, SUFE, 07/2019 - 06/2022, Associate Professor, School of Statistics and Management, SUFE, 06/2016 - 06/2019, Assistant Professor, School of Statistics</description>
+      <description>Contact Information Tel: (+86) 021-6590-1156 Email: liu.xu@sufe.edu.cn Address: No. 777, Guoding Rd., Shanghai 200433, China School of Statistics and Management (Rm. 2207), Shanghai University of Finance and Economics (SUFE), Education 2011 received Ph.D. in Statistics, Yunnan University Work Experience 07/2022 - Present, Tenured Associate Professor, School of Statistics and Management, SUFE, 07/2019 - 06/2022, Associate Professor, School of Statistics and Management, SUFE, 06/2016 - 06/2019, Assistant Professor, School of Statistics</description>
     </item>
     
     <item>
