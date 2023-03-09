@@ -35,7 +35,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/publications/</guid>
-      <description>Published Papers ($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Zhang, X., Shi X.*, Liu, Y., Liu, X., and Ma, S. (2022). A general framework for identifying hierarchical interactions and its application to genomics data. Journal of Computational and Graphical Statistics. Published online. DOI:10.1080/10618600.2022.2152034. An R-package &amp;ldquo;HierFabs&amp;rdquo; is available at https://github.com/xliusufe/HierFabs. Li, X., Feng, X. and Liu, X.* (2022). Heritability estimation for a linear combination of phenotypes via ridge regression. Bioinformatics. 38, 4687-4696. DOI:10.1093/bioinformatics/btac587. An</description>
+      <description>Published Papers ($\color{red}{\small{*corresponding author,\underline{trainee}}} $) Zhang, X., Shi X.*, Liu, Y., Liu, X., and Ma, S. (2023). A general framework for identifying hierarchical interactions and its application to genomics data. Journal of Computational and Graphical Statistics. Published online. DOI:10.1080/10618600.2022.2152034. An R-package &amp;ldquo;HierFabs&amp;rdquo; is available at https://github.com/xliusufe/HierFabs. Hu, J., Huang, J., Liu, X. and Liu, X.* (2023). Response Best-subset Selector for Multivariate Regression with High-dimensional Response Variables. Biometrika. 110, 205-223. DOI:10.1093/biomet/asac037.</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/trainees/</guid>
-      <description>PhD Students Xiao Zhang received his PhD degree in 2021. His thesis title is &amp;ldquo;Variable Selection and Inference for High Dimensional Data&amp;rdquo;. He is currently a postdoc in the Centre for Quantitative Medicine at Duke-NUS Medical School, Singapore. Xiangyong Tan received his PhD degree in 2020. His thesis title is &amp;ldquo;Coefficient Test and Its Application of High-dimensional Regression Model&amp;rdquo;. He is currently an Assistent Professor in the School of Statistics</description>
+      <description>PhD Students Yiming Liu received her PhD degree in 2023. His thesis title is &amp;ldquo;Multi-task Learning for High-dimensional Multi-view Data via Tensor Estimation&amp;rdquo;. She is currently Xiao Zhang received his PhD degree in 2021. His thesis title is &amp;ldquo;Variable Selection and Inference for High Dimensional Data&amp;rdquo;. He is currently a postdoc in the Centre for Quantitative Medicine at Duke-NUS Medical School, Singapore. Xiangyong Tan received his PhD degree in 2020.</description>
     </item>
     
   </channel>
