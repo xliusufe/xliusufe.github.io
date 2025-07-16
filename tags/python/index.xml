@@ -51,7 +51,7 @@ The contents including class101  syntax and examples  dictionary  syntax, usage 
       <pubDate>Sat, 14 Mar 2020 21:29:44 +0800</pubDate>
       
       <guid>https://xliusufe.github.io/post/cv/softwares/</guid>
-      <description>R packages The Python codes &amp;ldquo;REGS&amp;rdquo; is proposed for sampling from unnormalized densties by the techniques including Wasserstein gradient flows, numerical ODEs, density-ratio estimation and deep neural networks. REGS achieves a fantastic numerical performance on 2D mixtrues of Gaussian distributions with a large number of modes, a small variance, and a large distance between any two modes. &amp;ldquo;REGS&amp;rdquo; is available at https://github.com/xliusufe/REGS. Refer to Feng X., Gao, Y., Huang, J.,</description>
+      <description>R packages &amp;ldquo;gcdl&amp;rdquo; computes the confidence interval of coefficients in the high-dimensional linear models incorporating graphical structures. &amp;ldquo;gcdl&amp;rdquo; is available at https://github.com/XiaoZhangryy/gcdl. Tan, X., Zhang, X., Cui, Y. and Liu, X.* (2024). Uncertainty quantification in high-dimensional linear models incorporating graphical structures with applications to gene set analysis. Bioinformatics. &amp;ldquo;TBEinf&amp;rdquo; computes the density of TBE infinity by direct calculation, saddlepoint approximation, Fourier inversion, and related methods. &amp;ldquo;TBEinf&amp;rdquo; applys TBE1 to the</description>
     </item>
     
   </channel>
